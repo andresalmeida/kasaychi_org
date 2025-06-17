@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Comunidad Kasaychi - Proyectos</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="./projects.css" />
+    <link rel="icon" href="../images/KasaychiKunapak.png" type="image/x-icon">
+  </head>
+  <body>
+    <!-- HEADER DESIGN -->
+    <header class="header">
+        <div class="headerLogo">
+            <a href="../index.html" class="logo"><img src="../images/KasaychiKunapak.png" alt="logo" /></a>
+            <!--<i class="fa-brands fa-cloudflare"></i>-->
+        </div>
+      
+      
+        <div class="headerMenu">
+            <div class="menuToggle" >
+            <i class="fa-solid fa-bars" id="menu-icon"></i>
+            </div>
+            <nav class="navbar">
+            <ul>
+                <li>
+                <a href="#home" class="active">Quiénes Somos</a>
+                <ul class="submenu">
+                    <li><a href="../quienesSomos/aboutUs.html">Sobre Nosotros</a></li>
+                    <li><a href="../quienesSomos/ourHistory.html">Nuestra Historia</a></li>
+                </ul>
+                </li>
+                <li>
+                <a href="#activities" class="active">Actividades</a>
+                <ul class="submenu">
+                    <li><a href="../actividades/socialActivities.html">Sociales</a></li>
+                    <li><a href="../actividades/economyActivities.html">Económicas</a></li>
+                </ul>
+                </li>
+                <li>
+                <a href="../multimedia/multimedia.html" class="active">Multimedia</a>
+                </li>
+                <li>
+                <a href="../proyectos/projects.html" class="active">Proyectos</a>
+                </li>
+                <li>
+                <a href="../ubicanos/locateUs.html" class="active">Ubícanos</a>
+                </li>
+            </ul>
+            </nav>
+        </div>     
+    </header>
+
+    <main>
+        <!-- HERO SECTION -->
+        <section class="project-hero" id="home">
+            <h1>Proyectos Comunitarios</h1>
+            <p>Iniciativas para el desarrollo sostenible y la preservación cultural de nuestra comunidad</p>
+        </section>
+
+        <!-- PROYECTOS ACTUALES -->
+        <section class="project-services" id="services">
+          <h2 class="heading">Proyectos en Marcha<br><span>Construyendo un Futuro Sostenible</span></h2>
+          <p class="swipe-hint"><i class="fa-solid fa-hand-point-right"></i> Desliza para ver más proyectos</p>
+          
+          <div class="services-container" id="projectsContainer">
+              <div class="project-box" data-index="0">
+                  <i class="fa-solid fa-mountain-sun"></i>
+                  <h3>Turismo Comunitario</h3>
+                  <p>Alojamiento en cabañas rústicas con experiencias auténticas.</p>
+                  <p>Experiencias vivenciales: participación en mingas, cocina tradicional y rituales ancestrales.</p>
+                  <div class="project-status">
+                      <div class="progress-text">
+                          <span>Progreso</span>
+                          <span>70%</span>
+                      </div>
+                      <div class="progress-container">
+                          <div class="progress-bar" style="width: 70%"></div>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="project-box" data-index="1">
+                <i class="fa-solid fa-book-open"></i>
+                <h3>Plan de Revitalización Cultural</h3>
+                <p>Talleres de kichwa para jóvenes y niños de la comunidad.</p>
+                <p>Recuperación de mitos, leyendas orales y conocimientos ancestrales.</p>
+                <p>Creación de senderos ecoturísticos con guías nativos certificados.</p>
+                <div class="project-status">
+                    <div class="progress-text">
+                        <span>Progreso</span>
+                        <span>85%</span>
+                    </div>
+                    <div class="progress-container">
+                        <div class="progress-bar" style="width: 85%"></div>
+                    </div>
+                </div>
+            </div>
+      
+            <div class="project-box" data-index="2">
+                <i class="fa-solid fa-tree"></i>
+                <h3>Conservación Ambiental</h3>
+                <p>Reforestación de zonas degradadas con especies nativas (pumamaqui, quishuar).</p>
+                <p>Protección de fuentes hídricas y páramos de alta montaña.</p>
+                <p>Educación ambiental para escuelas locales.</p>
+                <div class="project-status">
+                    <div class="progress-text">
+                        <span>Progreso</span>
+                        <span>60%</span>
+                    </div>
+                    <div class="progress-container">
+                        <div class="progress-bar" style="width: 60%"></div>
+                    </div>
+                </div>
+            </div>
+          </div>
+          
+          <!-- Botones de Navegación -->
+          <div class="projects-navigation">
+            <button class="project-nav-button" id="prevProject">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <button class="project-nav-button" id="nextProject">
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
+          </div>
+          
+          <!-- Indicadores de Paginación -->
+          <div class="project-indicators" id="projectIndicators">
+            <div class="project-indicator active" data-index="0"></div>
+            <div class="project-indicator" data-index="1"></div>
+            <div class="project-indicator" data-index="2"></div>
+          </div>
+        </section>
+        
+        <!-- PROYECTOS FUTUROS -->
+        <section class="future-projects">
+            <h2 class="heading2">Proyectos Futuros<br><span style="color: var(--main-color)">Visión a Largo Plazo</span></h2>
+            
+            <div class="timeline">
+                <div class="timeline-container timeline-left">
+                    <div class="timeline-content">
+                        <h3>Centro Cultural Comunitario</h3>
+                        <p>Construcción de un espacio físico para preservar y exhibir nuestro patrimonio cultural, realizar talleres y eventos comunitarios.</p>
+                        <div class="timeline-date">Planificado para 2026</div>
+                    </div>
+                </div>
+                
+                <div class="timeline-container timeline-right">
+                    <div class="timeline-content">
+                        <h3>Cooperativa Agrícola Orgánica</h3>
+                        <p>Formación de una cooperativa para la producción y comercialización de productos agrícolas orgánicos cultivados con métodos tradicionales.</p>
+                        <div class="timeline-date">Planificado para 2027</div>
+                    </div>
+                </div>
+                
+                <div class="timeline-container timeline-left">
+                    <div class="timeline-content">
+                        <h3>Energía Solar Comunitaria</h3>
+                        <p>Implementación de paneles solares para proporcionar energía limpia y renovable a las familias de la comunidad y reducir nuestra huella de carbono.</p>
+                        <div class="timeline-date">Planificado para 2027-2028</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- CALL TO ACTION -->
+        <section class="project-cta">
+            <h2>¿Te gustaría apoyar nuestros proyectos?</h2>
+            <p>Tu colaboración puede hacer la diferencia en el desarrollo sostenible y la preservación cultural de nuestra comunidad. Contáctanos para conocer cómo puedes participar.</p>
+            <a href="../ubicanos/locateUs.html" class="cta-btn">Contáctanos</a>
+        </section>
+      
+
+      
+    </main>
+
+    <!-- FOOTER DESIGN -->
+
+    <footer class="footer">
+      <!-- Izquierda: Logo -->
+      <div class="footer-left">
+        <img src="../images/KasaychiKunapak.png"Logo Intichuri" class="footer-logo" />
+      </div>
+
+      <!-- Centro: Redes Sociales -->
+      <div class="footer-center">
+        <h3>Redes Sociales</h3>
+        <div class="social-media">
+          <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.facebook.com/people/Inti-Churi/100057352064394/"><i class="fa-brands fa-facebook"></i></a>
+        </div>
+      </div>
+
+      <!-- Derecha: Ubicación -->
+      <div class="footer-right">
+        <h3>Ubicación</h3>
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d19272.565484195628!2d-78.88690593671285!3d-1.6154590001759197!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d3115963de9929%3A0x6905673e5759ab61!2sGallo%20Rumi!5e0!3m2!1ses!2sec!4v1729647160930!5m2!1ses!2sec" 
+          width="185" 
+          height="90" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy">
+        </iframe>
+      </div>
+
+
+    </footer>
+      
+    <div class="footer-bottom"> 
+      <h3>&copy; 2025 Comunidad Kasaychi | Todos los derechos reservados | Ecuador</h3>
+    </div>
+
+    <!-- JAVASCRIPT -->
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <!--To give movements of appearing-->
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <!--To give the effect of typing and retyping some words-->
+
+    <script src="../script.js"></script>
+    
+    <script>
+        // Script específico para la página de proyectos
+        
+        // ScrollReveal para animaciones
+        ScrollReveal().reveal('.project-box', { 
+            delay: 200,
+            distance: '60px',
+            duration: 1000,
+            origin: 'bottom',
+            interval: 200
+        });
+        
+        ScrollReveal().reveal('.timeline-container', { 
+            delay: 300,
+            distance: '80px',
+            duration: 1200,
+            origin: 'left',
+            interval: 300
+        });
+        
+        // Animación de barras de progreso cuando están en viewport
+        const progressBars = document.querySelectorAll('.progress-bar');
+        
+        const animateOnScroll = () => {
+            progressBars.forEach(bar => {
+                const rect = bar.getBoundingClientRect();
+                const isInViewport = rect.top <= window.innerHeight && rect.bottom >= 0;
+                
+                if (isInViewport) {
+                    const width = bar.parentElement.previousElementSibling.querySelector('span:last-child').textContent;
+                    bar.style.width = width;
+                }
+            });
+        };
+        
+        // Inicializar barras de progreso en cero
+        window.addEventListener('load', () => {
+            progressBars.forEach(bar => {
+                bar.style.width = '0%';
+            });
+            
+            // Pequeño retraso para animar las barras después de cargar
+            setTimeout(animateOnScroll, 500);
+        });
+        
+        // Actualizar animaciones durante el scroll
+        window.addEventListener('scroll', animateOnScroll);
+
+        // Navegación horizontal de proyectos
+        document.addEventListener('DOMContentLoaded', () => {
+            const projectsContainer = document.getElementById('projectsContainer');
+            const projectBoxes = document.querySelectorAll('.project-box');
+            const prevButton = document.getElementById('prevProject');
+            const nextButton = document.getElementById('nextProject');
+            const indicators = document.querySelectorAll('.project-indicator');
+            
+            let currentIndex = 0;
+            const totalProjects = projectBoxes.length;
+            
+            // Función para actualizar los indicadores
+            const updateIndicators = (index) => {
+                indicators.forEach(indicator => {
+                    indicator.classList.remove('active');
+                });
+                indicators[index].classList.add('active');
+            };
+            
+            // Función para desplazar al proyecto actual
+            const scrollToProject = (index) => {
+                if (index < 0) index = totalProjects - 1;
+                if (index >= totalProjects) index = 0;
+                
+                currentIndex = index;
+                
+                // Actualizar clase activa en proyectos
+                projectBoxes.forEach((box, i) => {
+                    box.classList.remove('active');
+                    if (i === index) {
+                        box.classList.add('active');
+                    }
+                });
+                
+                // Desplazar suavemente a la posición del proyecto
+                const targetProject = projectBoxes[index];
+                projectsContainer.scrollTo({
+                    left: targetProject.offsetLeft - (projectsContainer.offsetWidth - targetProject.offsetWidth) / 2,
+                    behavior: 'smooth'
+                });
+                
+                // Actualizar indicadores
+                updateIndicators(index);
+            };
+            
+            // Event listeners para los botones de navegación
+            prevButton.addEventListener('click', () => {
+                scrollToProject(currentIndex - 1);
+            });
+            
+            nextButton.addEventListener('click', () => {
+                scrollToProject(currentIndex + 1);
+            });
+            
+            // Event listeners para los indicadores
+            indicators.forEach(indicator => {
+                indicator.addEventListener('click', () => {
+                    const index = parseInt(indicator.getAttribute('data-index'));
+                    scrollToProject(index);
+                });
+            });
+            
+            // Detectar cuando un proyecto esté centrado al desplazar manualmente
+            projectsContainer.addEventListener('scroll', () => {
+                const containerCenter = projectsContainer.offsetLeft + projectsContainer.offsetWidth / 2;
+                
+                let closestProject = 0;
+                let minDistance = Infinity;
+                
+                projectBoxes.forEach((box, index) => {
+                    const boxCenter = box.offsetLeft + box.offsetWidth / 2 - projectsContainer.scrollLeft;
+                    const distance = Math.abs(containerCenter - boxCenter);
+                    
+                    if (distance < minDistance) {
+                        minDistance = distance;
+                        closestProject = index;
+                    }
+                });
+                
+                // Solo actualizar si ha cambiado el proyecto centrado
+                if (closestProject !== currentIndex) {
+                    currentIndex = closestProject;
+                    
+                    // Actualizar la clase activa en los proyectos
+                    projectBoxes.forEach((box, idx) => {
+                        box.classList.toggle('active', idx === currentIndex);
+                    });
+                    
+                    updateIndicators(currentIndex);
+                }
+            });
+            
+            // Añadir eventos de click a los proyectos
+            projectBoxes.forEach((box, index) => {
+                box.addEventListener('click', () => {
+                    scrollToProject(index);
+                });
+            });
+            
+            // Iniciar en el primer proyecto
+            scrollToProject(0);
+            
+            // Responsive: ajustar visualización en dispositivos móviles
+            const adjustForMobile = () => {
+                if (window.innerWidth <= 768) {
+                    // Ajustes para móvil
+                    projectBoxes.forEach(box => {
+                        box.style.flex = '0 0 90%';
+                    });
+                } else {
+                    // Ajustes para desktop
+                    projectBoxes.forEach(box => {
+                        box.style.flex = '0 0 80%';
+                    });
+                }
+            };
+            
+            // Ejecutar ajustes al cargar y al cambiar el tamaño de la ventana
+            window.addEventListener('load', adjustForMobile);
+            window.addEventListener('resize', adjustForMobile);
+            
+            // Navegación con teclado
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowLeft') {
+                    scrollToProject(currentIndex - 1);
+                } else if (e.key === 'ArrowRight') {
+                    scrollToProject(currentIndex + 1);
+                }
+            });
+            
+            // Navegación táctil (swipe)
+            let touchStartX = 0;
+            let touchEndX = 0;
+            
+            projectsContainer.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            });
+            
+            projectsContainer.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            });
+            
+            const handleSwipe = () => {
+                const swipeThreshold = 50; // mínima distancia para considerar un swipe
+                
+                if (touchEndX < touchStartX - swipeThreshold) {
+                    // Swipe hacia la izquierda -> siguiente proyecto
+                    scrollToProject(currentIndex + 1);
+                }
+                
+                if (touchEndX > touchStartX + swipeThreshold) {
+                    // Swipe hacia la derecha -> proyecto anterior
+                    scrollToProject(currentIndex - 1);
+                }
+            };
+        });
+    </script>
+  </body>
+</html>

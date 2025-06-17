@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Comunidad Kasaychi - Multimedia</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="./multimedia.css" />
+    <link rel="icon" href="../images/KasaychiKunapak.png" type="image/x-icon">
+  </head>
+  <body>
+    <!-- HEADER DESIGN -->
+    <header class="header">
+        <div class="headerLogo">
+            <a href="../index.html" class="logo"><img src="../images/KasaychiKunapak.png" alt="logo" /></a>
+            <!--<i class="fa-brands fa-cloudflare"></i>-->
+        </div>
+      
+      
+        <div class="headerMenu">
+            <div class="menuToggle" >
+            <i class="fa-solid fa-bars" id="menu-icon"></i>
+            </div>
+            <nav class="navbar">
+            <ul>
+                <li>
+                <a href="#home" class="active">Quiénes Somos</a>
+                <ul class="submenu">
+                    <li><a href="../quienesSomos/aboutUs.html">Sobre Nosotros</a></li>
+                    <li><a href="../quienesSomos/ourHistory.html">Nuestra Historia</a></li>
+                </ul>
+                </li>
+                <li>
+                <a href="#activities" class="active">Actividades</a>
+                <ul class="submenu">
+                    <li><a href="../actividades/socialActivities.html">Sociales</a></li>
+                    <li><a href="../actividades/economyActivities.html">Económicas</a></li>
+                </ul>
+                </li>
+                <li>
+                <a href="../multimedia/multimedia.html" class="active">Multimedia</a>
+                </li>
+                <li>
+                <a href="../proyectos/projects.html" class="active">Proyectos</a>
+                </li>
+                <li>
+                <a href="../ubicanos/locateUs.html" class="active">Ubícanos</a>
+                </li>
+            </ul>
+            </nav>
+        </div>     
+    </header>
+
+    <main>
+        <!-- HERO SECTION -->
+        <section class="multimedia-hero" id="home">
+            <h1>Galería Multimedia</h1>
+            <p>Conoce nuestra comunidad a través de videos, fotos y documentos</p>
+        </section>
+
+        <!-- MULTIMEDIA PRINCIPAL -->
+        <h2 class="heading">Videos Destacados<br><span>Nuestra Comunidad en Acción</span></h2>
+        <section class="multimedia-section" id="multimedia">
+            
+            
+            <div class="multimedia-container">
+                <!-- Video destacado con miniaturas -->
+                <div class="multimedia-featured">
+                    <div class="main-video-container">
+                        <div class="video-placeholder" id="main-video-placeholder">
+                            <i class="fa-solid fa-circle-play"></i>
+                            <p>Video Principal</p>
+                            <p>Haz clic en una miniatura para reproducir</p>
+                        </div>
+                        <!-- El video principal se cargará aquí -->
+                        <video id="main-video-player" style="display: none;" controls></video>
+                    </div>
+                    
+                    <div class="thumbnails-container">
+                        <div class="video-thumbnail" data-video="../images/childsOnSchool.mp4">
+                            <img src="../images/childsEscuela.jpg" alt="Niños en la escuela">
+                            <div class="thumbnail-play">
+                                <i class="fa-solid fa-play"></i>
+                            </div>
+                            <div class="thumbnail-title">Niños en la escuela</div>
+                        </div>
+                        <div class="video-thumbnail" data-video="../images/Coro.mp4">
+                            <img src="../images/AulasEscuela.jpg" alt="Coro escolar">
+                            <div class="thumbnail-play">
+                                <i class="fa-solid fa-play"></i>
+                            </div>
+                            <div class="thumbnail-title">Coro escolar</div>
+                        </div>
+                        <div class="video-thumbnail" data-video="../images/Video de WhatsApp 2025-06-09 a las 20.01.21_bcdac0e1.mp4">
+                            <img src="../images/festividades.png" alt="Actividad comunitaria">
+                            <div class="thumbnail-play">
+                                <i class="fa-solid fa-play"></i>
+                            </div>
+                            <div class="thumbnail-title">Actividad comunitaria</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Galerías de contenido -->
+                <div class="multimedia-galleries">
+                    <div class="galleries-container">
+                        <!-- Galería de fotos -->
+                        <div class="gallery-section">
+                            <div class="gallery-header">
+                                <h3 class="gallery-title">Fotos</h3>
+                                <button class="ver-mas" id="verMasFotos">Ver más</button>
+                            </div>
+                            <div class="media-grid">
+                                <div class="media-item">
+                                    <img src="../images/AulasEscuela.jpg" alt="Aulas Escuela" class="media-img">
+                                    <div class="media-overlay">Aulas de la escuela</div>
+                                </div>
+                                <div class="media-item">
+                                    <img src="../images/CalleEntrada.jpg" alt="Calle entrada" class="media-img">
+                                    <div class="media-overlay">Calle de entrada</div>
+                                </div>
+                                <div class="media-item">
+                                    <img src="../images/childsEscuela.jpg" alt="Niños en la escuela" class="media-img">
+                                    <div class="media-overlay">Niños en la escuela</div>
+                                </div>
+                                <div class="media-item">
+                                    <img src="../images/childsInWoodPlatform.jpg" alt="Niños en plataforma" class="media-img">
+                                    <div class="media-overlay">Niños en actividades</div>
+                                </div>
+                                <div class="media-item">
+                                    <img src="../images/EscuelaPiso.jpg" alt="Piso de la escuela" class="media-img">
+                                    <div class="media-overlay">Instalaciones escolares</div>
+                                </div>
+                                <div class="media-item">
+                                    <img src="../images/fondoEscuela.jpg" alt="Paisaje de la escuela" class="media-img">
+                                    <div class="media-overlay">Paisaje escolar</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Galería de videos -->
+                        <div class="gallery-section">
+                            <div class="gallery-header">
+                                <h3 class="gallery-title">Videos</h3>
+                                <button class="ver-mas" id="verMasVideos">Ver más</button>
+                            </div>
+                            <div class="media-grid">
+                                <div class="media-item video-item">
+                                    <div class="video-thumbnail-container">
+                                        <img src="../images/childsEscuela.jpg" alt="Niños en la escuela" class="media-img video-thumb">
+                                        <div class="play-overlay"><i class="fa-solid fa-play"></i></div>
+                                    </div>
+                                    <div class="media-overlay">Niños en la escuela</div>
+                                    <span class="video-data" data-video="../images/childsOnSchool.mp4"></span>
+                                </div>
+                                <div class="media-item video-item">
+                                    <div class="video-thumbnail-container">
+                                        <img src="../images/AulasEscuela.jpg" alt="Coro escolar" class="media-img video-thumb">
+                                        <div class="play-overlay"><i class="fa-solid fa-play"></i></div>
+                                    </div>
+                                    <div class="media-overlay">Coro escolar</div>
+                                    <span class="video-data" data-video="../images/Coro.mp4"></span>
+                                </div>
+                                <div class="media-item video-item">
+                                    <div class="video-thumbnail-container">
+                                        <img src="../images/festividades.png" alt="Actividad comunitaria" class="media-img video-thumb">
+                                        <div class="play-overlay"><i class="fa-solid fa-play"></i></div>
+                                    </div>
+                                    <div class="media-overlay">Actividad comunitaria</div>
+                                    <span class="video-data" data-video="../images/Video de WhatsApp 2025-06-09 a las 20.01.21_bcdac0e1.mp4"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Sección de documentos (comentada temporalmente) -->
+                <!-- <div class="documents-section">
+                    <h2 class="heading2">Documentos<br><span style="color: var(--main-color)">Publicaciones y Recursos</span></h2>
+                    
+                    <div class="documents-container">
+                        <div class="document-card">
+                            <i class="fa-solid fa-file-pdf document-icon"></i>
+                            <h4 class="document-title">Historia de la Comunidad</h4>
+                            <p class="document-description">Documento que narra la fundación e historia de nuestra comunidad</p>
+                            <a href="#" class="document-link">Descargar PDF</a>
+                        </div>
+                        
+                        <div class="document-card">
+                            <i class="fa-solid fa-file-lines document-icon"></i>
+                            <h4 class="document-title">Plan de Desarrollo</h4>
+                            <p class="document-description">Proyecciones y metas de la comunidad para los próximos años</p>
+                            <a href="#" class="document-link">Descargar PDF</a>
+                        </div>
+                        
+                        <div class="document-card">
+                            <i class="fa-solid fa-book document-icon"></i>
+                            <h4 class="document-title">Revista Cultural</h4>
+                            <p class="document-description">Publicación semestral sobre la cultura y tradiciones de Kasaychi</p>
+                            <a href="#" class="document-link">Leer Online</a>
+                        </div>
+                    </div>
+                </div> -->
+
+                <!-- Sección de Sabiduría Ancestral (temporal) -->
+                <div class="wisdom-section">
+                    <h2 class="heading2">Sabiduría Ancestral<br><span style="color: var(--main-color)">Voces de Nuestros Antepasados</span></h2>
+                    <br><br><br>
+                    <div class="wisdom-container">
+                        <div class="wisdom-card">
+                            <div class="wisdom-icon">
+                                <i class="fa-solid fa-sun"></i>
+                            </div>
+                            <p class="wisdom-text">"La tierra no es una herencia de nuestros padres, sino un préstamo de nuestros hijos."</p>
+                            <div class="wisdom-author">
+                                <div class="author-info">
+                                    <h4>Proverbio Quechua</h4>
+                                    <p>Sabiduría Ancestral</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="wisdom-card">
+                            <div class="wisdom-icon">
+                                <i class="fa-solid fa-mountain"></i>
+                            </div>
+                            <p class="wisdom-text">"No heredamos la tierra de nuestros antepasados, la tomamos prestada de nuestros hijos."</p>
+                            <div class="wisdom-author">
+                                <div class="author-info">
+                                    <h4>Proverbio Andino</h4>
+                                    <p>Sabiduría Ancestral</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="wisdom-card">
+                            <div class="wisdom-icon">
+                                <i class="fa-solid fa-seedling"></i>
+                            </div>
+                            <p class="wisdom-text">"Cada semilla que plantamos es una promesa para el futuro, cada árbol que crece es una bendición para la comunidad."</p>
+                            <div class="wisdom-author">
+                                <div class="author-info">
+                                    <h4>Sabiduría Kichwa</h4>
+                                    <p>Sabiduría Ancestral</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modal para ver todas las imágenes -->
+        <div id="imageModal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2>Galería completa de imágenes</h2>
+                <div class="modal-grid" id="imageModalGrid">
+                    <!-- Se llenarán dinámicamente con JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal para ver todos los videos -->
+        <div id="videoModal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2>Colección completa de videos</h2>
+                <div class="modal-grid" id="videoModalGrid">
+                    <!-- Se llenarán dinámicamente con JavaScript -->
+                </div>
+            </div>
+        </div>        <!-- Modal para reproducir vídeo -->
+        <div id="playVideoModal" class="modal">
+            <div class="modal-content video-modal-content">
+                <span class="close-modal">&times;</span>
+                <h2 id="videoPlayerTitle">Reproduciendo video</h2>
+                <div class="video-player-container">
+                    <video id="videoPlayer" controls></video>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal para visualizar imagen ampliada -->
+        <div id="fullImageModal" class="modal">
+            <div class="modal-content image-modal-content">
+                <span class="close-modal">&times;</span>
+                <div class="full-image-container">
+                    <img id="fullImage" src="" alt="Imagen ampliada">
+                    <h3 id="fullImageTitle" class="image-title"></h3>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER DESIGN -->
+
+    <footer class="footer">
+      <!-- Izquierda: Logo -->
+      <div class="footer-left">
+        <img src="../images/KasaychiKunapak.png"Logo Intichuri" class="footer-logo" />
+      </div>
+
+      <!-- Centro: Redes Sociales -->
+      <div class="footer-center">
+        <h3>Redes Sociales</h3>
+        <div class="social-media">
+          <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.facebook.com/people/Inti-Churi/100057352064394/"><i class="fa-brands fa-facebook"></i></a>
+        </div>
+      </div>
+
+      <!-- Derecha: Ubicación -->
+      <div class="footer-right">
+        <h3>Ubicación</h3>
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d19272.565484195628!2d-78.88690593671285!3d-1.6154590001759197!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d3115963de9929%3A0x6905673e5759ab61!2sGallo%20Rumi!5e0!3m2!1ses!2sec!4v1729647160930!5m2!1ses!2sec" 
+          width="185" 
+          height="90" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy">
+        </iframe>
+      </div>
+
+
+    </footer>
+      
+    <div class="footer-bottom"> 
+      <h3>&copy; 2025 Comunidad Kasaychi | Todos los derechos reservados | Ecuador</h3>
+    </div>
+
+    <!-- JAVASCRIPT -->
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <!--To give movements of appearing-->
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <!--To give the effect of typing and retyping some words-->
+
+    <script src="../script.js"></script>
+    
+    <script>
+        // Script específico para la página multimedia
+        
+        // ScrollReveal para animaciones
+        ScrollReveal().reveal('.media-item', { 
+            delay: 200,
+            distance: '40px',
+            duration: 800,
+            origin: 'bottom',
+            interval: 100
+        });
+        
+        ScrollReveal().reveal('.document-card', { 
+            delay: 300,
+            distance: '60px',
+            duration: 1000,
+            origin: 'bottom',
+            interval: 200
+        });
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            // ===== REFERENCIAS A ELEMENTOS DOM =====
+            const mainVideoContainer = document.querySelector('.main-video-container');
+            const videoThumbnails = document.querySelectorAll('.video-thumbnail');
+            const videoPlaceholder = document.getElementById('main-video-placeholder');
+            const mainVideoPlayer = document.getElementById('main-video-player');
+            
+            // Botones Ver Más
+            const btnVerMasFotos = document.getElementById('verMasFotos');
+            const btnVerMasVideos = document.getElementById('verMasVideos');
+              // Modales
+            const imageModal = document.getElementById('imageModal');
+            const videoModal = document.getElementById('videoModal');
+            const playVideoModal = document.getElementById('playVideoModal');
+            const fullImageModal = document.getElementById('fullImageModal');
+            const closeButtons = document.querySelectorAll('.close-modal');
+            
+            // Contenedores de modal
+            const imageModalGrid = document.getElementById('imageModalGrid');
+            const videoModalGrid = document.getElementById('videoModalGrid');
+            const videoPlayer = document.getElementById('videoPlayer');
+            const videoPlayerTitle = document.getElementById('videoPlayerTitle');
+            const fullImage = document.getElementById('fullImage');
+            const fullImageTitle = document.getElementById('fullImageTitle');
+            
+            // ===== VÍDEOS DESTACADOS =====
+            videoThumbnails.forEach(thumbnail => {
+                thumbnail.addEventListener('click', function() {
+                    const videoPath = this.getAttribute('data-video');
+                    const videoTitle = this.querySelector('.thumbnail-title').textContent;
+                    
+                    if (videoPath) {
+                        // Oculta el placeholder y muestra el reproductor
+                        videoPlaceholder.style.display = 'none';
+                        mainVideoPlayer.style.display = 'block';
+                        mainVideoPlayer.src = videoPath;
+                        mainVideoPlayer.play();
+                    }
+                });
+            });
+            
+            // ===== ELEMENTOS DE VÍDEO EN LA GALERÍA =====
+            const videoItems = document.querySelectorAll('.video-item');
+            videoItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    const videoPath = this.querySelector('.video-data').getAttribute('data-video');
+                    const videoTitle = this.querySelector('.media-overlay').textContent;
+                    
+                    if (videoPath) {
+                        // Configurar el reproductor en el modal
+                        videoPlayer.src = videoPath;
+                        videoPlayerTitle.textContent = 'Reproduciendo: ' + videoTitle;
+                        
+                        // Mostrar el modal
+                        playVideoModal.style.display = 'block';
+                        videoPlayer.play();
+                    }
+                });
+            });
+            
+            // ===== FUNCIONALIDADES DE MODALES =====
+            
+            // Llenar modal de imágenes
+            function populateImageModal() {
+                // Lista de todas las imágenes disponibles
+                const imageFiles = [
+                    { src: '../images/AulasEscuela.jpg', title: 'Aulas de la escuela' },
+                    { src: '../images/CalleEntrada.jpg', title: 'Calle de entrada' },
+                    { src: '../images/childsEscuela.jpg', title: 'Niños en la escuela' },
+                    { src: '../images/childsInWoodPlatform.jpg', title: 'Niños en actividades' },
+                    { src: '../images/EscuelaPiso.jpg', title: 'Instalaciones escolares' },
+                    { src: '../images/fondoEscuela.jpg', title: 'Paisaje escolar' },
+                    { src: '../images/fondoLejano.jpg', title: 'Vista de la comunidad' },
+                    { src: '../images/fondoLejano2.jpg', title: 'Panorámica de la comunidad' },
+                    { src: '../images/fondoLejanoCalle.jpg', title: 'Calle a la distancia' },
+                    { src: '../images/fondoLejanoCalle3.jpg', title: 'Camino comunitario' },
+                    { src: '../images/fondoLejanoCalleAlto.jpg', title: 'Vista panorámica' },
+                    { src: '../images/Calle.jpg', title: 'Calle principal' },
+                    { src: '../images/calleEscuela.jpg', title: 'Calle de la escuela' },
+                    { src: '../images/festividades.png', title: 'Festividades tradicionales' },
+                    { src: '../images/inti.png', title: 'Celebración del Inti Raymi' },
+                    { src: '../images/casa.jpg', title: 'Vivienda tradicional' },
+                    { src: '../images/casa2.jpg', title: 'Hogar comunitario' },
+                    { src: '../images/casa3.jpg', title: 'Casa de la comunidad' }
+                ];
+                
+                imageModalGrid.innerHTML = '';
+                  imageFiles.forEach(img => {
+                    const mediaItem = document.createElement('div');
+                    mediaItem.className = 'media-item';
+                    
+                    mediaItem.innerHTML = `
+                        <img src="${img.src}" alt="${img.title}" class="media-img">
+                        <div class="media-overlay">${img.title}</div>
+                    `;
+                    
+                    // Agregar evento de clic para ver imagen ampliada
+                    mediaItem.addEventListener('click', function() {
+                        fullImage.src = img.src;
+                        fullImage.alt = img.title;
+                        fullImageTitle.textContent = img.title;
+                        
+                        imageModal.style.display = 'none';
+                        fullImageModal.style.display = 'block';
+                    });
+                    
+                    imageModalGrid.appendChild(mediaItem);
+                });
+            }
+            
+            // Llenar modal de videos
+            function populateVideoModal() {
+                // Lista de todos los videos disponibles
+                const videoFiles = [
+                    { src: '../images/childsOnSchool.mp4', thumb: '../images/childsEscuela.jpg', title: 'Niños en la escuela' },
+                    { src: '../images/Coro.mp4', thumb: '../images/AulasEscuela.jpg', title: 'Coro escolar' },
+                    { src: '../images/Video de WhatsApp 2025-06-09 a las 20.01.21_bcdac0e1.mp4', thumb: '../images/festividades.png', title: 'Actividad comunitaria' }
+                ];
+                
+                videoModalGrid.innerHTML = '';
+                
+                videoFiles.forEach(video => {
+                    const mediaItem = document.createElement('div');
+                    mediaItem.className = 'media-item video-item modal-video-item';
+                    
+                    mediaItem.innerHTML = `
+                        <div class="video-thumbnail-container">
+                            <img src="${video.thumb}" alt="${video.title}" class="media-img video-thumb">
+                            <div class="play-overlay"><i class="fa-solid fa-play"></i></div>
+                        </div>
+                        <div class="media-overlay">${video.title}</div>
+                        <span class="video-data" data-video="${video.src}"></span>
+                    `;
+                    
+                    // Manejar clic en el video del modal
+                    mediaItem.addEventListener('click', function() {
+                        videoPlayer.src = video.src;
+                        videoPlayerTitle.textContent = 'Reproduciendo: ' + video.title;
+                        
+                        videoModal.style.display = 'none';
+                        playVideoModal.style.display = 'block';
+                        videoPlayer.play();
+                    });
+                    
+                    videoModalGrid.appendChild(mediaItem);
+                });
+            }
+            
+            // Eventos para botones "Ver más"
+            btnVerMasFotos.addEventListener('click', function() {
+                populateImageModal();
+                imageModal.style.display = 'block';
+            });
+            
+            btnVerMasVideos.addEventListener('click', function() {
+                populateVideoModal();
+                videoModal.style.display = 'block';
+            });
+              // Cerrar modales
+            closeButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    imageModal.style.display = 'none';
+                    videoModal.style.display = 'none';
+                    playVideoModal.style.display = 'none';
+                    fullImageModal.style.display = 'none';
+                    
+                    // Pausar video si está reproduciéndose
+                    if (videoPlayer.src) {
+                        videoPlayer.pause();
+                    }
+                });
+            });
+              // Cerrar modales al hacer clic fuera
+            window.addEventListener('click', function(event) {
+                if (event.target === imageModal) {
+                    imageModal.style.display = 'none';
+                }
+                if (event.target === videoModal) {
+                    videoModal.style.display = 'none';
+                }
+                if (event.target === playVideoModal) {
+                    playVideoModal.style.display = 'none';
+                    if (videoPlayer.src) {
+                        videoPlayer.pause();
+                    }
+                }
+                if (event.target === fullImageModal) {
+                    fullImageModal.style.display = 'none';
+                }
+            });
+        });
+    </script>
+  </body>
+</html>

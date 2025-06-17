@@ -1,0 +1,404 @@
+/* Estilos específicos para la página de ubicación */
+
+.location-hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                    url("../images/fondoLejano2.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 80vh;
+  color: #fff;
+  text-align: center;
+  padding: 0 5%;
+}
+
+.location-hero h1 {
+  font-size: 5rem;
+  margin-bottom: 1.5rem;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.location-hero p {
+  font-size: 2.2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.5;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.location-info {
+  position: relative;
+  background-color: var(--bg-color);
+  padding: 8rem 9% 5rem;
+}
+
+.location-description {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.location-description p {
+  font-size: 1.8rem;
+  max-width: 800px;
+  margin: 2rem auto;
+  line-height: 1.6;
+  color: #444;
+}
+
+.location-main-map {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto 5rem;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.location-main-map iframe {
+  width: 100%;
+  height: 450px;
+  display: block;
+  border: none;
+}
+
+.location-map-overlay {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 1.5rem;
+  border-radius: 10px;
+  max-width: 300px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.location-map-overlay h3 {
+  font-size: 2.2rem;
+  color: var(--main-color);
+  margin-bottom: 1rem;
+}
+
+.location-map-overlay p {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+
+.location-map-overlay .coordinates {
+  font-family: monospace;
+  font-size: 1.4rem;
+  padding: 0.5rem 1rem;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  display: inline-block;
+  margin-top: 0.5rem;
+}
+
+/* Estilo para los atractivos turísticos */
+.attractions {
+  background-color: var(--bg-color);
+  padding: 5rem 9%;
+}
+
+.attractions .heading {
+  margin-bottom: 3rem;
+}
+
+.attractions-description {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto 5rem;
+  font-size: 1.8rem;
+  line-height: 1.6;
+  color: #444;
+}
+
+.attractions-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.attraction-card {
+  background-color: var(--bg-color-2);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s ease;
+  position: relative;
+}
+
+.attraction-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(255, 102, 0, 0.2);
+}
+
+.attraction-image {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.attraction-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.attraction-card:hover .attraction-image img {
+  transform: scale(1.1);
+}
+
+.attraction-content {
+  padding: 2rem;
+}
+
+.attraction-content h3 {
+  font-size: 2.2rem;
+  color: var(--main-color);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.attraction-content p {
+  font-size: 1.6rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  color: #444;
+}
+
+.attraction-map {
+  border-top: 1px solid #eee;
+  padding-top: 2rem;
+}
+
+.attraction-map iframe {
+  width: 100%;
+  height: 180px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.attraction-icons {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 1rem 0;
+}
+
+.attraction-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.4rem;
+  color: #666;
+}
+
+.attraction-icon i {
+  font-size: 2.5rem;
+  color: var(--main-color);
+  margin-bottom: 0.5rem;
+}
+
+/* Estilo para la información de contacto */
+.contact-info {
+  background-color: var(--snd-bg-color);
+  padding: 5rem 9%;
+  color: var(--bg-color);
+}
+
+.contact-info .heading2 {
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+.contact-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.contact-details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 3rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  transition: transform 0.3s ease;
+}
+
+.contact-item:hover {
+  transform: translateY(-5px);
+}
+
+.contact-icon {
+  font-size: 3rem;
+  color: var(--main-color);
+  width: 5rem;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.contact-item:hover .contact-icon {
+  transform: scale(1.1);
+}
+
+.contact-text h3 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.contact-text p, .contact-text a {
+  font-size: 1.6rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.4;
+}
+
+.contact-text a {
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-text a:hover {
+  color: var(--main-color);
+}
+
+/* Media queries para la sección de contacto */
+@media (max-width: 768px) {
+  .contact-details {
+    grid-template-columns: 1fr;
+    padding: 2rem;
+  }
+  
+  .contact-item {
+    padding: 1rem;
+  }
+}
+
+/* Comentamos los estilos del formulario ya que está temporalmente deshabilitado */
+/* .contact-form {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 3rem;
+    border-radius: 15px;
+}
+
+.contact-form h3 {
+    font-size: 2.4rem;
+    margin-bottom: 2rem;
+    color: #fff;
+}
+
+.form-group {
+    margin-bottom: 2rem;
+}
+
+.form-input {
+    width: 100%;
+    padding: 1.2rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    color: #fff;
+    font-size: 1.6rem;
+    transition: all 0.3s ease;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--main-color);
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.form-input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+textarea.form-input {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.submit-btn {
+    background-color: var(--main-color);
+    color: #fff;
+    padding: 1.2rem 3rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.8rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.submit-btn:hover {
+    background-color: #ff8533;
+    transform: translateY(-3px);
+} */
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .attractions-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .contact-container {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .location-hero {
+    height: 40vh;
+  }
+  
+  .location-hero h1 {
+    font-size: 3.5rem;
+  }
+  
+  .location-hero p {
+    font-size: 1.8rem;
+  }
+  
+  .location-map-overlay {
+    position: relative;
+    top: 0;
+    right: 0;
+    max-width: 100%;
+    margin-top: 2rem;
+  }
+  
+  .attractions-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .attraction-card {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 576px) {
+  .location-main-map iframe {
+    height: 350px;
+  }
+  
+  .contact-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+  }
+}
