@@ -118,4 +118,74 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
+
+  // Funcionalidad para el enlace "Síguenos" en el footer
+  const footerBrand = document.querySelector('.footer-brand');
+  if (footerBrand) {
+    // URL de la página de Facebook (la obtenemos del enlace existente)
+    const facebookUrl = document.querySelector('.social-connection a')?.getAttribute('href') || 
+                        "https://www.facebook.com/people/Inti-Churi/100057352064394/";
+      // Crear un área clickeable para el texto "Síguenos"
+    const siguenos = document.createElement('a');
+    siguenos.href = facebookUrl;
+    siguenos.target = "_blank";
+    siguenos.style.position = "absolute";
+    siguenos.style.bottom = "30px";
+    siguenos.style.left = "0";
+    siguenos.style.width = "100px"; // Aumentado para cubrir mejor el texto
+    siguenos.style.height = "25px";
+    siguenos.style.zIndex = "20";
+    siguenos.style.opacity = "0";
+    siguenos.style.cursor = "pointer"; // Mostrar cursor de mano al pasar por encima
+    siguenos.title = "Visita nuestra página de Facebook";
+    footerBrand.appendChild(siguenos);
+      // Hacer que el ícono visual de Facebook también sea clickeable
+    const facebookIcon = document.createElement('a');
+    facebookIcon.href = facebookUrl;
+    facebookIcon.target = "_blank";
+    facebookIcon.style.position = "absolute";
+    facebookIcon.style.bottom = "5px";
+    facebookIcon.style.left = "0";
+    facebookIcon.style.width = "24px";
+    facebookIcon.style.height = "24px";
+    facebookIcon.style.zIndex = "20";
+    facebookIcon.style.opacity = "0";
+    facebookIcon.style.cursor = "pointer"; // Mostrar cursor de mano al pasar por encima
+    facebookIcon.title = "Visita nuestra página de Facebook";
+    
+    // También podemos añadir un efecto visual al pasar el mouse por encima
+    facebookIcon.addEventListener('mouseover', () => {
+      const beforeElement = window.getComputedStyle(footerBrand, '::before');
+      if (beforeElement) {
+        document.documentElement.style.setProperty('--facebook-hover-background', '#ff6600');
+        document.documentElement.style.setProperty('--facebook-hover-color', 'white');
+      }
+    });
+    
+    facebookIcon.addEventListener('mouseout', () => {
+      document.documentElement.style.setProperty('--facebook-hover-background', 'transparent');
+      document.documentElement.style.setProperty('--facebook-hover-color', '#ff6600');
+    });
+    
+    footerBrand.appendChild(facebookIcon);
+    
+    // Ajustar posiciones en pantallas pequeñas
+    const adjustPositions = () => {
+      if (window.innerWidth <= 768) {
+        siguenos.style.left = "50%";
+        siguenos.style.transform = "translateX(-50%)";
+        facebookIcon.style.left = "50%";
+        facebookIcon.style.transform = "translateX(-50%)";
+      } else {
+        siguenos.style.left = "0";
+        siguenos.style.transform = "none";
+        facebookIcon.style.left = "0";
+        facebookIcon.style.transform = "none";
+      }
+    };
+    
+    // Ejecutar una vez al cargar y luego cada vez que se redimensione la ventana
+    adjustPositions();
+    window.addEventListener('resize', adjustPositions);
+  }
 });

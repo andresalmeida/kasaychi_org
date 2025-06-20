@@ -16,6 +16,8 @@
   --snd-bg-color: #333333; /* Gris oscuro */
   --text-color: #000000; /* Negro */
   --main-color: #ff6600; /* Naranja */
+  --facebook-hover-background: transparent;
+  --facebook-hover-color: #ff6600;
 }
 
 html {
@@ -54,13 +56,13 @@ section {
 
 /*LOGO*/
 
-.headerLogo img {
-    max-height: 95px;       
+.headerLogo img {    
+  max-height: 80px;       
     height: auto;
     width: auto;
     object-fit: contain;    
     display: block;
-    
+    margin: 0 0 auto;
 }
 
 
@@ -306,7 +308,7 @@ span {
   border-radius: 4rem;
   box-shadow: 0 0 1rem var(--main-color);
   font-size: 1.6rem;
-  color: var(-- bg-color);
+  color: var,-- bg-color);
   letter-spacing: 0.1rem;
   font-weight: 600;
   transition: 0.5s ease;
@@ -864,6 +866,9 @@ span {
   position: relative;
   overflow: hidden;
   margin-top: 50px;
+  max-height: 600px; /* Altura máxima limitada para no sobrepasar el botón proyectos */
+  display: grid;
+  grid-template-rows: auto 1fr auto; /* Organiza el contenido en filas */
 }
 
 /* Ondas decorativas */
@@ -878,71 +883,85 @@ span {
 }
 
 .footer-content {
-  padding: 60px 4% 30px;
+  padding: 40px 4% 20px; /* Reducido para ajustar altura */
   max-width: 1400px;
   margin: 0 auto;
+  display: grid;
+  grid-template-rows: auto;
+  gap: 20px;
 }
 
 .footer-main {
   display: grid;
-  grid-template-columns: 2fr 1fr 1.5fr;
-  gap: 40px;
-  margin-bottom: 40px;
+  grid-template-columns: 1.5fr 1fr 1.5fr; /* Ajustando proporción de columnas */
+  gap: 20px; /* Reducido el espacio entre columnas */
+  margin-bottom: 20px;
+  max-height: 350px; /* Limitar altura máxima */
+  overflow-y: auto; /* Scroll si es necesario */
 }
 
 /* Sección de marca */
 .footer-brand {
   color: white;
+  display: flex;
+  flex-direction: column;
+  max-height: 100%;
+  overflow: hidden;
 }
 
 .brand-logo {
   display: flex;
-  align-items: center;
-  gap: 15px;
-  margin-bottom: 20px;
+  align-items: center;  gap: 15px;
+  margin-bottom: 10px; /* Reducido */
 }
 
 .brand-logo img {
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  border: 3px solid #ff6600;
-  object-fit: cover;
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
 }
 
 .brand-text h3 {
-  font-size: 2.4rem;
+  font-size: 2.2rem; /* Reducido */
   color: #ff6600;
-  margin-bottom: 5px;
+  margin-bottom: 3px; /* Reducido */
   font-weight: 700;
 }
 
 .brand-subtitle {
-  font-size: 1.4rem;
+  font-size: 1.3rem; /* Reducido */
   color: #ffcc99;
   font-style: italic;
   margin: 0;
 }
 
 .brand-description {
-  font-size: 1.6rem;
-  line-height: 1.6;
+  font-size: 1.5rem; /* Reducido */
+  line-height: 1.5;
   color: #e6e6e6;
-  margin-bottom: 25px;
+  margin-bottom: 15px; /* Reducido */
+  max-height: 70px; /* Limitar altura */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Limitar a 3 líneas */
+  line-clamp: 3; /* Para compatibilidad */
+  -webkit-box-orient: vertical;
 }
 
 .cultural-elements {
   display: flex;
-  gap: 20px;
+  gap: 10px; /* Reducido */
   flex-wrap: wrap;
+  margin-bottom: 10px; /* Espacio para las redes sociales debajo */
 }
 
 .element-item {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px; /* Reducido */
   background: rgba(255, 102, 0, 0.2);
-  padding: 8px 15px;
+  padding: 6px 12px; /* Reducido */
   border-radius: 20px;
   border: 1px solid rgba(255, 102, 0, 0.3);
 }
@@ -958,47 +977,52 @@ span {
   font-weight: 500;
 }
 
-/* Enlaces rápidos */
+/* Enlaces rápidos - horizontales */
 .footer-links {
   color: white;
 }
 
 .footer-links h4 {
-  font-size: 2rem;
+  font-size: 1.8rem; /* Reducido */
   color: #ff6600;
-  margin-bottom: 20px;
+  margin-bottom: 15px; /* Reducido */
   font-weight: 600;
 }
 
 .footer-links ul {
   list-style: none;
   padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 20px; /* Espaciado entre elementos en línea */
 }
 
 .footer-links ul li {
-  margin-bottom: 12px;
+  margin-bottom: 5px;
 }
 
 .footer-links ul li a {
   color: #e6e6e6;
-  font-size: 1.5rem;
+  font-size: 1.4rem; /* Reducido */
   text-decoration: none;
   transition: all 0.3s ease;
   display: flex;
   align-items: center;
-  padding: 5px 0;
+  padding: 3px 8px; /* Añadido padding horizontal */
+  border-radius: 8px;
+  white-space: nowrap; /* Evita saltos de línea */
 }
 
 .footer-links ul li a:hover {
   color: #ff6600;
-  padding-left: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .footer-links ul li a::before {
   content: '▶';
   color: #ff6600;
-  margin-right: 10px;
-  font-size: 1rem;
+  margin-right: 5px; /* Reducido */
+  font-size: 0.9rem; /* Reducido */
   opacity: 0;
   transition: opacity 0.3s ease;
 }
@@ -1007,81 +1031,81 @@ span {
   opacity: 1;
 }
 
-/* Sección de contacto */
+/* Sección de contacto - compacta */
 .footer-contact {
   color: white;
 }
 
 .footer-contact h4 {
-  font-size: 2rem;
+  font-size: 1.8rem; /* Reducido */
   color: #ff6600;
-  margin-bottom: 20px;
+  margin-bottom: 12px; /* Reducido */
   font-weight: 600;
 }
 
 .contact-info {
-  margin-bottom: 25px;
+  margin-bottom: 15px; /* Reducido */
 }
 
 .contact-item {
   display: flex;
-  align-items: flex-start;
-  gap: 15px;
-  margin-bottom: 20px;
-  padding: 15px;
+  align-items: center; /* Centrado vertical */
+  gap: 10px; /* Reducido */
+  margin-bottom: 10px; /* Reducido */
+  padding: 10px; /* Reducido */
   background: rgba(255, 255, 255, 0.1);
   border-radius: 10px;
   border-left: 4px solid #ff6600;
 }
 
 .contact-item i {
-  font-size: 2rem;
+  font-size: 1.8rem; /* Reducido */
   color: #ff6600;
-  margin-top: 5px;
+  margin-top: 0;
 }
 
 .contact-item div strong {
   display: block;
-  font-size: 1.6rem;
+  font-size: 1.4rem; /* Reducido */
   color: #ff6600;
-  margin-bottom: 5px;
+  margin-bottom: 2px; /* Reducido */
 }
 
 .contact-item div p {
-  font-size: 1.4rem;
+  font-size: 1.3rem; /* Reducido */
   color: #e6e6e6;
-  margin: 2px 0;
+  margin: 1px 0; /* Reducido */
 }
 
-/* Facebook mejorado */
+/* Facebook más compacto */
 .social-connection h5 {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   color: #ff6600;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 .facebook-enhanced {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 10px;
   background: linear-gradient(45deg, #1877f2, #42a5f5);
-  padding: 15px 20px;
-  border-radius: 12px;
+  padding: 8px 15px;
+  border-radius: 10px;
   text-decoration: none;
   transition: all 0.3s ease;
-  border: 2px solid transparent;
+  border: 1px solid transparent;
 }
 
 .facebook-enhanced:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(24, 119, 242, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(24, 119, 242, 0.3);
   border-color: #ff6600;
 }
 
 .facebook-icon {
   background: white;
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -1089,49 +1113,50 @@ span {
 }
 
 .facebook-icon i {
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: #1877f2;
 }
 
 .facebook-text strong {
   display: block;
-  font-size: 1.6rem;
+  font-size: 1.3rem;
   color: white;
-  margin-bottom: 2px;
+  margin-bottom: 0;
 }
 
 .facebook-text span {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   color: rgba(255, 255, 255, 0.9);
 }
 
-/* Mapa mejorado */
+/* Mapa a la derecha */
 .footer-map {
-  grid-column: 1 / -1;
-  margin-top: 30px;
+  grid-column: 3; /* Colocar en la tercera columna */
+  grid-row: 1; /* Alineado con la primera fila */
 }
 
 .map-container h4 {
-  font-size: 2.2rem;
+  font-size: 1.8rem; /* Reducido */
   color: #ff6600;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 10px; /* Reducido */
   font-weight: 600;
 }
 
 .map-wrapper {
   background: white;
-  padding: 10px;
-  border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  padding: 8px; /* Reducido */
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
   overflow: hidden;
+  height: 85%; /* Ajustamos altura */
 }
 
-/* Footer bottom */
+/* Footer bottom más compacto */
 .footer-bottom {
   background: rgba(0, 0, 0, 0.3);
   border-top: 2px solid #ff6600;
-  padding: 25px 4%;
+  padding: 15px 4%; /* Reducido */
 }
 
 .footer-bottom-content {
@@ -1141,13 +1166,13 @@ span {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 10px; /* Reducido */
 }
 
 .copyright p {
   color: white;
-  font-size: 1.4rem;
-  margin: 5px 0;
+  font-size: 1.3rem; /* Reducido */
+  margin: 3px 0; /* Reducido */
 }
 
 .copyright p:first-child {
@@ -1181,22 +1206,42 @@ span {
   50% { opacity: 1; transform: rotate(45deg) scale(1.2); }
 }
 
-/* Responsive */
+/* Responsive ajustado */
 @media (max-width: 1024px) {
+  .kasaychi-footer {
+    max-height: none; /* En pantallas más pequeñas no limitamos altura */
+  }
+  
   .footer-main {
     grid-template-columns: 1fr 1fr;
-    gap: 30px;
+    gap: 20px;
+    max-height: none;
   }
   
   .footer-contact {
     grid-column: 1 / -1;
+  }
+  
+  .footer-map {
+    grid-column: 1 / -1;
+    grid-row: auto;
+    margin-top: 20px;
+  }
+  
+  .map-wrapper {
+    height: 200px;
+  }
+  
+  .footer-links ul {
+    flex-direction: column;
+    gap: 5px;
   }
 }
 
 @media (max-width: 768px) {
   .footer-main {
     grid-template-columns: 1fr;
-    gap: 30px;
+    gap: 20px;
   }
   
   .brand-logo {
@@ -1242,10 +1287,153 @@ span {
   }
 }
 
+/* Redes sociales pequeñas debajo de Inti Raymi */
+.footer-brand .social-media {
+  display: flex;
+  margin-top: 10px;
+  justify-content: flex-start;
+}
 
+.footer-brand .social-media a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  background: transparent;
+  border: 0.15rem solid var(--main-color);
+  border-radius: 50%;
+  font-size: 1.6rem;
+  color: var(--main-color);
+  margin: 0 1rem 0 0;
+  transition: 0.3s ease;
+}
 
+.footer-brand .social-media a:hover {
+  background: var(--main-color);
+  color: white;
+  box-shadow: 0 0 0.8rem var(--main-color);
+}
 
+/* ===== ESTILOS PARA MOVER "SÍGUENOS" DEBAJO DE INTI RAYMI ===== */
 
+/* 1. Ocultar la sección original de "Síguenos" en el footer-contact */
+.footer-contact .social-connection {
+  display: none !important;
+}
+
+/* 2. Añadir una versión visual de "Síguenos" en el footer-brand */
+.footer-brand {
+  position: relative;
+  padding-bottom: 50px; /* Espacio reducido para la sección "Síguenos" */
+}
+
+/* 3. Crear visualmente la sección "Síguenos" */
+.footer-brand::after {
+  content: 'Síguenos';
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  font-size: 1rem;
+  color: #ff6600;
+  font-weight: 600;
+}
+
+/* 4. Crear un botón visual para Facebook */
+.footer-brand::before {
+  content: '\f09a'; /* Código Unicode para el ícono de Facebook */
+  font-family: 'Font Awesome 6 Brands';
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 1px solid #ff6600;
+  color: var(--facebook-hover-color, #ff6600);
+  font-size: 1.2rem;
+  background: var(--facebook-hover-background, transparent);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+/* 5. Efecto hover para el botón de Facebook */
+.footer-brand::before:hover {
+  background-color: #ff6600;
+  color: white;
+  box-shadow: 0 0 0.5rem #ff6600;
+}
+
+/* 6. Crear un enlace funcional sobre el botón visual */
+.footer-brand {
+  position: relative;
+}
+
+.footer-brand a[href*="facebook.com/people/Inti-Churi"] {
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  width: 24px;
+  height: 24px;
+  z-index: 10;
+  opacity: 0;
+  font-size: 0;
+}
+
+/* 7. Estilos responsivos */
+@media (max-width: 768px) {
+  .footer-brand {
+    padding-bottom: 60px;
+  }
+  
+  .footer-brand::after {
+    width: 100%;
+    text-align: center;
+    bottom: 35px;
+  }
+  
+  .footer-brand::before {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .footer-brand a[href*="facebook.com/people/Inti-Churi"] {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  /* Mejorar el espaciado de elementos culturales en móvil */
+  .cultural-elements {
+    justify-content: center;
+    margin-bottom: 15px;
+  }
+}
+
+#festividades {
+  padding: 0;
+  padding-top: 6rem; /* Solo dejamos espacio arriba para el header fijo */
+  margin-top: 0;
+  background-color: #f2f2f2;
+}
+
+/* Ocultar los br antes de la sección de festividades */
+main > br {
+  display: none;
+}
+
+/* Ajustar el espaciado de los elementos internos */
+#festividades .heading {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Ocultar los br después del heading */
+#festividades > br {
+  display: none;
+}
 
 .event-table {
   justify-content: center; 
@@ -1278,7 +1466,6 @@ span {
   color: var(--bg-color-2);
   transition: 0.3s;
 }
-
 
 
 
@@ -1508,10 +1695,28 @@ span {
 
 
 #festividades {
-  padding: 4rem 2rem;
+  padding: 0;
+  padding-top: 6rem; /* Solo dejamos espacio arriba para el header fijo */
+  margin-top: 0;
   background-color: #f2f2f2;
 }
 
+
+/* Ocultar los br antes de la sección de festividades */
+main > br {
+  display: none;
+}
+
+/* Ajustar el espaciado de los elementos internos */
+#festividades .heading {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Ocultar los br después del heading */
+#festividades > br {
+  display: none;
+}
 
 .cards-festividades {
   display: flex;
@@ -1873,5 +2078,63 @@ span {
     .facebook-link span {
         font-size: 1.1rem;
     }
+}
+
+/* Ajustar específicamente la sección de festividades para socialActivities.html */
+body .kasaychi-footer + main section#festividades {
+  padding: 0 9% !important; 
+  padding-top: 3rem !important;
+  margin-top: 0 !important;
+  background-color: #f2f2f2;
+}
+
+/* Garantizar que el heading en festividades tenga menos espacio */
+body .kasaychi-footer + main section#festividades .heading {
+  margin-top: 0.5rem !important;
+  margin-bottom: 0.5rem !important;
+  padding-top: 0 !important;
+}
+
+/* Remover espacio adicional en la sección de cards */
+body .kasaychi-footer + main section#festividades .cards-festividades {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+
+/* Ajustes específicos para la página de actividades sociales */
+body:has(section#festividades) main {
+  padding-top: 0;
+}
+
+body:has(section#festividades) section {
+  padding-top: 5rem;
+  min-height: auto;
+}
+
+/* Ocultar saltos de línea antes de la sección festividades */
+body:has(section#festividades) br {
+  display: none;
+}
+
+/* Reducir márgenes para festividades */
+body:has(section#festividades) .cards-festividades {
+  margin-top: 0.5rem;
+}
+
+/* Estilos específicos para mobile en la página festividades */
+@media (max-width: 768px) {
+  body:has(section#festividades) section#festividades {
+    padding-top: 4rem;
+  }
+  
+  body:has(section#festividades) .heading {
+    margin-top: 0;
+    font-size: 3rem;
+  }
+  
+  body:has(section#festividades) section#festividades .cards-festividades {
+    padding-top: 0;
+    margin-top: 0.5rem;
+  }
 }
 
