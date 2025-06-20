@@ -308,7 +308,7 @@ span {
   border-radius: 4rem;
   box-shadow: 0 0 1rem var(--main-color);
   font-size: 1.6rem;
-  color: var,-- bg-color);
+  color: var(--bg-color);
   letter-spacing: 0.1rem;
   font-weight: 600;
   transition: 0.5s ease;
@@ -1412,27 +1412,24 @@ span {
   }
 }
 
-#festividades {
-  padding: 0;
-  padding-top: 6rem; /* Solo dejamos espacio arriba para el header fijo */
-  margin-top: 0;
-  background-color: #f2f2f2;
-}
-
-/* Ocultar los br antes de la sección de festividades */
 main > br {
-  display: none;
+  display: none !important;
 }
 
-/* Ajustar el espaciado de los elementos internos */
+/* Ajustar el heading dentro de festividades */
 #festividades .heading {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin-top: 0;
+  padding-top: 0;
 }
 
-/* Ocultar los br después del heading */
+/* Eliminar br después del heading */
 #festividades > br {
-  display: none;
+  display: none !important;
+}
+
+/* Ajustar la sección completa */
+main section#festividades {
+  min-height: auto; /* Permitir altura automática */
 }
 
 .event-table {
@@ -1573,9 +1570,6 @@ main > br {
   }
 }
 
-
-
-
 /* ------- Header Responsive ------- */
 
 @media (max-width: 900px) {
@@ -1687,36 +1681,16 @@ main > br {
   }
 }
 
-
-
-
-
 /* ------- CAMBIOS: TARJETAS EN NOSOTROS SOBRE LAS FESTIVIDADES  ------- */
 
 
 #festividades {
-  padding: 0;
-  padding-top: 6rem; /* Solo dejamos espacio arriba para el header fijo */
+  padding: 0.5rem 9%;
+  padding-top: 5rem !important; /* Ajustado para estar más cerca del header, pero dejando espacio para el menú fijo */
   margin-top: 0;
   background-color: #f2f2f2;
 }
 
-
-/* Ocultar los br antes de la sección de festividades */
-main > br {
-  display: none;
-}
-
-/* Ajustar el espaciado de los elementos internos */
-#festividades .heading {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-}
-
-/* Ocultar los br después del heading */
-#festividades > br {
-  display: none;
-}
 
 .cards-festividades {
   display: flex;
@@ -2026,6 +2000,24 @@ main > br {
   }
 }
 
+/* Ajustes responsivos para la sección festividades */
+@media (max-width: 768px) {
+  #festividades {
+    padding-top: 4.5rem !important; /* Ligeramente más cercano en móviles */
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+  
+  #festividades .heading {
+    margin-bottom: 0.5rem;
+    font-size: 3.5rem;
+  }
+  
+  .cards-festividades {
+    margin-top: 0.5rem;
+  }
+}
+
 /* Estilos para el enlace de Facebook */
 .footer .facebook-link {
   display: inline-flex;
@@ -2078,63 +2070,5 @@ main > br {
     .facebook-link span {
         font-size: 1.1rem;
     }
-}
-
-/* Ajustar específicamente la sección de festividades para socialActivities.html */
-body .kasaychi-footer + main section#festividades {
-  padding: 0 9% !important; 
-  padding-top: 3rem !important;
-  margin-top: 0 !important;
-  background-color: #f2f2f2;
-}
-
-/* Garantizar que el heading en festividades tenga menos espacio */
-body .kasaychi-footer + main section#festividades .heading {
-  margin-top: 0.5rem !important;
-  margin-bottom: 0.5rem !important;
-  padding-top: 0 !important;
-}
-
-/* Remover espacio adicional en la sección de cards */
-body .kasaychi-footer + main section#festividades .cards-festividades {
-  padding-top: 0 !important;
-  margin-top: 0 !important;
-}
-
-/* Ajustes específicos para la página de actividades sociales */
-body:has(section#festividades) main {
-  padding-top: 0;
-}
-
-body:has(section#festividades) section {
-  padding-top: 5rem;
-  min-height: auto;
-}
-
-/* Ocultar saltos de línea antes de la sección festividades */
-body:has(section#festividades) br {
-  display: none;
-}
-
-/* Reducir márgenes para festividades */
-body:has(section#festividades) .cards-festividades {
-  margin-top: 0.5rem;
-}
-
-/* Estilos específicos para mobile en la página festividades */
-@media (max-width: 768px) {
-  body:has(section#festividades) section#festividades {
-    padding-top: 4rem;
-  }
-  
-  body:has(section#festividades) .heading {
-    margin-top: 0;
-    font-size: 3rem;
-  }
-  
-  body:has(section#festividades) section#festividades .cards-festividades {
-    padding-top: 0;
-    margin-top: 0.5rem;
-  }
 }
 
