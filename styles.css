@@ -1696,12 +1696,13 @@ main section#festividades {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  gap: 2rem;
+  gap: 1rem;
   flex-wrap: wrap; 
 }
 
 .cards-festividades .card {
-  width: 300px;
+  width: 250px;
+  height: 400px;
   background-color: #fff;
   border-radius: 1.5rem;
   box-shadow: 0 4px 10px #0000001a;
