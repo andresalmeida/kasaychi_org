@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compromiso Institucional - Comunidad Kasaychi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="./images/KasaychiKunapak.png" type="image/x-icon">
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="headerLogo">
+            <a href="index.html" class="logo"><img src="./images/KasaychiKunapak.png" alt="logo" /></a>
+        </div>
+        <div class="headerMenu">
+            <div class="menuToggle">
+                <i class="fa-solid fa-bars" id="menu-icon"></i>
+            </div>
+            <nav class="navbar">
+                <ul>
+                    <li>
+                        <a href="#home" class="active">Quiénes Somos</a>
+                        <ul class="submenu">
+                            <li><a href="./quienesSomos/aboutUs.html">Sobre Nosotros</a></li>
+                            <li><a href="./quienesSomos/ourHistory.html">Nuestra Historia</a></li>
+                            <li><a href="./compromiso.html">Compromiso Institucional</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#activities" class="active">Actividades</a>
+                        <ul class="submenu">
+                            <li><a href="./actividades/socialActivities.html">Sociales</a></li>
+                            <li><a href="./actividades/economyActivities.html">Económicas</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="./multimedia/multimedia.html" class="active">Multimedia</a></li>
+                    <li><a href="./proyectos/projects.html" class="active">Proyectos</a></li>
+                    <li><a href="./ubicanos/locateUs.html" class="active">Ubícanos</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO SECTION CON VIDEO -->
+        <section class="hero-video" id="home">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h3 class="hero-welcome">Compromiso Institucional</h3>
+                        <h1 class="hero-title">Proyecto de Vinculación</h1>
+                        <p class="hero-subtitle">Fortaleciendo Nuestra Comunidad</p>
+                        <p class="hero-description">
+                            A través de nuestro proyecto de vinculación con instituciones educativas y organizaciones, 
+                            fortalecemos el desarrollo sostenible de la Comunidad Kasaychi, preservando nuestras 
+                            tradiciones ancestrales mientras construimos un futuro próspero.
+                        </p>
+                        <div class="hero-buttons">
+                            <a href="./actividades/economyActivities.html" class="btn-primary">Nuestros Productos</a>
+                            <a href="./quienesSomos/aboutUs.html" class="btn-secondary">Conocer Más</a>
+                        </div>
+                        <div class="hero-social">
+                            <a href="https://www.facebook.com/people/Inti-Churi/100057352064394/" target="_blank">
+                                <i class="fa-brands fa-facebook"></i>
+                                <span>Síguenos</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="hero-video-container">
+                        <div class="video-preview" onclick="openVideoModal()">
+                            <div class="video-thumbnail">
+                                <img src="https://img.youtube.com/vi/jyadaQmhU8Y/maxresdefault.jpg" alt="Video Promocional Kasaychi">
+                                <div class="play-overlay">
+                                    <div class="play-button">
+                                        <i class="fa-solid fa-play"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="video-badge">
+                                <i class="fa-solid fa-play"></i>
+                                <span>Ver Video Promocional</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-overlay"></div>
+        </section>
+
+        <!-- INFORMACIÓN DEL PROYECTO DE VINCULACIÓN -->
+        <section class="proyecto-vinculacion" style="padding: 6rem 9% 4rem; background: var(--bg-color);">
+            <div class="container">
+                <h2 class="heading">Proyecto de <span>Vinculación Universitaria</span></h2>
+                
+                <!-- Información Institucional -->
+                <div class="info-institucional">
+                    <div class="institucion-card">
+                        <div class="institucion-header">
+                            <div class="institucion-logo">
+                                <i class="fa-solid fa-university"></i>
+                            </div>
+                            <div class="institucion-info">
+                                <h3>Universidad de las Fuerzas Armadas ESPE</h3>
+                                <p>Departamento de Ciencias de la Computación</p>
+                            </div>
+                        </div>
+                        <div class="periodo-ejecucion">
+                            <div class="fecha-item">
+                                <i class="fa-solid fa-calendar-plus"></i>
+                                <div>
+                                    <strong>Inicio:</strong>
+                                    <span>Abril 2024</span>
+                                </div>
+                            </div>
+                            <div class="fecha-item">
+                                <i class="fa-solid fa-calendar-check"></i>
+                                <div>
+                                    <strong>Finalización:</strong>
+                                    <span>Abril 2027</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ODS Alignment -->
+                <div class="ods-section">
+                    <h3 class="section-title">Alineado con los Objetivos de Desarrollo Sostenible</h3>
+                    <div class="ods-container">
+                        <div class="ods-card">
+                            <div class="ods-logo-container ods-4">
+                                <div class="ods-number">4</div>
+                                <div class="ods-icon-overlay">
+                                    <i class="fa-solid fa-graduation-cap"></i>
+                                </div>
+                            </div>
+                            <div class="ods-content">
+                                <h4>Educación de Calidad</h4>
+                                <p>Capacitación en alfabetización digital para jóvenes y adultos, promoviendo competencias técnicas para el empleo y emprendimiento.</p>
+                            </div>
+                        </div>
+                        <div class="ods-card">
+                            <div class="ods-logo-container ods-8">
+                                <div class="ods-number">8</div>
+                                <div class="ods-icon-overlay">
+                                    <i class="fa-solid fa-briefcase"></i>
+                                </div>
+                            </div>
+                            <div class="ods-content">
+                                <h4>Trabajo Decente y Crecimiento Económico</h4>
+                                <p>Modernización tecnológica e innovación para mejorar la productividad económica y comercialización de productos locales.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Problema y Necesidad -->
+                <div class="problema-section">
+                    <h3 class="section-title">Problema que Abordamos</h3>
+                    <div class="problema-content">
+                        <div class="problema-stats">
+                            <div class="stat-item">
+                                <div class="stat-number">753</div>
+                                <div class="stat-label">Habitantes</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">369</div>
+                                <div class="stat-label">Beneficiarios Directos</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">$85</div>
+                                <div class="stat-label">Ingreso Promedio Mensual</div>
+                            </div>
+                        </div>
+                        <div class="problema-descripcion">
+                            <p>
+                                <strong>Falta de infraestructura tecnológica</strong> y baja alfabetización digital limita el acceso 
+                                a herramientas digitales para mejorar actividades económicas y sociales. Esta carencia restringe 
+                                la difusión y comercialización de productos agrícolas y pecuarios, perpetuando bajos ingresos 
+                                familiares y altas tasas de migración temporal.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Objetivos del Proyecto -->
+                <div class="objetivos-section">
+                    <h3 class="section-title">Nuestros Objetivos</h3>
+                    
+                    <div class="objetivo-general">
+                        <div class="objetivo-header">
+                            <i class="fa-solid fa-bullseye"></i>
+                            <h4>Objetivo General</h4>
+                        </div>
+                        <p>
+                            Implementar <strong>canales de comunicación digital</strong> en la comunidad Kasaychi para mejorar 
+                            su infraestructura tecnológica y promover el desarrollo económico y social, capacitando al 
+                            <strong>80% de sus habitantes</strong> en el uso de recursos digitales.
+                        </p>
+                    </div>
+
+                    <div class="objetivos-especificos">
+                        <h5>Objetivos Específicos</h5>
+                        <div class="objetivos-grid">
+                            <div class="objetivo-card">
+                                <div class="objetivo-icon">
+                                    <i class="fa-solid fa-laptop-code"></i>
+                                </div>
+                                <h6>Herramientas Digitales</h6>
+                                <p>Implementar sitio web y aplicación móvil para fortalecer la infraestructura tecnológica, capacitando al 80% de los miembros para incrementar ventas y beneficiar la economía local.</p>
+                            </div>
+                            <div class="objetivo-card">
+                                <div class="objetivo-icon">
+                                    <i class="fa-solid fa-chalkboard-teacher"></i>
+                                </div>
+                                <h6>Capacitación Digital</h6>
+                                <p>Capacitar al 80% de la población objetivo en administración de medios digitales para gestionar información cultural, educativa y comercial, fomentando la sostenibilidad tecnológica.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Herramientas Implementadas -->
+                <div class="herramientas-section">
+                    <h3 class="section-title">Herramientas Implementadas</h3>
+                    <div class="herramientas-grid">
+                        <div class="herramienta-card">
+                            <div class="herramienta-icon">
+                                <i class="fa-solid fa-globe"></i>
+                            </div>
+                            <h5>Sitio Web</h5>
+                            <p>Plataforma digital para promocionar productos y servicios de la comunidad</p>
+                        </div>
+                        <div class="herramienta-card">
+                            <div class="herramienta-icon">
+                                <i class="fa-solid fa-mobile-alt"></i>
+                            </div>
+                            <h5>Aplicación Móvil</h5>
+                            <p>App para facilitar la comercialización y comunicación directa con clientes</p>
+                        </div>
+                        <div class="herramienta-card">
+                            <div class="herramienta-icon">
+                                <i class="fa-solid fa-share-alt"></i>
+                            </div>
+                            <h5>Redes Sociales</h5>
+                            <p>Presencia en plataformas sociales para ampliar el alcance y visibilidad</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Impacto Esperado -->
+                <div class="impacto-section">
+                    <h3 class="section-title">Impacto Esperado</h3>
+                    <div class="impacto-grid">
+                        <div class="impacto-item">
+                            <i class="fa-solid fa-chart-line"></i>
+                            <h5>Crecimiento Económico</h5>
+                            <p>Aumento en la comercialización de productos agrícolas y pecuarios</p>
+                        </div>
+                        <div class="impacto-item">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                            <h5>Alfabetización Digital</h5>
+                            <p>80% de la población capacitada en herramientas tecnológicas</p>
+                        </div>
+                        <div class="impacto-item">
+                            <i class="fa-solid fa-home"></i>
+                            <h5>Reducción de Migración</h5>
+                            <p>Mejores oportunidades locales disminuyen la migración temporal</p>
+                        </div>
+                        <div class="impacto-item">
+                            <i class="fa-solid fa-users"></i>
+                            <h5>Calidad de Vida</h5>
+                            <p>Fortalecimiento de la economía local y bienestar comunitario</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- VIDEO MODAL -->
+    <div id="videoModal" class="video-modal" onclick="closeVideoModal()">
+        <div class="video-modal-content" onclick="event.stopPropagation()">
+            <div class="video-modal-header">
+                <h3>Video Promocional - Proyecto de Vinculación Kasaychi</h3>
+                <button class="video-modal-close" onclick="closeVideoModal()">
+                    <i class="fa-solid fa-times"></i>
+                </button>
+            </div>
+            <div class="video-modal-body">
+                <iframe 
+                    id="modalVideoFrame"
+                    src="" 
+                    title="Video Promocional - Proyecto de Vinculación Kasaychi" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="kasaychi-footer">
+        <div class="footer-waves">
+            <div class="wave wave1"></div>
+            <div class="wave wave2"></div>
+            <div class="wave wave3"></div>
+        </div>
+        
+        <div class="footer-content">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <div class="brand-logo">
+                        <img src="./images/KasaychiKunapak.png" alt="Comunidad Kasaychi">
+                        <div class="brand-text">
+                            <h3>Comunidad Kasaychi</h3>
+                            <p class="brand-subtitle">Inti Churi - Hijos del Sol</p>
+                        </div>
+                    </div>
+                    <p class="brand-description">
+                        Una comunidad ancestral que preserva las tradiciones kichwa mientras construye un futuro próspero para sus habitantes.
+                    </p>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Explora Kasaychi</h4>
+                    <ul>
+                        <li><a href="./quienesSomos/aboutUs.html">Sobre Nosotros</a></li>
+                        <li><a href="./quienesSomos/ourHistory.html">Nuestra Historia</a></li>
+                        <li><a href="./compromiso.html">Compromiso Institucional</a></li>
+                        <li><a href="./actividades/socialActivities.html">Actividades Sociales</a></li>
+                        <li><a href="./actividades/economyActivities.html">Actividades Económicas</a></li>
+                        <li><a href="./multimedia/multimedia.html">Multimedia</a></li>
+                        <li><a href="./proyectos/projects.html">Proyectos</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-contact">
+                    <h4>Encuéntranos</h4>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fa-solid fa-map-marker-alt"></i>
+                            <div>
+                                <strong>Ubicación</strong>
+                                <p>Guaranda, Bolívar, Ecuador</p>
+                                <p>3000-3400 msnm</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="social-connection">
+                        <h5>Síguenos</h5>
+                        <a href="https://www.facebook.com/people/Inti-Churi/100057352064394/" target="_blank" class="facebook-enhanced">
+                            <div class="facebook-icon">
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </div>
+                            <div class="facebook-text">
+                                <strong>Inti Churi</strong>
+                                <span>Página oficial</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <div class="copyright">
+                    <p>&copy; 2025 Comunidad Kasaychi</p>
+                    <p>Preservando tradiciones ancestrales desde 1992</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        function openVideoModal() {
+            const modal = document.getElementById('videoModal');
+            const iframe = document.getElementById('modalVideoFrame');
+            iframe.src = 'https://www.youtube.com/embed/jyadaQmhU8Y?autoplay=1&controls=1&showinfo=0&rel=0';
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeVideoModal() {
+            const modal = document.getElementById('videoModal');
+            const iframe = document.getElementById('modalVideoFrame');
+            iframe.src = '';
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Cerrar modal con tecla Escape
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeVideoModal();
+            }
+        });
+    </script>
+</body>
+</html> 
