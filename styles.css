@@ -18,6 +18,7 @@
   --main-color: #ff6600; /* Naranja */
   --facebook-hover-background: transparent;
   --facebook-hover-color: #ff6600;
+  --facebook-color-bg:#333fff;
 }
 
 html {
@@ -1202,17 +1203,17 @@ span {
   width: 4rem;
   height: 4rem;
   background: transparent;
-  border: 0.2rem solid var(--main-color);
+  border: 0.2rem solid var(--facebook-color-bg);
   border-radius: 50%;
   font-size: 2rem;
-  color: var(--main-color);
+  color: var(--facebook-color-bg);
   margin: 0 1rem;
   transition: 0.5s ease;
 }
 
 .social-media a:hover {
-  background: var(--main-color);
-  color: var(--bg-color);
+  background:var(--facebook-color-bg);
+  color: #fff;
   box-shadow: 0 0 1rem var(--main-color);
 }
 
