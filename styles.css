@@ -1094,7 +1094,7 @@ span {
   position: relative;
   color: #ffffff;
   min-height: 10vh;
-  padding: 10rem 9% 2rem;
+  padding: 7rem 9% 2rem;
 }
 
 .home::before {
@@ -2835,7 +2835,7 @@ main section#festividades {
 .info-hover .pregunta {
   font-weight: bold;
   margin-top: 0.8rem;
-  color: #FFD700;
+  color: #ff6600;
 }
 
 /* Product Badges */
@@ -2877,7 +2877,7 @@ main section#festividades {
 .product-price {
   font-size: 2.4rem;
   font-weight: 700;
-  color: #FFD700;
+  color: #ff6600;
   margin-bottom: 1rem;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
@@ -2885,7 +2885,7 @@ main section#festividades {
 .price-unit {
   font-size: 2.4rem;
   font-weight: 700;
-  color: #FFD700;
+  color: #ff6600;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
@@ -2912,7 +2912,7 @@ main section#festividades {
 
 .product-features i {
   font-size: 1.1rem;
-  color: #FFD700;
+  color: #ff6600;
 }
 
 .icono-link {
