@@ -1893,7 +1893,47 @@ span {
   font-weight: 500;
 }
 
-/* Enlaces rápidos - horizontales */
+/* Enlace invisible para el ícono de Facebook */
+.fb-icon-link {
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  width: 28px;
+  height: 28px;
+  z-index: 30;
+  opacity: 0; /* Invisible pero clickeable */
+  cursor: pointer;
+}
+
+/* Enlace de Facebook mejorado */
+.footer-brand a[href*="facebook.com/people/Inti-Churi"] {
+  position: relative;
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  background: var(--main-color);
+  color: white;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 1.2rem;
+  text-decoration: none;
+  transition: background 0.3s, transform 0.3s;
+}
+
+/* Efecto hover para el enlace de Facebook */
+.footer-brand a[href*="facebook.com/people/Inti-Churi"]:hover {
+  background: #e55a00;
+  transform: translateY(-2px);
+}
+
+/* Media query para ajustar la posición en móviles */
+@media (max-width: 768px) {
+  .fb-icon-link {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+/* Sección de enlaces rápidos - vertical */
 .footer-links {
   color: white;
 }
@@ -1909,8 +1949,8 @@ span {
   list-style: none;
   padding: 0;
   display: flex;
-  flex-wrap: wrap;
-  gap: 10px 20px; /* Espaciado entre elementos en línea */
+  flex-direction: column;
+  gap: 10px;
 }
 
 .footer-links ul li {
@@ -1991,58 +2031,6 @@ span {
   font-size: 1.3rem; /* Reducido */
   color: #e6e6e6;
   margin: 1px 0; /* Reducido */
-}
-
-/* Facebook más compacto */
-.social-connection h5 {
-  font-size: 1.4rem;
-  color: #ff6600;
-  margin-bottom: 10px;
-}
-
-.facebook-enhanced {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  background: linear-gradient(45deg, #1877f2, #42a5f5);
-  padding: 8px 15px;
-  border-radius: 10px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  border: 1px solid transparent;
-}
-
-.facebook-enhanced:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(24, 119, 242, 0.3);
-  border-color: #ff6600;
-}
-
-.facebook-icon {
-  background: white;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.facebook-icon i {
-  font-size: 1.5rem;
-  color: #1877f2;
-}
-
-.facebook-text strong {
-  display: block;
-  font-size: 1.3rem;
-  color: white;
-  margin-bottom: 0;
-}
-
-.facebook-text span {
-  font-size: 1.1rem;
-  color: rgba(255, 255, 255, 0.9);
 }
 
 /* Mapa a la derecha */
@@ -2178,10 +2166,6 @@ span {
     flex-direction: column;
     text-align: center;
   }
-  
-  .facebook-enhanced {
-    justify-content: center;
-  }
 }
 
 @media (max-width: 480px) {
@@ -2233,20 +2217,14 @@ span {
 
 /* ===== ESTILOS PARA MOVER "SÍGUENOS" DEBAJO DE INTI RAYMI ===== */
 
-/* 1. Ocultar la sección original de "Síguenos" en el footer-contact */
-.footer-contact .social-connection {
-  display: none !important;
-}
-
-/* 2. Añadir una versión visual de "Síguenos" en el footer-brand */
+/* Se eliminaron los estilos de Facebook adicionales */
 .footer-brand {
   position: relative;
-  padding-bottom: 50px; /* Espacio reducido para la sección "Síguenos" */
 }
 
 /* 3. Crear visualmente la sección "Síguenos" */
 .footer-brand::after {
-  content: 'Síguenos';
+  content: 'Síguenos en Facebook';
   position: absolute;
   bottom: 30px;
   left: 0;
@@ -2260,43 +2238,56 @@ span {
   content: '\f09a'; /* Código Unicode para el ícono de Facebook */
   font-family: 'Font Awesome 6 Brands';
   position: absolute;
-  bottom: 5px;
+  bottom: 2px;
   left: 0;
-  width: 24px;
-  height: 24px;
+  width: 28px;
+  height: 28px;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
   border: 1px solid #ff6600;
-  color: var(--facebook-hover-color, #ff6600);
-  font-size: 1.2rem;
-  background: var(--facebook-hover-background, transparent);
+  color: #ff6600;
+  font-size: 2rem;
+  background: transparent;
   transition: all 0.3s ease;
   cursor: pointer;
 }
 
-/* 5. Efecto hover para el botón de Facebook */
-.footer-brand::before:hover {
+/* 5. Efecto hover para el botón de Facebook - indicador visual de que es clickeable */
+.footer-brand:has(.footer-social:hover)::before {
   background-color: #ff6600;
   color: white;
   box-shadow: 0 0 0.5rem #ff6600;
+  transform: scale(1.1);
 }
+
+/* 5. Efecto hover para el botón de Facebook */
+/* Nota: La sintaxis correcta para el hover de un pseudoelemento es :hover::before, no ::before:hover */
+/* Este estilo se ha movido a .footer-brand:hover::before más abajo */
 
 /* 6. Crear un enlace funcional sobre el botón visual */
 .footer-brand {
   position: relative;
 }
 
-.footer-brand a[href*="facebook.com/people/Inti-Churi"] {
+.footer-social {
   position: absolute;
-  bottom: 5px;
+  bottom: 2px;
   left: 0;
-  width: 24px;
-  height: 24px;
+  width: 28px;
+  height: 28px;
   z-index: 10;
+}
+
+.footer-social a[href*="facebook.com"] {
+  display: block;
+  width: 100%;
+  height: 100%;
   opacity: 0;
   font-size: 0;
+  border-radius: 50%;
+  cursor: pointer;
 }
 
 /* 7. Estilos responsivos */
@@ -2316,9 +2307,14 @@ span {
     transform: translateX(-50%);
   }
   
-  .footer-brand a[href*="facebook.com/people/Inti-Churi"] {
+  .footer-social {
     left: 50%;
     transform: translateX(-50%);
+  }
+  
+  .footer-social a[href*="facebook.com"] {
+    width: 28px;
+    height: 28px;
   }
   
   /* Mejorar el espaciado de elementos culturales en móvil */

@@ -206,7 +206,6 @@
 
 /* Estilo para la información de contacto */
 .contact-info {
-  background-color: var(--snd-bg-color);
   padding: 5rem 9%;
   color: var(--bg-color);
 }
@@ -225,7 +224,7 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 3rem;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: var(--snd-bg-color);
   padding: 3rem;
   border-radius: 15px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
