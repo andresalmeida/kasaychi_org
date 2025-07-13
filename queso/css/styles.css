@@ -4,7 +4,7 @@
 /* Usar colores consistentes con el sitio principal */
 .queso-page {
   --queso-primary: var(--main-color);      /* Naranja principal del sitio */
-  --queso-secondary: #d4851a;              /* Naranja más oscuro */
+  --queso-secondary: #ff6600;              /* Naranja más oscuro */
   --queso-accent: #fff3e0;                 /* Crema muy claro */
   --queso-dark: var(--snd-bg-color);       /* Gris oscuro del sitio */
   --queso-text: var(--text-color);         /* Negro del sitio */
@@ -38,7 +38,8 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: brightness(0.6) saturate(1.1);
+  filter: brightness(0.4) saturate(1.1);
+
 }
 
 .queso-hero-content {
@@ -72,6 +73,12 @@
   margin-bottom: 3rem;
   line-height: 1.6;
   opacity: 0.95;
+}
+
+.queso-hero-features .feature span {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #ffffff;
 }
 
 .queso-hero-buttons {
@@ -194,6 +201,7 @@
   flex-wrap: wrap;
   position: relative;
   z-index: 3;
+  margin-top: 3rem;
 }
 
 .queso-hero-features .feature {
@@ -208,7 +216,7 @@
 
 .queso-hero-features .feature i {
   font-size: 3rem;
-  color: var(--queso-accent);
+  color: var(--queso-secondary);
   background: rgba(255, 255, 255, 0.1);
   padding: 1.5rem;
   border-radius: 50%;
@@ -260,12 +268,13 @@
 /* Personalización específica para títulos de queso mejorada */
 .queso-productos-section .section-title {
   color: var(--queso-dark);
-  font-size: 4.5rem;
+  font-size: 4rem;
   font-weight: 800;
   text-align: center;
-  margin-bottom: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 2.5rem;
   position: relative;
-  background: linear-gradient(135deg, var(--queso-dark) 0%, var(--queso-primary) 100%);
+  background: linear-gradient(135deg, var(--queso-dark) 0%, var(--queso-secondary) 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -303,11 +312,14 @@
 .queso-producto-destacado {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 6rem;
-  align-items: center;
-  margin-bottom: 10rem;
+  grid-template-areas:
+    "imagen info"
+    "extra extra";
+  gap: 3rem;
+  max-width: 1000px;
+  margin: 4rem auto 8rem;
+  padding: 3rem 4rem;
   background: linear-gradient(135deg, #ffffff 0%, #fefefe 100%);
-  padding: 5rem;
   border-radius: 30px;
   box-shadow: 0 25px 60px rgba(0, 0, 0, 0.08),
               0 10px 30px rgba(255, 102, 0, 0.1),
@@ -374,6 +386,7 @@
 }
 
 .queso-producto-imagen {
+  grid-area: imagen;
   position: relative;
   border-radius: 25px;
   overflow: hidden;
@@ -392,7 +405,8 @@
 
 .queso-producto-imagen img {
   width: 100%;
-  height: 450px;
+  height: auto; 
+  max-height: 350px;
   object-fit: cover;
   transition: all 0.4s ease;
   filter: brightness(1.02) saturate(1.1);
@@ -435,13 +449,29 @@
 
 /* ===== INFORMACIÓN DEL PRODUCTO MEJORADA ===== */
 .queso-producto-info {
+  grid-area: info;
+  align-self: start;
   position: relative;
   z-index: 2;
   padding: 2rem 0;
+  max-width: 90%;
+  font-size: 1.5rem;
+  line-height: 1.6;
 }
 
+.queso-producto-extra {
+  grid-area: extra;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+
+
 .queso-producto-info h3 {
-  font-size: 3.5rem;
+  font-size: 2.5rem;
   font-weight: 800;
   background: linear-gradient(135deg, var(--queso-dark) 0%, var(--queso-primary) 100%);
   background-clip: text;
@@ -526,14 +556,20 @@
 }
 
 .queso-producto-features {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Dos columnas */
+  gap: 1rem 2rem;               /* Menos espacio entre filas y columnas */
   list-style: none;
-  margin-bottom: 4rem;
-  padding: 2.5rem;
+  padding: 1.5rem 2rem;           /* Menos padding interno */
+  margin: 1rem auto 1.5rem;       /* Menos espacio arriba y abajo */
   background: linear-gradient(135deg, #fafafa 0%, #ffffff 100%);
   border-radius: 20px;
   border: 1px solid rgba(0, 0, 0, 0.05);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  max-width: 700px;
 }
+
+
 
 .queso-producto-features li {
   display: flex;
@@ -541,12 +577,11 @@
   gap: 1.5rem;
   font-size: 1.6rem;
   color: #555;
-  margin-bottom: 1.5rem;
-  padding: 1rem;
+  background: rgba(248, 248, 248, 0.8);
+  padding: 1.2rem 1.5rem;
   border-radius: 12px;
   transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
 }
 
 .queso-producto-features li::before {
@@ -653,7 +688,7 @@
   color: var(--queso-dark);
   text-align: center;
   margin-bottom: 4rem;
-  margin-top: 6rem;
+  margin-top: 1rem;
 }
 
 .queso-variedades-container {
@@ -779,7 +814,7 @@
 
 /* ===== SECCIÓN SOBRE NOSOTROS QUESO ===== */
 .queso-about-section {
-  padding: 8rem 5% 6rem;
+  padding: 3rem;
   background: linear-gradient(135deg, #2c1810 0%, #8B4513 50%, #d17a1b 100%);
   position: relative;
   overflow: hidden;
@@ -945,7 +980,6 @@
   text-align: center;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
-  border: 2px solid transparent;
   position: relative;
   overflow: hidden;
 }
@@ -1024,7 +1058,7 @@
   margin-bottom: 6rem;
 }
 
-.contact-content {
+.contact-section .contact-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 6rem;
@@ -1032,14 +1066,14 @@
   margin: 0 auto;
 }
 
-.contact-info h3 {
+.contact-section .contact-info h3 {
   font-size: 2.8rem;
   font-weight: 600;
   margin-bottom: 3rem;
   color: var(--queso-accent);
 }
 
-.contact-item {
+.contact-section .contact-item {
   display: flex;
   align-items: flex-start;
   gap: 2rem;
@@ -1051,12 +1085,12 @@
   transition: all 0.3s ease;
 }
 
-.contact-item:hover {
+.contact-section .contact-item:hover {
   background: rgba(255, 255, 255, 0.15);
   transform: translateX(10px);
 }
 
-.contact-item i {
+.contact-section .contact-item i {
   font-size: 2.5rem;
   color: var(--queso-accent);
   background: rgba(255, 243, 224, 0.2);
@@ -1069,31 +1103,31 @@
   justify-content: center;
 }
 
-.contact-item div h4 {
+.contact-section .contact-item div h4 {
   font-size: 1.8rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
   color: var(--queso-accent);
 }
 
-.contact-item div p {
+.contact-section .contact-item div p {
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
   color: rgba(255, 255, 255, 0.9);
 }
 
-.contact-item div a {
+.contact-section .contact-item div a {
   color: var(--queso-accent);
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s ease;
 }
 
-.contact-item div a:hover {
+.contact-section .contact-item div a:hover {
   color: #ffffff;
 }
 
-.contact-cta {
+.contact-section .contact-cta {
   background: rgba(255, 255, 255, 0.1);
   padding: 4rem 3rem;
   border-radius: 20px;
@@ -1101,33 +1135,33 @@
   backdrop-filter: blur(10px);
 }
 
-.contact-cta h3 {
+.contact-section .contact-cta h3 {
   font-size: 2.8rem;
   font-weight: 600;
   margin-bottom: 1.5rem;
   color: var(--queso-accent);
 }
 
-.contact-cta p {
+.contact-section .contact-cta p {
   font-size: 1.6rem;
   margin-bottom: 3rem;
   color: rgba(255, 255, 255, 0.9);
   line-height: 1.6;
 }
 
-.contact-buttons {
+.contact-section .contact-buttons {
   display: flex;
   flex-direction: column;
   gap: 2rem;
   align-items: center;
 }
 
-/* Personalización específica para botones de contacto */
-.contact-buttons .cta-button {
+.contact-section .contact-buttons .cta-button {
   width: 100%;
   max-width: 300px;
   justify-content: center;
 }
+
 
 /* ===== ANIMACIONES ===== */
 @keyframes fadeInUp {
