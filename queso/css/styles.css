@@ -1250,129 +1250,100 @@
 }
 
 /* ===== RESPONSIVE PARA PRODUCTOS SECTION ===== */
+
 @media (max-width: 1024px) {
-  .queso-productos-section {
-    padding: 8rem 4% 6rem;
+  .queso-producto-destacado {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "imagen"
+      "info"
+      "extra";
+    padding: 3rem 2rem;
   }
-  
-  .queso-produto-destacado {
+
+  .queso-about-content,
+  .contact-section .contact-content {
     grid-template-columns: 1fr;
     gap: 4rem;
-    padding: 4rem;
-  }
-  
-  .queso-produto-stats {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-    padding: 2.5rem;
-  }
-  
-  .queso-produto-info h3 {
-    font-size: 3rem;
-  }
-  
-  .queso-rating {
-    padding: 1.2rem 1.5rem;
+    padding: 0 2rem;
   }
 }
 
 @media (max-width: 768px) {
-  .queso-produtos-section .section-title {
-    font-size: 3.5rem;
+  .queso-hero-content h1 {
+    font-size: 3.8rem;
   }
-  
-  .queso-produto-destacado {
-    padding: 3rem 2rem;
-    gap: 3rem;
+
+  .queso-hero-subtitle {
+    font-size: 1.8rem;
   }
-  
-  .queso-produto-imagen img {
-    height: 350px;
-  }
-  
-  .queso-produto-info h3 {
-    font-size: 2.5rem;
-  }
-  
-  .queso-produto-info p {
+
+  .queso-hero-description {
     font-size: 1.6rem;
-    padding-left: 1.5rem;
   }
-  
-  .queso-produto-features {
-    padding: 2rem;
+
+  .queso-producto-info {
+    max-width: 100%;
   }
-  
-  .queso-produto-features li {
-    font-size: 1.5rem;
-    padding: 0.8rem;
-  }
-  
-  .queso-produto-stats {
+
+  .queso-variedades-container {
     grid-template-columns: 1fr;
-    gap: 1rem;
-    padding: 2rem;
   }
-  
-  .queso-stat-number {
-    font-size: 2.8rem;
+
+  .about-image img {
+    height: 300px;
   }
-  
-  .queso-btn-produto {
-    padding: 1.5rem 3rem;
-    font-size: 1.5rem;
+
+  .about-stats {
+    grid-template-columns: 1fr;
+    padding: 1.5rem;
+    gap: 1.5rem;
   }
 }
 
 @media (max-width: 480px) {
-  .queso-produtos-section {
-    padding: 6rem 3% 4rem;
-  }
-  
-  .queso-productos-section .section-title {
-    font-size: 2.8rem;
-  }
-  
-  .queso-produto-destacado {
-    padding: 2rem 1.5rem;
-    margin-bottom: 6rem;
-  }
-  
-  .queso-produto-imagen img {
-    height: 280px;
-  }
-  
-  .queso-produto-info h3 {
-    font-size: 2.2rem;
-  }
-  
-  .queso-rating {
-    flex-direction: column;
-    gap: 1rem;
+  .queso-hero-content {
     padding: 1.5rem;
-    text-align: center;
   }
-  
-  .queso-rating i {
-    font-size: 1.8rem;
+
+  .queso-hero-content h1 {
+    font-size: 3rem;
   }
-  
-  .queso-produto-features li {
-    flex-direction: column;
-    text-align: center;
-    gap: 1rem;
-    padding: 1rem;
-  }
-  
-  .queso-produto-features li i {
-    width: 40px;
-    height: 40px;
-  }
-  
-  .queso-btn-produto {
-    width: 100%;
-    justify-content: center;
-    padding: 1.3rem 2rem;
+
+  .cta-button {
+    padding: 1rem 2rem;
     font-size: 1.4rem;
+  }
+
+  .queso-btn-producto {
+    width: 100%;
+    padding: 1.2rem 1.5rem;
+    font-size: 1.4rem;
+  }
+
+  .queso-producto-info h3 {
+    font-size: 2rem;
+  }
+
+  .queso-rating {
+    flex-direction: row; /* Mantiene estrellas en línea */
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .queso-about-text p,
+  .tradicion-descripcion,
+  .contact-section .contact-item div p {
+    font-size: 1.4rem;
+  }
+
+  .contact-section .contact-buttons {
+    flex-direction: column;
+  }
+
+  .contact-section .contact-buttons .cta-button {
+    width: 100%;
   }
 }
