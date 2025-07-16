@@ -206,7 +206,7 @@
 
 /* Estilo para la información de contacto */
 .contact-info {
-  padding: 5rem 9%;
+  padding: 2rem 9%;  /* Reducido de 5rem a 2rem para igualar altura con otras páginas */
   color: var(--bg-color);
 }
 

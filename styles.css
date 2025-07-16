@@ -2576,7 +2576,7 @@ main section#festividades {
     width: 100%;
     top: 100px;
     left: 0;
-    background: var(--main-color);
+    background: linear-gradient(135deg, #2c1810 0%, #8B4513 50%, #d17a1b 100%);
     display: none;
   }
   .navbar.active {
