@@ -1,0 +1,245 @@
+---
+import Layout from '../layouts/Layout.astro';
+import FadeIn from '../components/ui/FadeIn.tsx';
+import { MapPin, Mountain, Thermometer, Users, Clock, Navigation } from 'lucide-react';
+
+const infoCards = [
+  { icon: MapPin, title: 'Ubicación', content: 'Guaranda, Provincia de Bolívar, Ecuador', subtext: 'Cerca de la parroquia de San Lorenzo' },
+  { icon: Mountain, title: 'Altitud', content: '3.000 - 3.400 msnm', subtext: 'Clima frío andino' },
+  { icon: Thermometer, title: 'Clima', content: 'Templado-frío', subtext: 'Temperatura promedio 12°C' },
+  { icon: Users, title: 'Comunidades', content: '6 comunidades', subtext: '753 habitantes aproximadamente' },
+];
+---
+
+<Layout 
+  title="Ubícanos"
+  description="Encuentra la Comunidad Kasaychi en Guaranda, Bolívar, Ecuador. Ubicación exacta, cómo llegar y más información."
+>
+  <!-- Hero Section -->
+  <section class="relative pt-32 pb-20 overflow-hidden">
+    <div class="absolute inset-0">
+      <div class="absolute inset-0 bg-gradient-to-br from-institutional-blue via-institutional-blue/95 to-institutional-blue/90"></div>
+      <div class="absolute inset-0 opacity-30">
+        <img src="/images/fondoLejanoCalle3.jpg" alt="" class="w-full h-full object-cover" />
+      </div>
+      <div class="absolute inset-0 chacana-bg opacity-5"></div>
+    </div>
+    
+    <div class="relative max-w-7xl mx-auto px-8 text-center">
+      <FadeIn client:load>
+        <div class="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 mb-6">
+          <Navigation className="w-4 h-4 text-ancestral-gold" />
+          <span class="text-white text-sm uppercase tracking-wider">Cómo llegar</span>
+        </div>
+        <h1 class="text-5xl lg:text-6xl text-white font-bold mb-6">
+          Encuéntranos en los <span class="text-ancestral-gold">Andes</span>
+        </h1>
+        <p class="text-xl text-white max-w-3xl mx-auto leading-relaxed font-serif">
+          La Comunidad Kasaychi está ubicada en las majestuosas montañas de la provincia de Bolívar, 
+          a pocos kilómetros de Guaranda
+        </p>
+      </FadeIn>
+    </div>
+  </section>
+
+  <!-- Map Section -->
+  <section class="py-16 bg-paper border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-8">
+      <FadeIn client:load>
+        <div class="bg-white overflow-hidden border border-slate-200 shadow-lg">
+          <div class="aspect-[21/9] w-full">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d19272.565484195628!2d-78.88690593671285!3d-1.6154590001759197!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d3115963de9929%3A0x6905673e5759ab61!2sGallo%20Rumi!5e0!3m2!1ses!2sec!4v1729647160930!5m2!1ses!2sec"
+              width="100%"
+              height="100%"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Ubicación de la Comunidad Kasaychi"
+              class="grayscale hover:grayscale-0 transition-all duration-500"
+            ></iframe>
+          </div>
+        </div>
+      </FadeIn>
+    </div>
+  </section>
+
+  <!-- Info Cards -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <FadeIn client:load>
+          <span class="text-xs font-bold uppercase tracking-[0.3em] text-ancestral-gold mb-4 block">Información</span>
+          <h2 class="text-4xl font-bold text-institutional-blue">
+            Datos de <span class="text-ancestral-gold">Ubicación</span>
+          </h2>
+        </FadeIn>
+      </div>
+      
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {infoCards.map((card, index) => (
+          <FadeIn client:load delay={0.1 * index}>
+            <div class="bg-paper p-6 border border-slate-200 hover:border-ancestral-gold/50 transition-all duration-300 group">
+              <div class="w-14 h-14 bg-institutional-blue/10 flex items-center justify-center mb-4 group-hover:bg-ancestral-gold/10 transition-colors">
+                <card.icon className="w-7 h-7 text-institutional-blue group-hover:text-ancestral-gold transition-colors" />
+              </div>
+              <h3 class="text-lg font-bold text-institutional-blue mb-1">{card.title}</h3>
+              <p class="text-slate-800 font-semibold">{card.content}</p>
+              <p class="text-slate-500 text-sm mt-1 font-serif">{card.subtext}</p>
+            </div>
+          </FadeIn>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- How to Get There -->
+  <section class="py-20 bg-institutional-blue">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="grid lg:grid-cols-2 gap-12">
+        <FadeIn client:load direction="left">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-[0.3em] text-ancestral-gold mb-4 block">Rutas</span>
+            <h2 class="text-4xl lg:text-5xl text-white font-bold mb-8">
+              Cómo <span class="text-ancestral-gold">Llegar</span>
+            </h2>
+            
+            <div class="space-y-6">
+              <div class="bg-white/10 border border-white/20 p-6">
+                <div class="flex items-start gap-4">
+                  <div class="w-10 h-10 bg-ancestral-gold flex items-center justify-center flex-shrink-0 text-white font-bold">
+                    1
+                  </div>
+                  <div>
+                    <h3 class="text-lg text-white font-bold mb-2">Desde Guaranda</h3>
+                    <p class="text-white leading-relaxed font-serif">
+                      Tome la carretera en dirección a San Lorenzo. Aproximadamente 15 minutos 
+                      en vehículo desde el centro de Guaranda.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="bg-white/10 border border-white/20 p-6">
+                <div class="flex items-start gap-4">
+                  <div class="w-10 h-10 bg-ancestral-gold flex items-center justify-center flex-shrink-0 text-white font-bold">
+                    2
+                  </div>
+                  <div>
+                    <h3 class="text-lg text-white font-bold mb-2">Desde Ambato</h3>
+                    <p class="text-white leading-relaxed font-serif">
+                      Tome la vía Ambato-Guaranda (E30) hasta llegar a Guaranda, luego 
+                      diríjase hacia San Lorenzo. Tiempo estimado: 2 horas.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="bg-white/10 border border-white/20 p-6">
+                <div class="flex items-start gap-4">
+                  <div class="w-10 h-10 bg-ancestral-gold flex items-center justify-center flex-shrink-0 text-white font-bold">
+                    3
+                  </div>
+                  <div>
+                    <h3 class="text-lg text-white font-bold mb-2">Desde Quito</h3>
+                    <p class="text-white leading-relaxed font-serif">
+                      Tome la Panamericana Sur hasta Ambato, luego la vía a Guaranda. 
+                      Tiempo estimado: 4-5 horas.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </FadeIn>
+        
+        <FadeIn client:load direction="right">
+          <div class="relative">
+            <div class="absolute -top-4 -right-4 w-full h-full bg-ancestral-gold/20"></div>
+            <div class="relative overflow-hidden shadow-2xl">
+              <img 
+                src="/images/fondoLejanoCalleAlto.jpg" 
+                alt="Vista de la comunidad Kasaychi"
+                class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+              />
+            </div>
+          </div>
+        </FadeIn>
+      </div>
+    </div>
+  </section>
+
+  <!-- Communities Detail -->
+  <section class="py-20 bg-paper border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <FadeIn client:load direction="left">
+          <div class="relative">
+            <div class="absolute -bottom-4 -left-4 w-full h-full bg-ancestral-gold/20"></div>
+            <div class="relative overflow-hidden shadow-2xl">
+              <img 
+                src="/images/fondoLejano.jpg" 
+                alt="Comunidades de Kasaychi"
+                class="w-full h-auto object-cover grayscale hover:grayscale-0 transition-all duration-700"
+              />
+            </div>
+          </div>
+        </FadeIn>
+        
+        <div>
+          <FadeIn client:load direction="right">
+            <span class="text-xs font-bold uppercase tracking-[0.3em] text-ancestral-gold mb-4 block">Territorio</span>
+            <h2 class="text-4xl lg:text-5xl font-bold text-institutional-blue mb-6">
+              Seis Comunidades, <span class="text-ancestral-gold">Una Familia</span>
+            </h2>
+            <p class="text-slate-600 text-lg leading-relaxed mb-8 font-serif">
+              Kasaychi está conformada por seis comunidades que trabajan unidas bajo los principios 
+              de la solidaridad y la reciprocidad. Cada comunidad aporta su fuerza y tradiciones 
+              al tejido social de nuestra organización.
+            </p>
+            
+            <div class="grid grid-cols-2 gap-4">
+              {['Casaichi Arenal', 'Grupo Comunitario Cacuango', 'Casaichi San Antonio', 'Casaichi Chinipamba', 'Casaichi Herapamba', 'Casaichi Llama Corral'].map((community) => (
+                <div class="flex items-center gap-3 px-4 py-3 bg-white border border-slate-200">
+                  <div class="w-2 h-2 bg-ancestral-gold"></div>
+                  <span class="text-slate-700 font-medium">{community}</span>
+                </div>
+              ))}
+            </div>
+          </FadeIn>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Visit Info -->
+  <section class="py-16 bg-white">
+    <FadeIn client:load>
+      <div class="max-w-7xl mx-auto px-8">
+        <div class="bg-institutional-blue overflow-hidden">
+          <div class="py-12 lg:py-16 px-8 text-center">
+            <Clock className="w-12 h-12 text-ancestral-gold mx-auto mb-6" />
+            <h2 class="text-3xl lg:text-4xl text-white font-bold mb-4">
+              Visítanos
+            </h2>
+            <p class="text-lg text-white max-w-2xl mx-auto mb-8 font-serif">
+              Te invitamos a conocer nuestra comunidad, experimentar nuestras tradiciones 
+              y disfrutar de la hospitalidad de nuestra gente. Contáctanos para coordinar tu visita.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <a 
+                href="https://www.facebook.com/people/Inti-Churi/100057352064394/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 px-6 py-3 bg-white text-institutional-blue font-bold uppercase text-xs tracking-[0.2em] hover:bg-paper transition-colors"
+              >
+                Contactar por Facebook
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </FadeIn>
+  </section>
+</Layout>

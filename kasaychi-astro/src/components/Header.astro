@@ -1,0 +1,102 @@
+---
+import { Menu, X } from 'lucide-react';
+const navItems = [
+  { label: 'Inicio', href: '/' },
+  { label: 'Nosotros', href: '/quienes-somos/' },
+  { label: 'Historia', href: '/quienes-somos/historia/' },
+  { label: 'Actividades', href: '/actividades/sociales/' },
+  { label: 'Productos', href: '/queso/' },
+  { label: 'Proyectos', href: '/proyectos/' },
+];
+const currentPath = Astro.url.pathname;
+---
+
+<header class="fixed top-1 w-full z-50 bg-white/95 backdrop-blur-sm border-b border-slate-200">
+  <nav class="max-w-7xl mx-auto px-8 h-20 flex items-center justify-between">
+    <!-- Logo -->
+    <a href="/" class="flex items-center gap-4 group">
+      <div class="w-12 h-12 flex items-center justify-center border border-ancestral-gold group-hover:border-institutional-blue transition-colors">
+        <img src="/images/KasaychiKunapak.png" alt="Kasaychi" class="w-8 h-8 object-contain" />
+      </div>
+      <div class="flex flex-col">
+        <span class="text-sm font-bold tracking-widest uppercase text-institutional-blue leading-none">Comunidad Kasaychi</span>
+        <span class="text-[10px] tracking-[0.2em] uppercase text-slate-500 font-medium">Inti Churi - Hijos del Sol</span>
+      </div>
+    </a>
+    
+    <!-- Desktop nav -->
+    <div class="hidden lg:flex items-center gap-10">
+      {navItems.map((item) => (
+        <a 
+          href={item.href} 
+          class:list={[
+            "text-xs font-bold uppercase tracking-widest transition-colors",
+            currentPath === item.href || (item.href !== '/' && currentPath.startsWith(item.href))
+              ? "text-ancestral-gold" 
+              : "hover:text-ancestral-gold"
+          ]}
+        >
+          {item.label}
+        </a>
+      ))}
+      <a 
+        href="/compromiso/" 
+        class="bg-institutional-blue text-white px-6 py-2.5 text-xs font-bold uppercase tracking-widest hover:bg-slate-800 transition-all"
+      >
+        Compromiso
+      </a>
+    </div>
+    
+    <!-- Mobile menu button -->
+    <button id="mobile-menu-btn" class="lg:hidden p-2 text-institutional-blue">
+      <Menu className="w-6 h-6" id="menu-icon-open" />
+      <X className="w-6 h-6 hidden" id="menu-icon-close" />
+    </button>
+  </nav>
+  
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="lg:hidden hidden bg-white border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-8 py-6">
+      <div class="flex flex-col gap-4">
+        {navItems.map((item) => (
+          <a 
+            href={item.href} 
+            class:list={[
+              "text-xs font-bold uppercase tracking-widest py-2 transition-colors",
+              currentPath === item.href ? "text-ancestral-gold" : "text-slate-700 hover:text-ancestral-gold"
+            ]}
+          >
+            {item.label}
+          </a>
+        ))}
+        <a 
+          href="/compromiso/" 
+          class="bg-institutional-blue text-white px-6 py-3 text-xs font-bold uppercase tracking-widest text-center hover:bg-slate-800 transition-all mt-2"
+        >
+          Compromiso
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuIconOpen = document.getElementById('menu-icon-open');
+  const menuIconClose = document.getElementById('menu-icon-close');
+  
+  mobileMenuBtn?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('hidden');
+    menuIconOpen?.classList.toggle('hidden');
+    menuIconClose?.classList.toggle('hidden');
+  });
+  
+  mobileMenu?.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+      menuIconOpen?.classList.remove('hidden');
+      menuIconClose?.classList.add('hidden');
+    });
+  });
+</script>

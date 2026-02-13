@@ -1,0 +1,282 @@
+---
+import Layout from '../layouts/Layout.astro';
+import FadeIn from '../components/ui/FadeIn.tsx';
+import StaggerContainer, { StaggerItem } from '../components/ui/StaggerContainer.tsx';
+import { Play, Image as ImageIcon, Sun, Mountain, Sprout, X } from 'lucide-react';
+
+const videos = [
+  { src: '/images/childsOnSchool.mp4', thumb: '/images/childsEscuela.jpg', title: 'Niños en la escuela' },
+  { src: '/images/Coro.mp4', thumb: '/images/AulasEscuela.jpg', title: 'Coro escolar' },
+  { src: '/images/Video de WhatsApp 2025-06-09 a las 20.01.21_bcdac0e1.mp4', thumb: '/images/festividades.png', title: 'Actividad comunitaria' },
+];
+
+const images = [
+  { src: '/images/AulasEscuela.jpg', title: 'Aulas de la escuela' },
+  { src: '/images/CalleEntrada.jpg', title: 'Calle de entrada' },
+  { src: '/images/childsEscuela.jpg', title: 'Niños en la escuela' },
+  { src: '/images/childsInWoodPlatform.jpg', title: 'Niños en actividades' },
+  { src: '/images/EscuelaPiso.jpg', title: 'Instalaciones escolares' },
+  { src: '/images/fondoEscuela.jpg', title: 'Paisaje escolar' },
+  { src: '/images/fondoLejano.jpg', title: 'Vista de la comunidad' },
+  { src: '/images/fondoLejano2.jpg', title: 'Panorámica de la comunidad' },
+  { src: '/images/Calle.jpg', title: 'Calle principal' },
+];
+
+const wisdom = [
+  { icon: Sun, text: 'La tierra no es una herencia de nuestros padres, sino un préstamo de nuestros hijos.', author: 'Proverbio Quechua' },
+  { icon: Mountain, text: 'No heredamos la tierra de nuestros antepasados, la tomamos prestada de nuestros hijos.', author: 'Proverbio Andino' },
+  { icon: Sprout, text: 'Cada semilla que plantamos es una promesa para el futuro, cada árbol que crece es una bendición para la comunidad.', author: 'Sabiduría Kichwa' },
+];
+---
+
+<Layout 
+  title="Multimedia"
+  description="Galería multimedia de la Comunidad Kasaychi. Videos, fotos y sabiduría ancestral."
+>
+  <!-- Hero Section -->
+  <section class="relative pt-32 pb-20 overflow-hidden">
+    <div class="absolute inset-0">
+      <div class="absolute inset-0 bg-gradient-to-br from-institutional-blue via-institutional-blue/95 to-institutional-blue/90"></div>
+      <div class="absolute inset-0 opacity-30">
+        <img src="/images/fondoLejanoCalle.jpg" alt="" class="w-full h-full object-cover" />
+      </div>
+      <div class="absolute inset-0 chacana-bg opacity-5"></div>
+    </div>
+    
+    <div class="relative max-w-7xl mx-auto px-8 text-center">
+      <FadeIn client:load>
+        <span class="text-xs font-bold uppercase tracking-[0.3em] text-ancestral-gold mb-6 block">
+          Galería
+        </span>
+        <h1 class="text-5xl lg:text-6xl text-white font-bold mb-6">
+          Multimedia <span class="text-ancestral-gold">Kasaychi</span>
+        </h1>
+        <p class="text-xl text-white max-w-3xl mx-auto leading-relaxed font-serif">
+          Conoce nuestra comunidad a través de videos, fotos y las voces de nuestros antepasados
+        </p>
+      </FadeIn>
+    </div>
+  </section>
+
+  <!-- Featured Videos -->
+  <section class="py-20 bg-paper border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <FadeIn client:load>
+          <span class="text-xs font-bold uppercase tracking-[0.3em] text-ancestral-gold mb-4 block">Videos</span>
+          <h2 class="text-4xl font-bold text-institutional-blue">
+            Nuestra Comunidad <span class="text-ancestral-gold">en Acción</span>
+          </h2>
+        </FadeIn>
+      </div>
+      
+      <FadeIn client:load delay={0.2}>
+        <div class="grid lg:grid-cols-3 gap-6">
+          <!-- Main Video -->
+          <div class="lg:col-span-2">
+            <div 
+              class="relative overflow-hidden bg-institutional-blue aspect-video group cursor-pointer"
+              onclick="playVideo(0)"
+            >
+              <img 
+                src={videos[0].thumb} 
+                alt={videos[0].title}
+                class="w-full h-full object-cover opacity-80 group-hover:opacity-60 transition-opacity"
+              />
+              <div class="absolute inset-0 flex items-center justify-center">
+                <div class="w-20 h-20 bg-ancestral-gold flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform">
+                  <Play className="w-8 h-8 text-white ml-1" />
+                </div>
+              </div>
+              <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-institutional-blue/90 to-transparent">
+                <h3 class="text-xl text-white font-bold">{videos[0].title}</h3>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Video List -->
+          <div class="space-y-4">
+            {videos.slice(1).map((video, index) => (
+              <div 
+                class="relative overflow-hidden bg-institutional-blue aspect-video group cursor-pointer"
+                onclick={`playVideo(${index + 1})`}
+              >
+                <img 
+                  src={video.thumb} 
+                  alt={video.title}
+                  class="w-full h-full object-cover opacity-80 group-hover:opacity-60 transition-opacity"
+                />
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <div class="w-12 h-12 bg-ancestral-gold/90 flex items-center justify-center">
+                    <Play className="w-5 h-5 text-white ml-0.5" />
+                  </div>
+                </div>
+                <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-institutional-blue/90 to-transparent">
+                  <h3 class="text-white font-medium text-sm">{video.title}</h3>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </FadeIn>
+    </div>
+  </section>
+
+  <!-- Photo Gallery -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <FadeIn client:load>
+          <span class="text-xs font-bold uppercase tracking-[0.3em] text-ancestral-gold mb-4 block">Fotografías</span>
+          <h2 class="text-4xl font-bold text-institutional-blue mb-6">
+            Momentos de Nuestra <span class="text-ancestral-gold">Comunidad</span>
+          </h2>
+        </FadeIn>
+      </div>
+      
+      <StaggerContainer client:load className="grid grid-cols-2 md:grid-cols-3 gap-4">
+        {images.map((image, index) => (
+          <StaggerItem client:load>
+            <div 
+              class="group relative aspect-square overflow-hidden cursor-pointer shadow-lg"
+              onclick={`openImage(${index})`}
+            >
+              <img 
+                src={image.src} 
+                alt={image.title}
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-institutional-blue/80 via-institutional-blue/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                <div class="flex items-center gap-2 text-white">
+                  <ImageIcon className="w-4 h-4" />
+                  <span class="text-sm font-medium">{image.title}</span>
+                </div>
+              </div>
+            </div>
+          </StaggerItem>
+        ))}
+      </StaggerContainer>
+    </div>
+  </section>
+
+  <!-- Wisdom Section -->
+  <section class="py-20 bg-institutional-blue">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <FadeIn client:load>
+          <span class="text-xs font-bold uppercase tracking-[0.3em] text-ancestral-gold mb-4 block">Sabiduría Ancestral</span>
+          <h2 class="text-4xl font-bold text-white mb-6">
+            Voces de Nuestros <span class="text-ancestral-gold">Antepasados</span>
+          </h2>
+        </FadeIn>
+      </div>
+      
+      <StaggerContainer client:load className="grid md:grid-cols-3 gap-6">
+        {wisdom.map((item) => (
+          <StaggerItem client:load>
+            <div class="bg-white/10 border border-white/20 p-8 text-center hover:bg-white/20 transition-colors">
+              <div class="w-14 h-14 bg-ancestral-gold/30 flex items-center justify-center mx-auto mb-6">
+                <item.icon className="w-7 h-7 text-ancestral-gold" />
+              </div>
+              <blockquote class="text-lg text-white italic leading-relaxed mb-6 font-serif">
+                "{item.text}"
+              </blockquote>
+              <cite class="text-ancestral-gold text-sm not-italic font-bold uppercase tracking-wider">{item.author}</cite>
+            </div>
+          </StaggerItem>
+        ))}
+      </StaggerContainer>
+    </div>
+  </section>
+
+  <!-- Video Modal -->
+  <div id="videoModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-institutional-blue/95 backdrop-blur-sm p-4" onclick="closeVideoModal()">
+    <div class="relative w-full max-w-5xl" onclick="event.stopPropagation()">
+      <button 
+        onclick="closeVideoModal()"
+        class="absolute -top-12 right-0 text-white hover:text-ancestral-gold transition-colors"
+      >
+        <X className="w-8 h-8" />
+      </button>
+      <div class="aspect-video bg-institutional-blue overflow-hidden shadow-2xl">
+        <video id="modalVideo" class="w-full h-full" controls>
+          <source src="" type="video/mp4" />
+          Tu navegador no soporta el video.
+        </video>
+      </div>
+      <h3 id="videoTitle" class="text-white text-xl font-bold mt-4 text-center"></h3>
+    </div>
+  </div>
+
+  <!-- Image Modal -->
+  <div id="imageModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-institutional-blue/95 backdrop-blur-sm p-4" onclick="closeImageModal()">
+    <div class="relative w-full max-w-5xl" onclick="event.stopPropagation()">
+      <button 
+        onclick="closeImageModal()"
+        class="absolute -top-12 right-0 text-white hover:text-ancestral-gold transition-colors z-10"
+      >
+        <X className="w-8 h-8" />
+      </button>
+      <div class="relative overflow-hidden shadow-2xl">
+        <img id="modalImage" src="" alt="" class="w-full h-auto max-h-[80vh] object-contain mx-auto" />
+        <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-institutional-blue/90 to-transparent">
+          <h3 id="imageTitle" class="text-white text-xl font-bold"></h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script is:inline define:vars={{ videos, images }}>
+    function playVideo(index) {
+      const modal = document.getElementById('videoModal');
+      const video = document.getElementById('modalVideo');
+      const title = document.getElementById('videoTitle');
+      const videoData = videos[index];
+      
+      video.src = videoData.src;
+      title.textContent = videoData.title;
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+      video.play();
+    }
+
+    function closeVideoModal() {
+      const modal = document.getElementById('videoModal');
+      const video = document.getElementById('modalVideo');
+      video.pause();
+      video.src = '';
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+
+    function openImage(index) {
+      const modal = document.getElementById('imageModal');
+      const img = document.getElementById('modalImage');
+      const title = document.getElementById('imageTitle');
+      const imageData = images[index];
+      
+      img.src = imageData.src;
+      img.alt = imageData.title;
+      title.textContent = imageData.title;
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeImageModal() {
+      const modal = document.getElementById('imageModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeVideoModal();
+        closeImageModal();
+      }
+    });
+  </script>
+</Layout>

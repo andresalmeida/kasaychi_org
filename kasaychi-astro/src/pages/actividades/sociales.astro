@@ -1,0 +1,228 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import FadeIn from '../../components/ui/FadeIn.tsx';
+import StaggerContainer, { StaggerItem } from '../../components/ui/StaggerContainer.tsx';
+import { Sun, Snowflake, Wheat, Heart, ArrowRight, X } from 'lucide-react';
+
+const festivities = [
+  {
+    id: 'inti',
+    title: 'Inti Raymi',
+    date: 'Junio',
+    image: '/images/inti-raymi1.jpeg',
+    description: 'Celebración del año nuevo andino.',
+    fullDescription: `
+      El Inti Raymi es una festividad ancestral del nuevo año andino, en la que se rinde homenaje al dios sol (Inti), considerado fuente de vida, calor y fertilidad. Esta celebración tiene lugar cada 21 de junio, coincidiendo con el solsticio de invierno en el hemisferio sur.
+      
+      Durante el Inti Raymi, la comunidad se viste con trajes típicos, realizan danzas rituales y presentan ofrendas a la naturaleza. Es un momento de reflexión, renovación espiritual y comunión con la tierra.
+    `,
+    icon: Sun,
+  },
+  {
+    id: 'naty',
+    title: 'Fiesta de la Mama Naty',
+    date: 'Agosto',
+    image: '/images/mama-naty.jpg',
+    description: 'Homenaje a la Virgen de las Nieves.',
+    fullDescription: `
+      La Fiesta de la Mama Naty se celebra en agosto en honor a la Virgen de las Nieves, patrona espiritual de muchas comunidades andinas. Esta festividad refleja una fusión entre la religiosidad católica y las costumbres ancestrales indígenas.
+      
+      Durante la celebración, se realizan procesiones solemnes donde la imagen de la Virgen es llevada por las calles adornadas con flores, música y danzas tradicionales.
+    `,
+    icon: Snowflake,
+  },
+  {
+    id: 'cosecha',
+    title: 'Rito de la Cosecha',
+    date: 'Noviembre',
+    image: '/images/cosecha.jpg',
+    description: 'Agradecimiento a la Pachamama.',
+    fullDescription: `
+      Esta ceremonia ancestral se realiza en el mes de noviembre como una forma de agradecer a la Pachamama (madre tierra) por los frutos recibidos durante el año. La comunidad se reúne para ofrecer alimentos, semillas y otros elementos simbólicos que representan la gratitud y el ciclo de vida.
+      
+      Se acompaña con danzas, música, rezos colectivos y comidas compartidas, fortaleciendo los lazos de unidad y reciprocidad.
+    `,
+    icon: Wheat,
+  },
+  {
+    id: 'minga',
+    title: 'Mingas Comunitarias',
+    date: 'Todo el año',
+    image: '/images/sisOrganizativo1.png',
+    description: 'Jornadas de trabajo colectivo.',
+    fullDescription: `
+      Las mingas son jornadas de trabajo colectivo donde las comunidades se organizan para realizar actividades en beneficio común, como siembras, cosechas, limpieza, construcción de caminos, o mantenimiento de espacios públicos.
+      
+      Esta práctica ancestral fortalece la cooperación, la solidaridad y el sentido de pertenencia entre los miembros de la comunidad, siendo uno de los pilares de la vida andina.
+    `,
+    icon: Heart,
+  },
+];
+---
+
+<Layout 
+  title="Actividades Sociales"
+  description="Descubre las festividades, rituales y actividades sociales de la Comunidad Kasaychi. Tradiciones ancestrales vivas."
+>
+  <!-- Hero Section -->
+  <section class="relative pt-32 pb-20 overflow-hidden">
+    <div class="absolute inset-0">
+      <div class="absolute inset-0 bg-gradient-to-br from-institutional-blue via-institutional-blue/95 to-institutional-blue/90"></div>
+      <div class="absolute inset-0 opacity-30">
+        <img src="/images/festividades.png" alt="" class="w-full h-full object-cover" />
+      </div>
+      <div class="absolute inset-0 chacana-bg opacity-5"></div>
+    </div>
+    
+    <div class="relative max-w-7xl mx-auto px-8 text-center">
+      <FadeIn client:load>
+        <span class="text-xs font-bold uppercase tracking-[0.3em] text-ancestral-gold mb-6 block">
+          Actividades Sociales
+        </span>
+        <h1 class="text-5xl lg:text-6xl text-white font-bold mb-6">
+          Festividades y <span class="text-ancestral-gold">Rituales</span>
+        </h1>
+        <p class="text-xl text-white max-w-3xl mx-auto leading-relaxed font-serif">
+          Nuestras tradiciones ancestrales que mantienen viva la cultura kichwa 
+          y fortalecen los lazos comunitarios
+        </p>
+      </FadeIn>
+    </div>
+  </section>
+
+  <!-- Festivities Grid -->
+  <section class="py-20 bg-paper border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <FadeIn client:load>
+          <span class="text-xs font-bold uppercase tracking-[0.3em] text-ancestral-gold mb-4 block">Calendario Cultural</span>
+          <h2 class="text-4xl font-bold text-institutional-blue">
+            Nuestras <span class="text-ancestral-gold">Celebraciones</span>
+          </h2>
+        </FadeIn>
+      </div>
+      
+      <StaggerContainer client:load className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {festivities.map((festivity) => (
+          <StaggerItem client:load>
+            <article class="group bg-white overflow-hidden border border-slate-200 hover:border-ancestral-gold/50 transition-all duration-500 hover:-translate-y-2">
+              <div class="relative h-48 overflow-hidden">
+                <img 
+                  src={festivity.image} 
+                  alt={festivity.title}
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-institutional-blue/80 to-transparent"></div>
+                <div class="absolute top-4 left-4">
+                  <span class="inline-flex items-center gap-1.5 px-3 py-1 bg-white text-institutional-blue text-xs font-bold uppercase tracking-wider">
+                    <festivity.icon className="w-3.5 h-3.5 text-ancestral-gold" />
+                    {festivity.date}
+                  </span>
+                </div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold text-institutional-blue mb-2 group-hover:text-ancestral-gold transition-colors">
+                  {festivity.title}
+                </h3>
+                <p class="text-slate-500 text-sm mb-4 font-serif">{festivity.description}</p>
+                <button 
+                  onclick={`openModal('${festivity.id}')`}
+                  class="inline-flex items-center gap-1 text-ancestral-gold font-bold text-xs uppercase tracking-wider hover:gap-2 transition-all"
+                >
+                  Saber más
+                  <ArrowRight className="w-4 h-4" />
+                </button>
+              </div>
+            </article>
+          </StaggerItem>
+        ))}
+      </StaggerContainer>
+    </div>
+  </section>
+
+  <!-- Quote Section -->
+  <section class="py-20 bg-white">
+    <FadeIn client:load>
+      <div class="max-w-4xl mx-auto px-8 text-center">
+        <blockquote class="relative">
+          <div class="absolute -top-8 left-1/2 -translate-x-1/2 text-8xl text-ancestral-gold/20 font-serif">"</div>
+          <p class="relative text-2xl lg:text-3xl text-institutional-blue italic leading-relaxed mb-6 font-serif">
+            Las tradiciones no son el culto a las cenizas, sino la preservación del fuego.
+          </p>
+          <footer class="text-ancestral-gold font-bold uppercase tracking-wider text-sm">
+            Sabiduría Ancestral
+          </footer>
+        </blockquote>
+      </div>
+    </FadeIn>
+  </section>
+
+  <!-- Modals -->
+  {festivities.map((festivity) => (
+    <div 
+      id={`modal-${festivity.id}`}
+      class="fixed inset-0 z-50 hidden items-center justify-center bg-institutional-blue/80 backdrop-blur-sm p-4"
+      onclick={`closeModal('${festivity.id}')`}
+    >
+      <div 
+        class="relative bg-white overflow-hidden max-w-2xl w-full shadow-2xl"
+        onclick="event.stopPropagation()"
+      >
+        <button 
+          onclick={`closeModal('${festivity.id}')`}
+          class="absolute top-4 right-4 z-10 w-10 h-10 bg-white/90 hover:bg-white flex items-center justify-center transition-colors"
+        >
+          <X className="w-5 h-5 text-institutional-blue" />
+        </button>
+        <div class="relative h-56">
+          <img 
+            src={festivity.image} 
+            alt={festivity.title}
+            class="w-full h-full object-cover"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-institutional-blue/60 to-transparent"></div>
+          <div class="absolute bottom-4 left-6">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 bg-ancestral-gold text-white text-sm font-bold uppercase tracking-wider">
+              <festivity.icon className="w-3.5 h-3.5" />
+              {festivity.date}
+            </span>
+          </div>
+        </div>
+        <div class="p-6 lg:p-8">
+          <h3 class="text-2xl font-bold text-institutional-blue mb-4">{festivity.title}</h3>
+          <div class="prose prose-slate max-w-none">
+            {festivity.fullDescription.split('\n\n').map((paragraph) => (
+              <p class="text-slate-600 leading-relaxed mb-4 font-serif">{paragraph.trim()}</p>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  ))}
+
+  <script is:inline>
+    function openModal(id) {
+      const modal = document.getElementById(`modal-${id}`);
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal(id) {
+      const modal = document.getElementById(`modal-${id}`);
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        document.querySelectorAll('[id^="modal-"]').forEach(modal => {
+          modal.classList.add('hidden');
+          modal.classList.remove('flex');
+        });
+        document.body.style.overflow = '';
+      }
+    });
+  </script>
+</Layout>

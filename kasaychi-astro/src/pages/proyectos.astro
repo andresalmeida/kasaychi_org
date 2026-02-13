@@ -1,0 +1,218 @@
+---
+import Layout from '../layouts/Layout.astro';
+import FadeIn from '../components/ui/FadeIn.tsx';
+import StaggerContainer, { StaggerItem } from '../components/ui/StaggerContainer.tsx';
+import { GraduationCap, Sprout, Laptop, Users, ArrowRight, Clock, Target, CheckCircle2 } from 'lucide-react';
+
+const projects = [
+  {
+    title: 'Bachillerato Técnico Agropecuario',
+    year: '2008',
+    description: 'Implementación de la educación secundaria técnica en la comunidad, permitiendo a los jóvenes acceder a educación de calidad sin alejarse de sus raíces.',
+    status: 'Activo',
+    icon: GraduationCap,
+  },
+  {
+    title: 'Mejoramiento Ganadero',
+    year: '2010',
+    description: 'Proyecto de optimización de la producción ganadera mediante técnicas modernas respetuosas con el medio ambiente y el bienestar animal.',
+    status: 'Activo',
+    icon: Sprout,
+  },
+  {
+    title: 'Proyecto de Vinculación ESPE',
+    year: '2024 - 2027',
+    description: 'Colaboración con la Universidad ESPE para el desarrollo tecnológico, creación de sitio web y aplicación móvil para la comunidad.',
+    status: 'En progreso',
+    icon: Laptop,
+  },
+  {
+    title: 'Fortalecimiento Organizacional',
+    year: '2015',
+    description: 'Desarrollo de capacidades de liderazgo y gestión comunitaria para fortalecer la toma de decisiones colectivas.',
+    status: 'Completado',
+    icon: Users,
+  },
+];
+
+const upcoming = [
+  { title: 'Centro de Interpretación Cultural', description: 'Espacio para preservar y difundir la cultura kichwa' },
+  { title: 'Turismo Comunitario', description: 'Desarrollo de rutas turísticas sostenibles' },
+  { title: 'Energía Renovable', description: 'Implementación de paneles solares para la comunidad' },
+];
+---
+
+<Layout 
+  title="Proyectos"
+  description="Conoce los proyectos de desarrollo de la Comunidad Kasaychi. Educación, producción, tecnología y más."
+>
+  <!-- Hero Section -->
+  <section class="relative pt-32 pb-20 overflow-hidden">
+    <div class="absolute inset-0">
+      <div class="absolute inset-0 bg-gradient-to-br from-institutional-blue via-institutional-blue/95 to-institutional-blue/90"></div>
+      <div class="absolute inset-0 opacity-20">
+        <img src="/images/fondoLejanoCalle.jpg" alt="" class="w-full h-full object-cover" />
+      </div>
+      <div class="absolute inset-0 chacana-bg opacity-5"></div>
+    </div>
+    
+    <div class="relative max-w-7xl mx-auto px-8 text-center">
+      <FadeIn client:load>
+        <span class="text-xs font-bold uppercase tracking-[0.3em] text-ancestral-gold mb-6 block">
+          Desarrollo Comunitario
+        </span>
+        <h1 class="text-5xl lg:text-6xl text-white font-bold mb-6">
+          Nuestros <span class="text-ancestral-gold">Proyectos</span>
+        </h1>
+        <p class="text-xl text-white max-w-3xl mx-auto leading-relaxed font-serif">
+          Iniciativas que transforman nuestra realidad y construyen un futuro próspero para todos
+        </p>
+      </FadeIn>
+    </div>
+  </section>
+
+  <!-- Active Projects -->
+  <section class="py-20 bg-paper border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <FadeIn client:load>
+          <span class="text-xs font-bold uppercase tracking-[0.3em] text-ancestral-gold mb-4 block">Iniciativas</span>
+          <h2 class="text-4xl font-bold text-institutional-blue mb-6">
+            Proyectos de la <span class="text-ancestral-gold">Comunidad</span>
+          </h2>
+        </FadeIn>
+      </div>
+      
+      <StaggerContainer client:load className="grid md:grid-cols-2 gap-8">
+        {projects.map((project) => (
+          <StaggerItem client:load>
+            <div class="bg-white border border-slate-200 overflow-hidden hover:border-ancestral-gold/50 transition-all duration-300 group">
+              <div class="bg-institutional-blue p-6">
+                <div class="flex items-start justify-between">
+                  <div class="w-14 h-14 bg-white/10 flex items-center justify-center">
+                    <project.icon className="w-7 h-7 text-ancestral-gold" />
+                  </div>
+                  <span class:list={[
+                    "px-3 py-1 text-xs font-bold uppercase tracking-wider",
+                    project.status === 'Activo' ? "bg-ancestral-gold text-white" :
+                    project.status === 'En progreso' ? "bg-white/20 text-white" :
+                    "bg-white/10 text-white"
+                  ]}>
+                    {project.status}
+                  </span>
+                </div>
+              </div>
+              <div class="p-6">
+                <div class="flex items-center gap-2 text-slate-500 text-sm mb-2 uppercase tracking-wider">
+                  <Clock className="w-4 h-4" />
+                  <span>{project.year}</span>
+                </div>
+                <h3 class="text-xl font-bold text-institutional-blue mb-3">{project.title}</h3>
+                <p class="text-slate-600 leading-relaxed font-serif">{project.description}</p>
+              </div>
+            </div>
+          </StaggerItem>
+        ))}
+      </StaggerContainer>
+    </div>
+  </section>
+
+  <!-- Featured Project -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <FadeIn client:load direction="left">
+          <div class="relative">
+            <div class="absolute -top-4 -left-4 w-full h-full bg-ancestral-gold/20"></div>
+            <div class="relative overflow-hidden shadow-2xl">
+              <img 
+                src="/images/AulasEscuela.jpg" 
+                alt="Proyecto de Vinculación ESPE"
+                class="w-full h-auto object-cover grayscale hover:grayscale-0 transition-all duration-700"
+              />
+            </div>
+          </div>
+        </FadeIn>
+        
+        <div>
+          <FadeIn client:load direction="right">
+            <span class="inline-flex items-center gap-2 px-4 py-1.5 bg-ancestral-gold/10 text-ancestral-gold text-xs font-bold uppercase tracking-wider mb-6">
+              <Target className="w-4 h-4" />
+              Proyecto Destacado
+            </span>
+            <h2 class="text-4xl lg:text-5xl font-bold text-institutional-blue mb-6">
+              Vinculación con la <span class="text-ancestral-gold">Universidad ESPE</span>
+            </h2>
+            <p class="text-slate-600 text-lg leading-relaxed mb-6 font-serif">
+              Un proyecto ambicioso que busca cerrar la brecha digital en nuestra comunidad mediante 
+              la implementación de herramientas tecnológicas y la capacitación de nuestros habitantes.
+            </p>
+            <ul class="space-y-3 mb-8">
+              {['Creación de sitio web institucional', 'Desarrollo de aplicación móvil', 'Capacitación en alfabetización digital', 'Fortalecimiento de la comercialización'].map((item) => (
+                <li class="flex items-center gap-3 text-slate-600">
+                  <CheckCircle2 className="w-5 h-5 text-ancestral-gold flex-shrink-0" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <a href="/compromiso/" class="inline-flex items-center gap-2 bg-ancestral-gold text-white px-8 py-4 font-bold uppercase text-xs tracking-[0.2em] hover:bg-ancestral-gold/90 transition-colors">
+              Conocer Más
+              <ArrowRight className="w-5 h-5" />
+            </a>
+          </FadeIn>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Upcoming Projects -->
+  <section class="py-20 bg-institutional-blue">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <FadeIn client:load direction="left">
+            <span class="text-xs font-bold uppercase tracking-[0.3em] text-ancestral-gold mb-4 block">Próximamente</span>
+            <h2 class="text-4xl lg:text-5xl text-white font-bold mb-6">
+              Próximos <span class="text-ancestral-gold">Proyectos</span>
+            </h2>
+            <p class="text-white text-lg leading-relaxed mb-8 font-serif">
+              Continuamos trabajando en nuevas iniciativas que fortalezcan el desarrollo sostenible 
+              de nuestra comunidad y preserven nuestra identidad cultural.
+            </p>
+          </FadeIn>
+          
+          <div class="space-y-4">
+            {upcoming.map((project, index) => (
+              <FadeIn client:load delay={0.1 * index} direction="left">
+                <div class="bg-white/10 border border-white/20 p-6 hover:bg-white/20 transition-colors">
+                  <div class="flex items-start gap-4">
+                    <div class="w-10 h-10 bg-ancestral-gold/30 flex items-center justify-center flex-shrink-0">
+                      <Target className="w-5 h-5 text-ancestral-gold" />
+                    </div>
+                    <div>
+                      <h3 class="text-lg text-white font-bold mb-1">{project.title}</h3>
+                      <p class="text-white text-sm font-serif">{project.description}</p>
+                    </div>
+                  </div>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+        
+        <FadeIn client:load direction="right">
+          <div class="relative">
+            <div class="absolute -bottom-4 -right-4 w-full h-full bg-ancestral-gold/20"></div>
+            <div class="relative overflow-hidden shadow-2xl">
+              <img 
+                src="/images/childsEscuela.jpg" 
+                alt="Futuro de la comunidad"
+                class="w-full h-auto object-cover grayscale hover:grayscale-0 transition-all duration-700"
+              />
+            </div>
+          </div>
+        </FadeIn>
+      </div>
+    </div>
+  </section>
+</Layout>

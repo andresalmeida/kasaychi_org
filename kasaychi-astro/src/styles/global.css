@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Lora:ital,wght@0,400;0,500;1,400&display=swap');
+@import "tailwindcss";
+
+/* ============================================
+   THEME CONFIGURATION - Tailwind CSS v4
+   Paleta Institucional Elegante
+   ============================================ */
+@theme {
+  /* Colores principales */
+  --color-paper: #F9F7F2;
+  --color-institutional-blue: #1A365D;
+  --color-ancestral-gold: #C5A059;
+  
+  /* Colores Wiphala */
+  --color-wiphala-red: #FF0000;
+  --color-wiphala-orange: #FF8C00;
+  --color-wiphala-yellow: #FFFF00;
+  --color-wiphala-white: #FFFFFF;
+  --color-wiphala-green: #008000;
+  --color-wiphala-blue: #0000FF;
+  --color-wiphala-violet: #4B0082;
+  
+  /* Font families */
+  --font-family-sans: 'Plus Jakarta Sans', sans-serif;
+  --font-family-serif: 'Lora', serif;
+  
+  /* Animaciones */
+  --animate-fade-in: fade-in 0.8s ease-out forwards;
+  --animate-slide-up: slide-up 0.8s ease-out forwards;
+}
+
+/* ============================================
+   BASE STYLES
+   ============================================ */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: var(--color-paper);
+  color: #0f172a;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  letter-spacing: -0.025em;
+}
+
+p {
+  font-family: 'Lora', serif;
+  line-height: 1.75;
+}
+
+/* ============================================
+   WIPHALA BORDER
+   ============================================ */
+.wiphala-border {
+  background: linear-gradient(to right, 
+    #FF0000 14.28%, 
+    #FF8C00 14.28%, #FF8C00 28.56%, 
+    #FFFF00 28.56%, #FFFF00 42.84%, 
+    #FFFFFF 42.84%, #FFFFFF 57.12%, 
+    #008000 57.12%, #008000 71.4%, 
+    #0000FF 71.4%, #0000FF 85.68%, 
+    #4B0082 85.68%);
+  height: 4px;
+}
+
+/* ============================================
+   CHACANA PATTERN
+   ============================================ */
+.chacana-bg {
+  background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 0l5 5h5v5l5 5-5 5v5h-5l-5 5-5-5h-5v-5l-5-5 5-5v-5h5z' fill='%23C5A059' fill-opacity='0.05'/%3E%3C/svg%3E");
+}
+
+/* ============================================
+   UTILITIES
+   ============================================ */
+.section-divider {
+  border-top: 1px solid #e2e8f0;
+}
+
+/* Tracking utilities */
+.tracking-widest-custom {
+  letter-spacing: 0.2em;
+}
+
+/* Grayscale hover effect for images */
+.img-grayscale {
+  filter: grayscale(100%);
+  transition: filter 0.7s ease;
+}
+
+.img-grayscale:hover {
+  filter: grayscale(0%);
+}
+
+/* ============================================
+   COMPONENT UTILITIES
+   ============================================ */
+.btn-primary {
+  @apply bg-ancestral-gold text-white px-10 py-5 font-bold uppercase text-xs tracking-[0.2em] 
+         hover:bg-institutional-blue transition-all duration-300;
+}
+
+.btn-outline {
+  @apply flex items-center gap-3 font-bold uppercase text-xs tracking-[0.2em] 
+         text-institutional-blue hover:text-ancestral-gold transition-colors;
+}
+
+/* Card hover effect */
+.card-editorial {
+  @apply transition-all duration-300;
+}
+
+.card-editorial:hover h4 {
+  color: var(--color-ancestral-gold);
+}
+
+/* Section label */
+.section-label {
+  @apply text-xs font-bold uppercase tracking-[0.3em] text-ancestral-gold;
+}
+
+/* Gold accent line */
+.gold-line {
+  @apply h-[1px] w-12 bg-ancestral-gold;
+}
+
+.gold-line-vertical {
+  @apply w-[2px] bg-ancestral-gold;
+}
+
+/* ============================================
+   KEYFRAMES
+   ============================================ */
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slide-up {
+  from { 
+    opacity: 0; 
+    transform: translateY(40px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}

@@ -1,0 +1,201 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import FadeIn from '../../components/ui/FadeIn.tsx';
+import StaggerContainer, { StaggerItem } from '../../components/ui/StaggerContainer.tsx';
+import { Calendar, GraduationCap, Landmark, Trees } from 'lucide-react';
+
+const milestones = [
+  {
+    year: '1981',
+    title: 'Primeros Pasos',
+    description: 'Creación del molino de grano como una de las primeras acciones significativas de la comunidad, marcando el inicio del desarrollo económico colectivo.',
+    icon: Landmark,
+  },
+  {
+    year: '1992',
+    title: 'Fundación Oficial',
+    description: 'Constitución formal de la Comunidad Kasaychi como organización indígena, estableciendo las bases para el reconocimiento legal y el desarrollo institucional.',
+    icon: Calendar,
+  },
+  {
+    year: '2000',
+    title: 'Adquisición de Terrenos',
+    description: 'Gestión exitosa para la adquisición de terrenos comunales destinados a la sede social, fortaleciendo la presencia física de la comunidad.',
+    icon: Trees,
+  },
+  {
+    year: '2008',
+    title: 'Hito Educativo',
+    description: 'Acuerdo para implementar el Bachillerato Técnico Agropecuario, marcando un hito en el desarrollo educativo de la comunidad y abriendo nuevas oportunidades para los jóvenes.',
+    icon: GraduationCap,
+  },
+  {
+    year: '2024',
+    title: 'Proyecto de Vinculación',
+    description: 'Inicio del proyecto de vinculación con la Universidad ESPE para el desarrollo tecnológico y digital de la comunidad, impulsando la modernización y el acceso a nuevas herramientas.',
+    icon: Calendar,
+  },
+];
+
+const communities = [
+  'Casaichi Arenal',
+  'Grupo Comunitario Cacuango',
+  'Casaichi San Antonio',
+  'Casaichi Chinipamba',
+  'Casaichi Herapamba',
+  'Casaichi Llama Corral',
+];
+---
+
+<Layout 
+  title="Nuestra Historia"
+  description="Descubre la historia de la Comunidad Kasaychi, desde sus inicios en 1981 hasta los proyectos actuales que transforman nuestra realidad."
+>
+  <!-- Hero Section -->
+  <section class="relative pt-32 pb-20 overflow-hidden">
+    <div class="absolute inset-0">
+      <div class="absolute inset-0 bg-gradient-to-br from-institutional-blue via-institutional-blue/95 to-institutional-blue/90"></div>
+      <div class="absolute inset-0 opacity-20">
+        <img src="/images/fondoLejano.jpg" alt="" class="w-full h-full object-cover" />
+      </div>
+      <div class="absolute inset-0 chacana-bg opacity-5"></div>
+    </div>
+    
+    <div class="relative max-w-7xl mx-auto px-8 text-center">
+      <FadeIn client:load>
+        <span class="text-xs font-bold uppercase tracking-[0.3em] text-ancestral-gold mb-6 block">
+          Trayectoria
+        </span>
+        <h1 class="text-5xl lg:text-6xl text-white font-bold mb-6">
+          Nuestra <span class="text-ancestral-gold">Historia</span>
+        </h1>
+        <p class="text-xl text-white max-w-3xl mx-auto leading-relaxed font-serif">
+          Más de cuatro décadas de trabajo comunitario, preservación cultural 
+          y desarrollo sostenible en los Andes ecuatorianos
+        </p>
+      </FadeIn>
+    </div>
+  </section>
+
+  <!-- Introduction -->
+  <section class="py-16 bg-paper border-b border-slate-200">
+    <div class="max-w-4xl mx-auto px-8 text-center">
+      <FadeIn client:load>
+        <p class="text-slate-600 text-lg leading-relaxed font-serif">
+          La historia de la Comunidad Kasaychi está marcada por el esfuerzo colectivo, 
+          la perseverancia y el compromiso con nuestras raíces ancestrales. Desde nuestra 
+          conformación, hemos trabajado incansablemente por el bienestar de nuestras familias 
+          y la preservación de nuestra identidad cultural kichwa.
+        </p>
+      </FadeIn>
+    </div>
+  </section>
+
+  <!-- Timeline -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <FadeIn client:load>
+          <span class="text-xs font-bold uppercase tracking-[0.3em] text-ancestral-gold mb-4 block">Línea de Tiempo</span>
+          <h2 class="text-4xl font-bold text-institutional-blue">
+            Hitos de Nuestra <span class="text-ancestral-gold">Comunidad</span>
+          </h2>
+        </FadeIn>
+      </div>
+      
+      <div class="relative max-w-4xl mx-auto">
+        <!-- Center line -->
+        <div class="absolute left-1/2 transform -translate-x-1/2 w-px h-full bg-ancestral-gold/30 hidden md:block"></div>
+        
+        <StaggerContainer client:load className="space-y-12">
+          {milestones.map((milestone, index) => (
+            <StaggerItem client:load>
+              <div class={`relative grid md:grid-cols-2 gap-8 items-center ${index % 2 === 1 ? 'md:text-right' : ''}`}>
+                {/* Content */}
+                <div class={`${index % 2 === 1 ? 'md:order-2' : ''}`}>
+                  <div class="bg-paper p-6 lg:p-8 border border-slate-200 hover:border-ancestral-gold/50 transition-all duration-300">
+                    <span class="inline-block px-4 py-1 bg-ancestral-gold text-white text-sm font-bold uppercase tracking-wider mb-4">
+                      {milestone.year}
+                    </span>
+                    <h3 class="text-2xl font-bold text-institutional-blue mb-3">{milestone.title}</h3>
+                    <p class="text-slate-600 leading-relaxed font-serif">{milestone.description}</p>
+                  </div>
+                </div>
+                
+                {/* Center Icon */}
+                <div class={`hidden md:flex justify-center ${index % 2 === 1 ? 'md:order-1' : ''}`}>
+                  <div class="relative z-10 w-16 h-16 bg-ancestral-gold flex items-center justify-center shadow-lg">
+                    <milestone.icon className="w-8 h-8 text-white" />
+                  </div>
+                </div>
+              </div>
+            </StaggerItem>
+          ))}
+        </StaggerContainer>
+      </div>
+    </div>
+  </section>
+
+  <!-- Communities Section -->
+  <section class="py-20 bg-institutional-blue">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <FadeIn client:load direction="left">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-[0.3em] text-ancestral-gold mb-4 block">Territorio</span>
+            <h2 class="text-4xl lg:text-5xl text-white font-bold mb-6">
+              Seis Comunidades, <span class="text-ancestral-gold">Una Sola Familia</span>
+            </h2>
+            <p class="text-white text-lg leading-relaxed mb-8 font-serif">
+              Kasaychi está conformada por seis comunidades que trabajan unidas bajo los 
+              principios de la solidaridad y la reciprocidad. Cada comunidad aporta su 
+              fuerza y tradiciones al tejido social de nuestra organización.
+            </p>
+            <div class="grid grid-cols-2 gap-4">
+              {communities.map((community) => (
+                <div class="flex items-center gap-3 bg-white/10 px-4 py-3 border border-white/20">
+                  <div class="w-2 h-2 bg-ancestral-gold"></div>
+                  <span class="text-white font-medium text-sm">{community}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </FadeIn>
+        
+        <FadeIn client:load direction="right">
+          <div class="relative">
+            <div class="absolute -top-4 -left-4 w-full h-full bg-ancestral-gold/20"></div>
+            <div class="relative overflow-hidden shadow-2xl">
+              <img 
+                src="/images/fondoLejano2.jpg" 
+                alt="Vista panorámica de Kasaychi"
+                class="w-full h-auto object-cover grayscale hover:grayscale-0 transition-all duration-700"
+              />
+            </div>
+            <div class="absolute -bottom-6 -right-6 bg-white p-6 border border-slate-200">
+              <p class="text-4xl font-bold text-ancestral-gold">753</p>
+              <p class="text-slate-600 text-sm uppercase tracking-wider">Habitantes</p>
+            </div>
+          </div>
+        </FadeIn>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quote Section -->
+  <section class="py-20 bg-paper border-t border-slate-200">
+    <FadeIn client:load>
+      <div class="max-w-4xl mx-auto px-8 text-center">
+        <blockquote class="relative">
+          <div class="absolute -top-8 left-1/2 -translate-x-1/2 text-8xl text-ancestral-gold/20 font-serif">"</div>
+          <p class="relative text-2xl lg:text-3xl text-institutional-blue italic leading-relaxed mb-6 font-serif">
+            La tierra no es una herencia de nuestros padres, sino un préstamo de nuestros hijos.
+          </p>
+          <footer class="text-ancestral-gold font-bold uppercase tracking-wider text-sm">
+            Proverbio Quechua
+          </footer>
+        </blockquote>
+      </div>
+    </FadeIn>
+  </section>
+</Layout>

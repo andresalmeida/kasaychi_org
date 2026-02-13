@@ -1,0 +1,208 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import FadeIn from '../components/ui/FadeIn.tsx';
+import StaggerContainer, { StaggerItem } from '../components/ui/StaggerContainer.tsx';
+import { Target, Eye, Users, Leaf, Gavel, Landmark, ArrowRight, Download, ExternalLink, EyeIcon } from 'lucide-react';
+
+const highlights = [
+  {
+    image: '/images/cosecha.jpg',
+    title: 'Agricultura Ancestral',
+    description: 'Técnicas de cultivo transmitidas por generaciones.',
+    tag: 'Tradición',
+  },
+  {
+    image: '/images/QUESO.jpg',
+    title: 'IntiChuri Queso',
+    description: 'Elaboración artesanal con tradición familiar.',
+    tag: 'Economía',
+  },
+  {
+    image: '/images/PAZUL.jpg',
+    title: 'Cultura Viva',
+    description: 'Festividades y tradiciones que mantenemos vivas.',
+    tag: 'Cultura',
+  },
+];
+
+const stats = [
+  { value: '753', label: 'Habitantes' },
+  { value: '6', label: 'Comunidades' },
+  { value: '1981', label: 'Fundación' },
+  { value: '100%', label: 'Organización' },
+];
+---
+
+<Layout title="Inicio">
+  <Hero />
+  
+  <!-- Mission Section -->
+  <section class="py-32 section-divider bg-white/50">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+        <div class="lg:col-span-4">
+          <FadeIn client:load>
+            <span class="section-label mb-6 block">Nuestra Identidad</span>
+            <h2 class="text-4xl font-bold text-institutional-blue mb-8 leading-tight">Gobernanza Comunitaria para un Futuro Sostenible</h2>
+            <div class="w-20 h-1 bg-ancestral-gold mb-8"></div>
+          </FadeIn>
+        </div>
+        <div class="lg:col-span-8">
+          <FadeIn client:load delay={0.1}>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+              <div>
+                <p class="text-lg text-slate-600 mb-6 font-serif">
+                  Consolidamos un marco de respeto mutuo entre nuestra comunidad y el entorno, 
+                  fundamentado en el principio del <em>Sumak Kawsay</em>. Nuestra labor trasciende 
+                  generaciones para preservar la sabiduría ancestral en la agenda del desarrollo sostenible.
+                </p>
+                <p class="text-lg italic text-slate-500 font-serif">
+                  Promovemos la autodeterminación como pilar fundamental de la paz social y 
+                  la conservación de la biodiversidad en los Andes.
+                </p>
+              </div>
+              <div class="space-y-8">
+                <div class="flex gap-6">
+                  <div class="w-12 h-12 flex items-center justify-center border border-ancestral-gold flex-shrink-0">
+                    <Gavel className="w-5 h-5 text-ancestral-gold" />
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-sm uppercase tracking-widest mb-2">Organización</h4>
+                    <p class="text-sm text-slate-600 font-serif">Estructura comunitaria fortalecida por la participación de todos los habitantes.</p>
+                  </div>
+                </div>
+                <div class="flex gap-6">
+                  <div class="w-12 h-12 flex items-center justify-center border border-ancestral-gold flex-shrink-0">
+                    <Landmark className="w-5 h-5 text-ancestral-gold" />
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-sm uppercase tracking-widest mb-2">Patrimonio Vivo</h4>
+                    <p class="text-sm text-slate-600 font-serif">Salvaguarda de nuestra lengua Kichwa, rituales y conocimientos ancestrales.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </FadeIn>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Highlights Grid -->
+  <section class="py-32 section-divider bg-paper">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="flex justify-between items-end mb-16 border-b border-slate-200 pb-8">
+        <div>
+          <span class="section-label mb-4 block">Nuestra Herencia</span>
+          <h2 class="text-4xl font-bold text-institutional-blue">Vida y Tradición</h2>
+        </div>
+        <a 
+          href="/multimedia/" 
+          class="text-xs font-bold uppercase tracking-widest text-slate-500 hover:text-institutional-blue border-b border-slate-300 pb-1 transition-colors hidden md:block"
+        >
+          Ver Galería Completa
+        </a>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+        {highlights.map((item) => (
+          <FadeIn client:load>
+            <a href="/multimedia/" class="group cursor-pointer block card-editorial">
+              <div class="mb-6 overflow-hidden bg-slate-100 aspect-[16/10]">
+                <img 
+                  src={item.image} 
+                  alt={item.title}
+                  class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100"
+                />
+              </div>
+              <div class="flex items-center gap-4 mb-4">
+                <span class="text-[10px] font-bold uppercase tracking-widest bg-institutional-blue text-white px-2 py-0.5">
+                  {item.tag}
+                </span>
+              </div>
+              <h4 class="text-xl font-bold text-institutional-blue group-hover:text-ancestral-gold transition-colors mb-4 leading-tight">
+                {item.title}
+              </h4>
+              <p class="text-sm text-slate-600 font-serif mb-6">{item.description}</p>
+              <span class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest border-b-2 border-ancestral-gold/30 group-hover:border-ancestral-gold pb-1 transition-all">
+                Ver más
+                <EyeIcon className="w-4 h-4" />
+              </span>
+            </a>
+          </FadeIn>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Quote Section -->
+  <section class="py-32 section-divider bg-white relative overflow-hidden">
+    <div class="absolute inset-0 opacity-[0.03] chacana-bg pointer-events-none"></div>
+    <div class="max-w-7xl mx-auto px-8 relative z-10">
+      <div class="flex flex-col items-center text-center max-w-4xl mx-auto">
+        <div class="w-16 h-16 flex items-center justify-center border border-ancestral-gold mb-8">
+          <span class="text-3xl text-ancestral-gold font-serif italic">"</span>
+        </div>
+        <h2 class="text-4xl md:text-5xl font-serif italic mb-10 text-slate-800 leading-tight">
+          "Nuestra historia no está escrita en libros, sino en las montañas, 
+          en el fluir de los ríos y en la memoria de nuestros abuelos."
+        </h2>
+        <div class="w-24 h-[1px] bg-slate-300 mb-10"></div>
+        <p class="text-xl text-slate-600 mb-12 font-serif max-w-2xl">
+          Desde hace décadas, hemos caminado estos senderos. Hoy, nuestra misión es asegurar 
+          que las futuras generaciones sigan escuchando el latido de la tierra.
+        </p>
+        
+        <!-- Stats -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-12 w-full mt-8">
+          {stats.map((stat) => (
+            <div class="border-l-2 border-ancestral-gold pl-6 text-left">
+              <div class="text-3xl font-bold text-institutional-blue mb-1">{stat.value}</div>
+              <div class="text-[10px] font-bold uppercase tracking-widest text-slate-500">{stat.label}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-24 bg-paper">
+    <div class="max-w-5xl mx-auto px-8">
+      <FadeIn client:load>
+        <div class="bg-institutional-blue/5 rounded-[2rem] p-8 md:p-16 border border-institutional-blue/10 relative overflow-hidden">
+          <div class="absolute top-0 right-0 p-8 opacity-10">
+            <Users className="w-32 h-32 text-institutional-blue" />
+          </div>
+          
+          <div class="max-w-2xl relative z-10">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 text-institutional-blue leading-tight">
+              Tu apoyo fortalece nuestra identidad cultural
+            </h2>
+            <p class="text-lg text-slate-600 mb-8 font-serif">
+              Cada compra de nuestros productos o visita a nuestra comunidad contribuye a proyectos 
+              de educación y preservación cultural.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a 
+                href="/queso/" 
+                class="bg-ancestral-gold text-white px-8 py-4 font-bold uppercase text-xs tracking-[0.2em] hover:bg-institutional-blue transition-all flex items-center justify-center gap-2"
+              >
+                Ver Productos
+                <ArrowRight className="w-4 h-4" />
+              </a>
+              <a 
+                href="/compromiso/" 
+                class="bg-white text-institutional-blue border border-slate-300 px-8 py-4 font-bold uppercase text-xs tracking-[0.2em] hover:bg-slate-50 transition-all flex items-center justify-center gap-2"
+              >
+                Conocer Impacto
+                <ExternalLink className="w-4 h-4" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </FadeIn>
+    </div>
+  </section>
+</Layout>

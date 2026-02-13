@@ -1,0 +1,232 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import FadeIn from '../../components/ui/FadeIn.tsx';
+import StaggerContainer, { StaggerItem } from '../../components/ui/StaggerContainer.tsx';
+import { Milk, Beef, Wheat, ArrowRight, ExternalLink, Award, Leaf, Droplets } from 'lucide-react';
+
+const products = [
+  {
+    title: 'Quesos Artesanales',
+    description: 'Elaborados con técnicas tradicionales transmitidas por generaciones. Leche 100% fresca de vacas criadas en pastizales naturales.',
+    image: '/images/QUESO.jpg',
+    href: '/queso/',
+    icon: Milk,
+    badges: ['Artesanal', '100% Natural'],
+  },
+  {
+    title: 'Productos Lácteos',
+    description: 'Yogures, cuajada y otros derivados lácteos producidos de forma artesanal sin conservantes artificiales.',
+    image: '/images/mozzarella.jpg',
+    href: '/queso/',
+    icon: Droplets,
+    badges: ['Fresco', 'Sin aditivos'],
+  },
+  {
+    title: 'Agricultura',
+    description: 'Cultivos tradicionales andinos: papas, maíz, quinua y otros productos de la tierra cultivados de forma sostenible.',
+    image: '/images/cosecha.jpg',
+    href: '#',
+    icon: Wheat,
+    badges: ['Orgánico', 'Sostenible'],
+  },
+  {
+    title: 'Ganadería',
+    description: 'Cría de ganado vacuno con prácticas tradicionales respetuosas con el medio ambiente y el bienestar animal.',
+    image: '/images/casaiche.png',
+    href: '#',
+    icon: Beef,
+    badges: ['Pastoreo natural', 'Bienestar animal'],
+  },
+];
+
+const features = [
+  { icon: Award, title: 'Calidad Premium', description: 'Productos seleccionados bajo estrictos estándares de calidad' },
+  { icon: Leaf, title: 'Producción Sostenible', description: 'Métodos respetuosos con la Pachamama' },
+  { icon: Milk, title: 'Proceso Artesanal', description: 'Elaboración tradicional sin industrialización' },
+];
+---
+
+<Layout 
+  title="Actividades Económicas"
+  description="Descubre los emprendimientos sostenibles de la Comunidad Kasaychi: quesos artesanales, productos lácteos y agricultura tradicional."
+>
+  <!-- Hero Section -->
+  <section class="relative pt-32 pb-20 overflow-hidden">
+    <div class="absolute inset-0">
+      <div class="absolute inset-0 bg-gradient-to-br from-institutional-blue via-institutional-blue/95 to-institutional-blue/90"></div>
+      <div class="absolute inset-0 opacity-30">
+        <img src="/images/QUESO.jpg" alt="" class="w-full h-full object-cover" />
+      </div>
+      <div class="absolute inset-0 chacana-bg opacity-5"></div>
+    </div>
+    
+    <div class="relative max-w-7xl mx-auto px-8 text-center">
+      <FadeIn client:load>
+        <span class="text-xs font-bold uppercase tracking-[0.3em] text-ancestral-gold mb-6 block">
+          Actividades Económicas
+        </span>
+        <h1 class="text-5xl lg:text-6xl text-white font-bold mb-6">
+          Emprendimientos <span class="text-ancestral-gold">Comunitarios</span>
+        </h1>
+        <p class="text-xl text-white max-w-3xl mx-auto leading-relaxed font-serif">
+          Productos elaborados con tradición ancestral, respetando la Pachamama 
+          y generando desarrollo económico para nuestras familias
+        </p>
+      </FadeIn>
+    </div>
+  </section>
+
+  <!-- Products Section -->
+  <section class="py-20 bg-paper border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <FadeIn client:load>
+          <span class="text-xs font-bold uppercase tracking-[0.3em] text-ancestral-gold mb-4 block">Nuestros Productos</span>
+          <h2 class="text-4xl font-bold text-institutional-blue mb-6">
+            Lo que <span class="text-ancestral-gold">Producimos</span>
+          </h2>
+          <p class="text-slate-600 text-lg font-serif">
+            Comunidad Kasaychi ha generado emprendimientos a partir de lo que la naturaleza 
+            le brinda para mantenerse activa.
+          </p>
+        </FadeIn>
+      </div>
+      
+      <StaggerContainer client:load className="grid sm:grid-cols-2 gap-8">
+        {products.map((product) => (
+          <StaggerItem client:load>
+            <a 
+              href={product.href}
+              class="group block bg-white overflow-hidden border border-slate-200 hover:border-ancestral-gold/50 transition-all duration-500 hover:-translate-y-2"
+            >
+              <div class="relative h-56 overflow-hidden">
+                <img 
+                  src={product.image} 
+                  alt={product.title}
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-institutional-blue/70 via-institutional-blue/20 to-transparent"></div>
+                <div class="absolute top-4 left-4 flex gap-2">
+                  {product.badges.map((badge) => (
+                    <span class="px-3 py-1 bg-white text-institutional-blue text-xs font-bold uppercase tracking-wider">
+                      {badge}
+                    </span>
+                  ))}
+                </div>
+                <div class="absolute bottom-4 right-4 w-12 h-12 bg-ancestral-gold flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                  <product.icon className="w-6 h-6 text-white" />
+                </div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold text-institutional-blue mb-2 group-hover:text-ancestral-gold transition-colors">
+                  {product.title}
+                </h3>
+                <p class="text-slate-500 text-sm mb-4 font-serif">{product.description}</p>
+                <div class="flex items-center gap-1 text-ancestral-gold font-bold text-xs uppercase tracking-wider group-hover:gap-2 transition-all">
+                  <span>Ver más</span>
+                  <ArrowRight className="w-4 h-4" />
+                </div>
+              </div>
+            </a>
+          </StaggerItem>
+        ))}
+      </StaggerContainer>
+    </div>
+  </section>
+
+  <!-- Featured: Cheese Section -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <FadeIn client:load direction="left">
+          <div class="relative">
+            <div class="absolute -top-4 -left-4 w-full h-full bg-ancestral-gold/20"></div>
+            <div class="relative overflow-hidden shadow-2xl">
+              <img 
+                src="/images/QUESO.jpg" 
+                alt="Quesos Artesanales IntiChuri"
+                class="w-full h-auto object-cover grayscale hover:grayscale-0 transition-all duration-700"
+              />
+            </div>
+            <div class="absolute -bottom-6 -right-6 bg-white p-4 border border-slate-200 shadow-xl">
+              <div class="flex items-center gap-3">
+                <div class="flex">
+                  {[...Array(5)].map(() => (
+                    <svg class="w-5 h-5 text-ancestral-gold fill-current" viewBox="0 0 20 20">
+                      <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                    </svg>
+                  ))}
+                </div>
+                <span class="text-sm text-slate-600">4.9/5</span>
+              </div>
+              <p class="text-xs text-slate-400 mt-1 uppercase tracking-wider">127 reseñas</p>
+            </div>
+          </div>
+        </FadeIn>
+        
+        <div>
+          <FadeIn client:load direction="right">
+            <span class="inline-flex items-center gap-2 px-4 py-1.5 bg-ancestral-gold/10 text-ancestral-gold text-xs font-bold uppercase tracking-wider mb-6">
+              <Award className="w-4 h-4" />
+              Producto Estrella
+            </span>
+            <h2 class="text-4xl lg:text-5xl font-bold text-institutional-blue mb-6">
+              Queso Inti Churi <span class="text-ancestral-gold">Premium</span>
+            </h2>
+            <p class="text-slate-600 text-lg leading-relaxed mb-6 font-serif">
+              Nuestro producto insignia elaborado con leche fresca de vacas criadas en pastizales 
+              naturales. Siguiendo técnicas ancestrales, cada pieza es una obra maestra del sabor 
+              auténtico andino.
+            </p>
+            <ul class="space-y-3 mb-8">
+              {['Leche 100% fresca del día', 'Proceso artesanal tradicional', 'Sin conservantes artificiales', 'Maduración controlada'].map((item) => (
+                <li class="flex items-center gap-3 text-slate-600">
+                  <div class="w-5 h-5 bg-ancestral-gold/10 flex items-center justify-center">
+                    <svg class="w-3 h-3 text-ancestral-gold" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                    </svg>
+                  </div>
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a href="/queso/" class="inline-flex items-center justify-center gap-2 bg-ancestral-gold text-white px-8 py-4 font-bold uppercase text-xs tracking-[0.2em] hover:bg-ancestral-gold/90 transition-colors">
+                Conocer Productos
+                <ArrowRight className="w-5 h-5" />
+              </a>
+              <a 
+                href="https://docs.google.com/forms/d/e/1FAIpQLSfdKlGXTKcVvKPovsqa4NjN7CDTcL3lrmcvi9CW0_g1bTN2aQ/viewform?usp=dialog" 
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center justify-center gap-2 border-2 border-institutional-blue text-institutional-blue px-8 py-4 font-bold uppercase text-xs tracking-[0.2em] hover:bg-institutional-blue hover:text-white transition-colors"
+              >
+                Hacer Pedido
+                <ExternalLink className="w-5 h-5" />
+              </a>
+            </div>
+          </FadeIn>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="py-20 bg-institutional-blue">
+    <div class="max-w-7xl mx-auto px-8">
+      <StaggerContainer client:load className="grid md:grid-cols-3 gap-8">
+        {features.map((feature) => (
+          <StaggerItem client:load>
+            <div class="bg-white/10 border border-white/20 p-8 text-center hover:bg-white/20 transition-colors">
+              <div class="w-16 h-16 bg-ancestral-gold/30 flex items-center justify-center mx-auto mb-6">
+                <feature.icon className="w-8 h-8 text-ancestral-gold" />
+              </div>
+              <h3 class="text-xl text-white font-bold mb-3">{feature.title}</h3>
+              <p class="text-white font-serif">{feature.description}</p>
+            </div>
+          </StaggerItem>
+        ))}
+      </StaggerContainer>
+    </div>
+  </section>
+</Layout>

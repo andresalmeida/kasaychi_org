@@ -1,0 +1,391 @@
+---
+import Layout from '../layouts/Layout.astro';
+import FadeIn from '../components/ui/FadeIn.tsx';
+import StaggerContainer, { StaggerItem } from '../components/ui/StaggerContainer.tsx';
+import { Building2, Calendar, Target, BookOpen, Smartphone, Globe, Share2, TrendingUp, GraduationCap, Home, Users, Play, X } from 'lucide-react';
+
+const ods = [
+  {
+    number: '4',
+    title: 'Educación de Calidad',
+    description: 'Capacitación en alfabetización digital para jóvenes y adultos, promoviendo competencias técnicas para el empleo y emprendimiento.',
+    icon: GraduationCap,
+  },
+  {
+    number: '8',
+    title: 'Trabajo Decente y Crecimiento Económico',
+    description: 'Modernización tecnológica e innovación para mejorar la productividad económica y comercialización de productos locales.',
+    icon: TrendingUp,
+  },
+];
+
+const tools = [
+  { icon: Globe, title: 'Sitio Web', description: 'Plataforma digital para promocionar productos y servicios de la comunidad' },
+  { icon: Smartphone, title: 'Aplicación Móvil', description: 'App para facilitar la comercialización y comunicación directa con clientes' },
+  { icon: Share2, title: 'Redes Sociales', description: 'Presencia en plataformas sociales para ampliar el alcance y visibilidad' },
+];
+
+const impact = [
+  { icon: TrendingUp, title: 'Crecimiento Económico', description: 'Aumento en la comercialización de productos agrícolas y pecuarios' },
+  { icon: GraduationCap, title: 'Alfabetización Digital', description: '80% de la población capacitada en herramientas tecnológicas' },
+  { icon: Home, title: 'Reducción de Migración', description: 'Mejores oportunidades locales disminuyen la migración temporal' },
+  { icon: Users, title: 'Calidad de Vida', description: 'Fortalecimiento de la economía local y bienestar comunitario' },
+];
+
+const objectives = [
+  {
+    icon: Globe,
+    title: 'Herramientas Digitales',
+    description: 'Implementar sitio web y aplicación móvil para fortalecer la infraestructura tecnológica, capacitando al 80% de los miembros para incrementar ventas y beneficiar la economía local.',
+  },
+  {
+    icon: BookOpen,
+    title: 'Capacitación Digital',
+    description: 'Capacitar al 80% de la población objetivo en administración de medios digitales para gestionar información cultural, educativa y comercial, fomentando la sostenibilidad tecnológica.',
+  },
+];
+---
+
+<Layout 
+  title="Compromiso Institucional"
+  description="Proyecto de Vinculación Universitaria entre la Comunidad Kasaychi y la Universidad ESPE. Fortaleciendo nuestra comunidad a través de la tecnología."
+>
+  <!-- Hero Section -->
+  <section class="relative pt-32 pb-20 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-institutional-blue via-institutional-blue/95 to-institutional-blue/90"></div>
+    <div class="absolute inset-0 chacana-bg opacity-5"></div>
+    
+    <div class="relative max-w-7xl mx-auto px-8">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <FadeIn client:load>
+            <span class="text-xs font-bold uppercase tracking-[0.3em] text-ancestral-gold mb-6 block">
+              Compromiso Institucional
+            </span>
+            <h1 class="text-5xl lg:text-6xl text-white font-bold mb-6">
+              Proyecto de <span class="text-ancestral-gold">Vinculación</span>
+            </h1>
+            <p class="text-2xl text-ancestral-gold/80 italic mb-6 font-serif">
+              Fortaleciendo Nuestra Comunidad
+            </p>
+            <p class="text-lg text-white leading-relaxed mb-8 font-serif">
+              A través de nuestro proyecto de vinculación con instituciones educativas 
+              y organizaciones, fortalecemos el desarrollo sostenible de la Comunidad 
+              Kasaychi, preservando nuestras tradiciones ancestrales mientras construimos 
+              un futuro próspero.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a href="/actividades/economicas/" class="inline-flex items-center justify-center gap-2 bg-ancestral-gold text-white px-8 py-4 font-bold uppercase text-xs tracking-[0.2em] hover:bg-ancestral-gold/90 transition-colors">
+                Nuestros Productos
+              </a>
+              <a href="/quienes-somos/" class="inline-flex items-center justify-center gap-2 border-2 border-white/30 text-white px-8 py-4 font-bold uppercase text-xs tracking-[0.2em] hover:bg-white/10 transition-colors">
+                Conocer Más
+              </a>
+            </div>
+          </FadeIn>
+        </div>
+        
+        <FadeIn client:load delay={0.3} direction="right">
+          <div class="relative">
+            <div class="absolute -inset-4 bg-ancestral-gold/20 blur-2xl"></div>
+            <div class="relative overflow-hidden shadow-2xl group cursor-pointer" onclick="openVideoModal()">
+              <img 
+                src="https://img.youtube.com/vi/jyadaQmhU8Y/maxresdefault.jpg" 
+                alt="Video Promocional del Proyecto"
+                class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div class="absolute inset-0 bg-institutional-blue/40 group-hover:bg-institutional-blue/30 transition-colors flex items-center justify-center">
+                <div class="w-20 h-20 bg-ancestral-gold flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform">
+                  <Play className="w-8 h-8 text-white ml-1" />
+                </div>
+              </div>
+              <div class="absolute top-4 right-4">
+                <span class="inline-flex items-center gap-2 px-4 py-2 bg-ancestral-gold text-white text-sm font-bold uppercase tracking-wider">
+                  <Play className="w-4 h-4" />
+                  Ver Video
+                </span>
+              </div>
+            </div>
+          </div>
+        </FadeIn>
+      </div>
+    </div>
+  </section>
+
+  <!-- Institutional Info -->
+  <section class="py-20 bg-paper border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-8">
+      <FadeIn client:load>
+        <div class="bg-white p-8 lg:p-12 border border-slate-200">
+          <div class="flex flex-col lg:flex-row lg:items-center gap-8 mb-8">
+            <div class="w-20 h-20 bg-institutional-blue flex items-center justify-center shadow-lg">
+              <Building2 className="w-10 h-10 text-white" />
+            </div>
+            <div>
+              <h2 class="text-3xl font-bold text-institutional-blue mb-2">Universidad de las Fuerzas Armadas ESPE</h2>
+              <p class="text-slate-500 text-lg font-serif">Departamento de Ciencias de la Computación</p>
+            </div>
+          </div>
+          
+          <div class="grid sm:grid-cols-2 gap-6 pt-8 border-t border-slate-200">
+            <div class="flex items-center gap-4">
+              <div class="w-14 h-14 bg-ancestral-gold/10 flex items-center justify-center">
+                <Calendar className="w-7 h-7 text-ancestral-gold" />
+              </div>
+              <div>
+                <p class="text-sm text-slate-500 font-medium uppercase tracking-wider">Inicio del Proyecto</p>
+                <p class="text-xl text-institutional-blue font-bold">Abril 2024</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-4">
+              <div class="w-14 h-14 bg-institutional-blue/10 flex items-center justify-center">
+                <Calendar className="w-7 h-7 text-institutional-blue" />
+              </div>
+              <div>
+                <p class="text-sm text-slate-500 font-medium uppercase tracking-wider">Finalización</p>
+                <p class="text-xl text-institutional-blue font-bold">Abril 2027</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </FadeIn>
+    </div>
+  </section>
+
+  <!-- ODS Section -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <FadeIn client:load>
+          <span class="text-xs font-bold uppercase tracking-[0.3em] text-ancestral-gold mb-4 block">Alineación Global</span>
+          <h2 class="text-4xl font-bold text-institutional-blue mb-6">
+            Objetivos de Desarrollo <span class="text-ancestral-gold">Sostenible</span>
+          </h2>
+          <p class="text-slate-600 text-lg font-serif">
+            Nuestro proyecto contribuye directamente a los ODS de las Naciones Unidas
+          </p>
+        </FadeIn>
+      </div>
+      
+      <StaggerContainer client:load className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        {ods.map((item) => (
+          <StaggerItem client:load>
+            <div class="bg-white border border-slate-200 overflow-hidden hover:border-ancestral-gold/50 transition-all duration-300 group">
+              <div class="bg-institutional-blue p-6 flex items-center gap-6">
+                <div class="w-20 h-20 bg-white/10 flex items-center justify-center">
+                  <span class="text-4xl font-bold text-ancestral-gold">{item.number}</span>
+                </div>
+                <div>
+                  <p class="text-white text-sm font-medium uppercase tracking-wider mb-1">ODS {item.number}</p>
+                  <h3 class="text-white text-xl font-bold">{item.title}</h3>
+                </div>
+              </div>
+              <div class="p-6">
+                <p class="text-slate-600 leading-relaxed font-serif">{item.description}</p>
+              </div>
+            </div>
+          </StaggerItem>
+        ))}
+      </StaggerContainer>
+    </div>
+  </section>
+
+  <!-- Problem Section -->
+  <section class="py-20 bg-institutional-blue">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <FadeIn client:load direction="left">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-[0.3em] text-ancestral-gold mb-4 block">Diagnóstico</span>
+            <h2 class="text-4xl lg:text-5xl text-white font-bold mb-6">
+              Problema que <span class="text-ancestral-gold">Abordamos</span>
+            </h2>
+            <p class="text-white text-lg leading-relaxed mb-8 font-serif">
+              <strong class="text-white">Falta de infraestructura tecnológica</strong> y baja 
+              alfabetización digital limita el acceso a herramientas digitales para mejorar 
+              actividades económicas y sociales. Esta carencia restringe la difusión y 
+              comercialización de productos agrícolas y pecuarios, perpetuando bajos ingresos 
+              familiares y altas tasas de migración temporal.
+            </p>
+          </div>
+        </FadeIn>
+        
+        <FadeIn client:load direction="right">
+          <div class="grid grid-cols-3 gap-4">
+            <div class="bg-white/10 border border-white/20 p-6 text-center">
+              <p class="text-4xl lg:text-5xl font-bold text-ancestral-gold mb-2">753</p>
+              <p class="text-white text-sm uppercase tracking-wider">Habitantes</p>
+            </div>
+            <div class="bg-white/10 border border-white/20 p-6 text-center">
+              <p class="text-4xl lg:text-5xl font-bold text-ancestral-gold mb-2">369</p>
+              <p class="text-white text-sm uppercase tracking-wider">Beneficiarios</p>
+            </div>
+            <div class="bg-white/10 border border-white/20 p-6 text-center">
+              <p class="text-4xl lg:text-5xl font-bold text-ancestral-gold mb-2">$85</p>
+              <p class="text-white text-sm uppercase tracking-wider">Ingreso Promedio</p>
+            </div>
+          </div>
+        </FadeIn>
+      </div>
+    </div>
+  </section>
+
+  <!-- Objectives Section -->
+  <section class="py-20 bg-paper border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <FadeIn client:load>
+          <span class="text-xs font-bold uppercase tracking-[0.3em] text-ancestral-gold mb-4 block">Nuestra Meta</span>
+          <h2 class="text-4xl font-bold text-institutional-blue mb-6">
+            Objetivos del <span class="text-ancestral-gold">Proyecto</span>
+          </h2>
+        </FadeIn>
+      </div>
+      
+      <div class="grid lg:grid-cols-2 gap-8">
+        <!-- General Objective -->
+        <FadeIn client:load direction="left">
+          <div class="bg-institutional-blue p-8 text-white h-full">
+            <div class="flex items-center gap-4 mb-6">
+              <div class="w-14 h-14 bg-white/10 flex items-center justify-center">
+                <Target className="w-7 h-7 text-ancestral-gold" />
+              </div>
+              <h3 class="text-2xl font-bold">Objetivo General</h3>
+            </div>
+            <p class="text-lg leading-relaxed text-white font-serif">
+              Implementar <strong>canales de comunicación digital</strong> en la comunidad 
+              Kasaychi para mejorar su infraestructura tecnológica y promover el desarrollo 
+              económico y social, capacitando al <strong>80% de sus habitantes</strong> en el 
+              uso de recursos digitales.
+            </p>
+          </div>
+        </FadeIn>
+        
+        <!-- Specific Objectives -->
+        <div class="space-y-6">
+          <FadeIn client:load delay={0.1} direction="right">
+            <h3 class="text-2xl font-bold text-institutional-blue mb-4">Objetivos Específicos</h3>
+          </FadeIn>
+          {objectives.map((obj, index) => (
+            <FadeIn client:load delay={0.2 + index * 0.1} direction="right">
+              <div class="bg-white p-6 border border-slate-200 hover:border-ancestral-gold/50 transition-all duration-300">
+                <div class="flex gap-4">
+                  <div class="w-12 h-12 bg-ancestral-gold/10 flex items-center justify-center flex-shrink-0">
+                    <obj.icon className="w-6 h-6 text-ancestral-gold" />
+                  </div>
+                  <div>
+                    <h4 class="text-lg text-institutional-blue font-bold mb-2">{obj.title}</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed font-serif">{obj.description}</p>
+                  </div>
+                </div>
+              </div>
+            </FadeIn>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tools Section -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <FadeIn client:load>
+          <span class="text-xs font-bold uppercase tracking-[0.3em] text-ancestral-gold mb-4 block">Implementación</span>
+          <h2 class="text-4xl font-bold text-institutional-blue mb-6">
+            Herramientas <span class="text-ancestral-gold">Implementadas</span>
+          </h2>
+        </FadeIn>
+      </div>
+      
+      <StaggerContainer client:load className="grid md:grid-cols-3 gap-8">
+        {tools.map((tool) => (
+          <StaggerItem client:load>
+            <div class="group bg-paper p-8 border-t-4 border-ancestral-gold hover:border-institutional-blue transition-all duration-300 text-center">
+              <div class="w-16 h-16 bg-institutional-blue flex items-center justify-center mx-auto mb-6 group-hover:bg-ancestral-gold transition-colors">
+                <tool.icon className="w-8 h-8 text-white" />
+              </div>
+              <h3 class="text-xl font-bold text-institutional-blue mb-3">{tool.title}</h3>
+              <p class="text-slate-600 font-serif">{tool.description}</p>
+            </div>
+          </StaggerItem>
+        ))}
+      </StaggerContainer>
+    </div>
+  </section>
+
+  <!-- Impact Section -->
+  <section class="py-20 bg-institutional-blue">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <FadeIn client:load>
+          <span class="text-xs font-bold uppercase tracking-[0.3em] text-ancestral-gold mb-4 block">Resultados Esperados</span>
+          <h2 class="text-4xl font-bold text-white mb-6">
+            Impacto en la <span class="text-ancestral-gold">Comunidad</span>
+          </h2>
+        </FadeIn>
+      </div>
+      
+      <StaggerContainer client:load className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {impact.map((item) => (
+          <StaggerItem client:load>
+            <div class="bg-white/10 border border-white/20 p-6 text-center hover:bg-white/20 transition-colors">
+              <div class="w-14 h-14 bg-ancestral-gold/30 flex items-center justify-center mx-auto mb-4">
+                <item.icon className="w-7 h-7 text-ancestral-gold" />
+              </div>
+              <h3 class="text-lg text-white font-bold mb-2">{item.title}</h3>
+              <p class="text-white text-sm font-serif">{item.description}</p>
+            </div>
+          </StaggerItem>
+        ))}
+      </StaggerContainer>
+    </div>
+  </section>
+
+  <!-- Video Modal -->
+  <div id="videoModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-institutional-blue/95 backdrop-blur-sm" onclick="closeVideoModal()">
+    <div class="relative w-full max-w-4xl mx-4" onclick="event.stopPropagation()">
+      <button 
+        onclick="closeVideoModal()"
+        class="absolute -top-12 right-0 text-white hover:text-ancestral-gold transition-colors"
+      >
+        <X className="w-8 h-8" />
+      </button>
+      <div class="aspect-video bg-institutional-blue overflow-hidden shadow-2xl">
+        <iframe
+          id="modalVideo"
+          class="w-full h-full"
+          src=""
+          title="Video Promocional - Proyecto de Vinculación Kasaychi"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+  </div>
+
+  <script is:inline>
+    function openVideoModal() {
+      const modal = document.getElementById('videoModal');
+      const iframe = document.getElementById('modalVideo');
+      iframe.src = 'https://www.youtube.com/embed/jyadaQmhU8Y?autoplay=1&controls=1&showinfo=0&rel=0';
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeVideoModal() {
+      const modal = document.getElementById('videoModal');
+      const iframe = document.getElementById('modalVideo');
+      iframe.src = '';
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeVideoModal();
+    });
+  </script>
+</Layout>

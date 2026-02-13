@@ -1,0 +1,197 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import FadeIn from '../../components/ui/FadeIn.tsx';
+import StaggerContainer, { StaggerItem } from '../../components/ui/StaggerContainer.tsx';
+import { Target, Eye, Heart, Users, MapPin, Globe, ArrowRight } from 'lucide-react';
+
+const values = [
+  { icon: Users, title: 'Unidad Comunitaria', description: 'Trabajamos juntos como una gran familia, fortaleciendo los lazos que nos unen.' },
+  { icon: Heart, title: 'Respeto Ancestral', description: 'Honramos las tradiciones de nuestros ancestros y las transmitimos a las nuevas generaciones.' },
+  { icon: Globe, title: 'Cosmovisión Andina', description: 'Vivimos en armonía con la Pachamama, reconociendo nuestra interconexión con la naturaleza.' },
+];
+
+const stats = [
+  { value: '1981', label: 'Año de Fundación' },
+  { value: 'Kichwa', label: 'Nacionalidad' },
+  { value: 'Guaranda', label: 'Ubicación' },
+];
+---
+
+<Layout title="Quiénes Somos" description="Conoce la historia y visión de la Comunidad Kasaychi, una comunidad indígena Kichwa en los Andes ecuatorianos.">
+  <!-- Hero Section -->
+  <section class="relative pt-32 pb-20 overflow-hidden">
+    <!-- Background -->
+    <div class="absolute inset-0 z-0">
+      <div class="absolute inset-0 bg-gradient-to-br from-institutional-blue via-institutional-blue/95 to-institutional-blue/90"></div>
+      <div class="absolute inset-0 chacana-bg opacity-5"></div>
+      <div class="absolute -right-40 top-20 w-96 h-96 bg-ancestral-gold/10 rounded-full blur-3xl"></div>
+      <div class="absolute -left-40 bottom-20 w-80 h-80 bg-white/5 rounded-full blur-3xl"></div>
+    </div>
+    
+    <div class="relative z-10 max-w-7xl mx-auto px-8">
+      <div class="max-w-3xl">
+        <FadeIn client:load>
+          <span class="text-xs font-bold uppercase tracking-[0.3em] text-ancestral-gold mb-6 block">
+            Nuestra Identidad
+          </span>
+          <h1 class="text-5xl md:text-6xl font-bold text-white leading-tight mb-6">
+            Somos <span class="text-ancestral-gold">Inti Churi</span>
+          </h1>
+          <p class="text-xl text-white leading-relaxed font-serif">
+            Una comunidad indígena Kichwa que habita en las faldas de los Andes ecuatorianos, 
+            preservando nuestra cultura, idioma y tradiciones ancestrales.
+          </p>
+        </FadeIn>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Bar -->
+  <section class="bg-white border-y border-slate-200">
+    <div class="max-w-7xl mx-auto px-8 py-8">
+      <div class="grid grid-cols-3 gap-8 text-center">
+        {stats.map((stat) => (
+          <div>
+            <div class="text-2xl md:text-3xl font-bold text-ancestral-gold">{stat.value}</div>
+            <div class="text-slate-600 text-sm uppercase tracking-wider">{stat.label}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission & Vision -->
+  <section class="py-20 bg-paper">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="grid lg:grid-cols-2 gap-12">
+        <!-- Mission -->
+        <FadeIn client:load direction="left">
+          <div class="bg-white p-8 md:p-12 border border-slate-200 relative overflow-hidden group hover:border-ancestral-gold/50 transition-colors duration-300">
+            <div class="absolute top-0 right-0 p-6 opacity-5">
+              <Target className="w-24 h-24 text-institutional-blue" />
+            </div>
+            <div class="relative z-10">
+              <div class="w-14 h-14 bg-institutional-blue/10 flex items-center justify-center mb-6">
+                <Target className="w-7 h-7 text-institutional-blue" />
+              </div>
+              <span class="text-xs font-bold uppercase tracking-[0.3em] text-ancestral-gold mb-4 block">Propósito</span>
+              <h2 class="text-3xl font-bold text-institutional-blue mb-4">Nuestra Misión</h2>
+              <p class="text-slate-600 leading-relaxed text-lg font-serif">
+                Fortalecer nuestra identidad cultural Kichwa mediante la preservación de nuestras tradiciones, 
+                el fortalecimiento de la educación bilingüe y el desarrollo sostenible de proyectos productivos 
+                que beneficien a toda la comunidad.
+              </p>
+            </div>
+          </div>
+        </FadeIn>
+        
+        <!-- Vision -->
+        <FadeIn client:load direction="right">
+          <div class="bg-white p-8 md:p-12 border border-slate-200 relative overflow-hidden group hover:border-ancestral-gold/50 transition-colors duration-300">
+            <div class="absolute top-0 right-0 p-6 opacity-5">
+              <Eye className="w-24 h-24 text-institutional-blue" />
+            </div>
+            <div class="relative z-10">
+              <div class="w-14 h-14 bg-institutional-blue/10 flex items-center justify-center mb-6">
+                <Eye className="w-7 h-7 text-institutional-blue" />
+              </div>
+              <span class="text-xs font-bold uppercase tracking-[0.3em] text-ancestral-gold mb-4 block">Futuro</span>
+              <h2 class="text-3xl font-bold text-institutional-blue mb-4">Nuestra Visión</h2>
+              <p class="text-slate-600 leading-relaxed text-lg font-serif">
+                Ser una comunidad referente en la región por nuestra organización, cultura viva y desarrollo 
+                armónico con la naturaleza. Un lugar donde las nuevas generaciones encuentren orgullo en sus raíces 
+                y herramientas para su futuro.
+              </p>
+            </div>
+          </div>
+        </FadeIn>
+      </div>
+    </div>
+  </section>
+
+  <!-- Values Section -->
+  <section class="py-20 bg-white border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <FadeIn client:load>
+          <span class="text-xs font-bold uppercase tracking-[0.3em] text-ancestral-gold mb-4 block">Nuestros Pilares</span>
+          <h2 class="text-4xl font-bold text-institutional-blue">Valores que Nos Guían</h2>
+        </FadeIn>
+      </div>
+      
+      <StaggerContainer client:load className="grid md:grid-cols-3 gap-8">
+        {values.map((value) => (
+          <StaggerItem client:load>
+            <div class="bg-paper p-8 border border-slate-200 hover:border-ancestral-gold/50 transition-all duration-300 group">
+              <div class="w-14 h-14 bg-institutional-blue/10 flex items-center justify-center mb-6 group-hover:bg-ancestral-gold/10 transition-colors">
+                <value.icon className="w-7 h-7 text-institutional-blue group-hover:text-ancestral-gold transition-colors" />
+              </div>
+              <h3 class="text-xl font-bold text-institutional-blue mb-3">{value.title}</h3>
+              <p class="text-slate-600 leading-relaxed font-serif">{value.description}</p>
+            </div>
+          </StaggerItem>
+        ))}
+      </StaggerContainer>
+    </div>
+  </section>
+
+  <!-- Location Section -->
+  <section class="py-20 bg-institutional-blue">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <FadeIn client:load direction="left">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-[0.3em] text-ancestral-gold mb-4 block">Ubicación</span>
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+              En el Corazón de los <span class="text-ancestral-gold">Andes</span>
+            </h2>
+            <p class="text-lg text-white mb-8 leading-relaxed font-serif">
+              Kasaychi se encuentra en la parroquia de Guanujo, cantón Guaranda, provincia de Bolívar. 
+              A una altitud de aproximadamente 3,000 metros sobre el nivel del mar, nuestra comunidad 
+              disfruta de un clima andino privilegiado y paisajes montañosos espectaculares.
+            </p>
+            <div class="flex flex-wrap gap-4">
+              <div class="flex items-center gap-2 text-white">
+                <MapPin className="w-5 h-5 text-ancestral-gold" />
+                <span>Guanujo, Guaranda, Bolívar</span>
+              </div>
+            </div>
+          </div>
+        </FadeIn>
+        
+        <FadeIn client:load direction="right">
+          <div class="relative">
+            <div class="absolute -top-4 -right-4 w-full h-full border-2 border-ancestral-gold/50"></div>
+            <div class="relative overflow-hidden shadow-2xl">
+              <img 
+                src="/images/fondoLejano.jpg" 
+                alt="Paisaje de Kasaychi"
+                class="w-full aspect-[4/3] object-cover grayscale hover:grayscale-0 transition-all duration-700"
+              />
+            </div>
+          </div>
+        </FadeIn>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 bg-paper border-t border-slate-200">
+    <div class="max-w-4xl mx-auto px-8 text-center">
+      <FadeIn client:load>
+        <span class="text-xs font-bold uppercase tracking-[0.3em] text-ancestral-gold mb-4 block">Explorar</span>
+        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-institutional-blue">¿Quieres conocer más?</h2>
+        <p class="text-lg text-slate-600 mb-8 font-serif">
+          Explora nuestra historia completa y descubre los momentos que han definido nuestra comunidad.
+        </p>
+        <a 
+          href="/quienes-somos/historia/" 
+          class="inline-flex items-center gap-2 bg-ancestral-gold text-white px-8 py-4 font-bold uppercase text-xs tracking-[0.2em] hover:bg-ancestral-gold/90 transition-colors"
+        >
+          Ver Nuestra Historia
+          <ArrowRight className="w-5 h-5" />
+        </a>
+      </FadeIn>
+    </div>
+  </section>
+</Layout>

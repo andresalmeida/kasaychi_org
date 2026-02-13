@@ -1,0 +1,119 @@
+---
+import { Globe, Mail, Share2, ArrowRight } from 'lucide-react';
+
+const footerLinks = {
+  institucional: [
+    { label: 'Nuestra Historia', href: '/quienes-somos/' },
+    { label: 'Misión y Visión', href: '/quienes-somos/' },
+    { label: 'Proyectos', href: '/proyectos/' },
+    { label: 'Compromiso', href: '/compromiso/' },
+  ],
+  recursos: [
+    { label: 'Actividades', href: '/actividades/sociales/' },
+    { label: 'Productos', href: '/queso/' },
+    { label: 'Multimedia', href: '/multimedia/' },
+    { label: 'Ubicación', href: '/ubicanos/' },
+  ],
+};
+---
+
+<footer class="bg-institutional-blue text-white pt-24 pb-12">
+  <div class="max-w-7xl mx-auto px-8">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-16 mb-20">
+      <!-- Brand -->
+      <div class="md:col-span-5">
+        <div class="flex items-center gap-4 mb-8">
+          <div class="w-10 h-10 flex items-center justify-center border border-white/30">
+            <img src="/images/KasaychiKunapak.png" alt="Kasaychi" class="w-6 h-6 object-contain" />
+          </div>
+          <div class="flex flex-col">
+            <span class="text-sm font-bold tracking-widest uppercase">Comunidad Kasaychi</span>
+            <span class="text-[9px] tracking-widest uppercase text-white">Inti Churi - Hijos del Sol</span>
+          </div>
+        </div>
+        <p class="text-white font-serif italic text-lg mb-8 leading-relaxed">
+          Comunidad indígena Kichwa dedicada a la preservación de nuestras tradiciones ancestrales, 
+          la defensa de nuestro territorio y el fortalecimiento de nuestra cultura milenaria.
+        </p>
+        <div class="flex gap-6">
+          <a href="#" class="text-white hover:text-white transition-colors">
+            <Globe className="w-5 h-5" />
+          </a>
+          <a href="#" class="text-white hover:text-white transition-colors">
+            <Mail className="w-5 h-5" />
+          </a>
+          <a href="#" class="text-white hover:text-white transition-colors">
+            <Share2 className="w-5 h-5" />
+          </a>
+        </div>
+      </div>
+      
+      <!-- Links - Institucional -->
+      <div class="md:col-span-2">
+        <h5 class="text-[10px] font-bold uppercase tracking-[0.2em] text-ancestral-gold mb-8">Institucional</h5>
+        <ul class="space-y-4 text-xs font-medium uppercase tracking-widest text-white">
+          {footerLinks.institucional.map((link) => (
+            <li>
+              <a href={link.href} class="hover:text-white transition-colors">
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+      
+      <!-- Links - Recursos -->
+      <div class="md:col-span-2">
+        <h5 class="text-[10px] font-bold uppercase tracking-[0.2em] text-ancestral-gold mb-8">Recursos</h5>
+        <ul class="space-y-4 text-xs font-medium uppercase tracking-widest text-white">
+          {footerLinks.recursos.map((link) => (
+            <li>
+              <a href={link.href} class="hover:text-white transition-colors">
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+      
+      <!-- Newsletter -->
+      <div class="md:col-span-3">
+        <h5 class="text-[10px] font-bold uppercase tracking-[0.2em] text-ancestral-gold mb-8">Suscríbete</h5>
+        <p class="text-xs text-white mb-6 uppercase tracking-widest">Recibe noticias de nuestra comunidad.</p>
+        <div class="flex border-b border-white/20 pb-2">
+          <input 
+            type="email" 
+            placeholder="CORREO ELECTRÓNICO" 
+            class="bg-transparent border-none focus:ring-0 text-xs w-full placeholder:text-white uppercase tracking-widest text-white"
+          />
+          <button class="text-ancestral-gold px-2 hover:text-white transition-colors">
+            <ArrowRight className="w-5 h-5" />
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Bottom bar -->
+    <div class="flex flex-col md:flex-row justify-between items-center gap-8 pt-8 border-t border-white/10">
+      <p class="text-[10px] uppercase tracking-[0.2em] text-white">
+        © {new Date().getFullYear()} Comunidad Kasaychi. Todos los derechos reservados.
+      </p>
+      <div class="flex gap-10 text-[10px] uppercase tracking-[0.2em] text-white font-bold">
+        <a href="#" class="hover:text-white transition-colors">Privacidad</a>
+        <a href="#" class="hover:text-white transition-colors">Legal</a>
+        <a href="#" class="hover:text-white transition-colors">Contacto</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Location Widget -->
+<div class="fixed bottom-8 right-8 z-40 hidden md:block">
+  <div class="bg-white border border-slate-200 p-4 shadow-xl flex items-center gap-4">
+    <div class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+    <div class="flex flex-col">
+      <span class="text-[10px] font-bold uppercase tracking-widest text-slate-400 leading-none mb-1">Ubicación</span>
+      <span class="text-xs font-bold text-institutional-blue">GUARANDA, ECUADOR</span>
+    </div>
+  </div>
+</div>
