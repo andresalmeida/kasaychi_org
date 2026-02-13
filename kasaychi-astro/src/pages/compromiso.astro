@@ -9,13 +9,13 @@ const ods = [
     number: '4',
     title: 'Educación de Calidad',
     description: 'Capacitación en alfabetización digital para jóvenes y adultos, promoviendo competencias técnicas para el empleo y emprendimiento.',
-    icon: GraduationCap,
+    color: 'bg-[#C5192D]', // ODS 4 - Rojo
   },
   {
     number: '8',
     title: 'Trabajo Decente y Crecimiento Económico',
     description: 'Modernización tecnológica e innovación para mejorar la productividad económica y comercialización de productos locales.',
-    icon: TrendingUp,
+    color: 'bg-[#A21942]', // ODS 8 - Vino
   },
 ];
 
@@ -118,8 +118,8 @@ const objectives = [
       <FadeIn client:load>
         <div class="bg-white p-8 lg:p-12 border border-slate-200">
           <div class="flex flex-col lg:flex-row lg:items-center gap-8 mb-8">
-            <div class="w-20 h-20 bg-institutional-blue flex items-center justify-center shadow-lg">
-              <Building2 className="w-10 h-10 text-white" />
+            <div class="w-20 h-20 bg-white flex items-center justify-center shadow-lg border border-slate-200">
+              <img src="/images/espe_logo.png" alt="Logo ESPE" class="w-16 h-16 object-contain" />
             </div>
             <div>
               <h2 class="text-3xl font-bold text-institutional-blue mb-2">Universidad de las Fuerzas Armadas ESPE</h2>
@@ -157,7 +157,10 @@ const objectives = [
     <div class="max-w-7xl mx-auto px-8">
       <div class="text-center max-w-3xl mx-auto mb-16">
         <FadeIn client:load>
-          <span class="text-xs font-bold uppercase tracking-[0.3em] text-ancestral-gold mb-4 block">Alineación Global</span>
+          <div class="flex items-center justify-center gap-3 mb-6">
+            <img src="https://www.un.org/sustainabledevelopment/es/wp-content/uploads/sites/3/2016/01/S_SDG_Icons-01-17-1.jpg" alt="ODS ONU" class="w-16 h-16 object-cover" />
+            <span class="text-xs font-bold uppercase tracking-[0.3em] text-ancestral-gold">Alineación Global</span>
+          </div>
           <h2 class="text-4xl font-bold text-institutional-blue mb-6">
             Objetivos de Desarrollo <span class="text-ancestral-gold">Sostenible</span>
           </h2>
@@ -171,12 +174,15 @@ const objectives = [
         {ods.map((item) => (
           <StaggerItem client:load>
             <div class="bg-white border border-slate-200 overflow-hidden hover:border-ancestral-gold/50 transition-all duration-300 group">
-              <div class="bg-institutional-blue p-6 flex items-center gap-6">
-                <div class="w-20 h-20 bg-white/10 flex items-center justify-center">
-                  <span class="text-4xl font-bold text-ancestral-gold">{item.number}</span>
+              <div class={`${item.color} p-6 flex items-center gap-6`}>
+                <div class="w-20 h-20 bg-white/20 flex items-center justify-center backdrop-blur-sm">
+                  <span class="text-5xl font-bold text-white">{item.number}</span>
                 </div>
                 <div>
-                  <p class="text-white text-sm font-medium uppercase tracking-wider mb-1">ODS {item.number}</p>
+                  <div class="flex items-center gap-2 mb-1">
+                    <img src="https://www.un.org/sustainabledevelopment/es/wp-content/uploads/sites/3/2016/01/S_SDG_Icons-01-17-1.jpg" alt="ONU ODS" class="w-6 h-6 object-cover" />
+                    <p class="text-white/90 text-sm font-medium uppercase tracking-wider">ODS {item.number}</p>
+                  </div>
                   <h3 class="text-white text-xl font-bold">{item.title}</h3>
                 </div>
               </div>
