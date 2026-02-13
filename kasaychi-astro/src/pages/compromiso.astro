@@ -9,13 +9,13 @@ const ods = [
     number: '4',
     title: 'Educación de Calidad',
     description: 'Capacitación en alfabetización digital para jóvenes y adultos, promoviendo competencias técnicas para el empleo y emprendimiento.',
-    color: 'bg-[#C5192D]', // ODS 4 - Rojo
+    image: '/images/ods_4.svg',
   },
   {
     number: '8',
     title: 'Trabajo Decente y Crecimiento Económico',
     description: 'Modernización tecnológica e innovación para mejorar la productividad económica y comercialización de productos locales.',
-    color: 'bg-[#A21942]', // ODS 8 - Vino
+    image: '/images/ods_8.svg',
   },
 ];
 
@@ -158,7 +158,6 @@ const objectives = [
       <div class="text-center max-w-3xl mx-auto mb-16">
         <FadeIn client:load>
           <div class="flex items-center justify-center gap-3 mb-6">
-            <img src="https://www.un.org/sustainabledevelopment/es/wp-content/uploads/sites/3/2016/01/S_SDG_Icons-01-17-1.jpg" alt="ODS ONU" class="w-16 h-16 object-cover" />
             <span class="text-xs font-bold uppercase tracking-[0.3em] text-ancestral-gold">Alineación Global</span>
           </div>
           <h2 class="text-4xl font-bold text-institutional-blue mb-6">
@@ -174,16 +173,13 @@ const objectives = [
         {ods.map((item) => (
           <StaggerItem client:load>
             <div class="bg-white border border-slate-200 overflow-hidden hover:border-ancestral-gold/50 transition-all duration-300 group">
-              <div class={`${item.color} p-6 flex items-center gap-6`}>
-                <div class="w-20 h-20 bg-white/20 flex items-center justify-center backdrop-blur-sm">
-                  <span class="text-5xl font-bold text-white">{item.number}</span>
+              <div class="bg-white p-6 flex items-center gap-6">
+                <div class="w-24 h-24 flex-shrink-0">
+                  <img src={item.image} alt={`ODS ${item.number}`} class="w-full h-full object-contain" />
                 </div>
                 <div>
-                  <div class="flex items-center gap-2 mb-1">
-                    <img src="https://www.un.org/sustainabledevelopment/es/wp-content/uploads/sites/3/2016/01/S_SDG_Icons-01-17-1.jpg" alt="ONU ODS" class="w-6 h-6 object-cover" />
-                    <p class="text-white/90 text-sm font-medium uppercase tracking-wider">ODS {item.number}</p>
-                  </div>
-                  <h3 class="text-white text-xl font-bold">{item.title}</h3>
+                  <p class="text-slate-500 text-sm font-medium uppercase tracking-wider mb-1">ODS {item.number}</p>
+                  <h3 class="text-institutional-blue text-xl font-bold">{item.title}</h3>
                 </div>
               </div>
               <div class="p-6">
