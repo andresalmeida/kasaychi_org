@@ -48,7 +48,7 @@ const stats = [
   <!-- Hero Section -->
   <section class="relative min-h-[90vh] flex items-center overflow-hidden">
     <div class="absolute inset-0">
-      <img src="/images/inti_churi_premium.png" alt="Queso Inti Churi Premium" class="w-full h-full object-cover" />
+      <img src="/images/queso_premium_v2.png" alt="Queso Inti Churi Premium" class="w-full h-full object-cover" />
       <div class="absolute inset-0 bg-gradient-to-r from-institutional-blue/95 via-institutional-blue/80 to-transparent"></div>
     </div>
     
@@ -129,7 +129,7 @@ const stats = [
             <div class="absolute -top-4 -right-4 w-full h-full bg-ancestral-gold/20"></div>
             <div class="relative overflow-hidden shadow-2xl">
               <img 
-                src="/images/inti_churi_premium.png" 
+                src="/images/queso_premium_v2.png" 
                 alt="Queso IntiChuri Premium"
                 class="w-full h-auto object-cover grayscale hover:grayscale-0 transition-all duration-700"
               />
@@ -201,8 +201,8 @@ const stats = [
       <StaggerContainer client:load className="grid md:grid-cols-3 gap-8">
         {products.map((product) => (
           <StaggerItem client:load>
-            <div class="group bg-institutional-blue overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
-              <div class="relative h-56 overflow-hidden">
+            <div class="group bg-institutional-blue overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex flex-col h-full">
+              <div class="relative h-56 overflow-hidden flex-shrink-0">
                 <img 
                   src={product.image} 
                   alt={product.name}
@@ -210,7 +210,7 @@ const stats = [
                 />
                 <div class="absolute inset-0 bg-gradient-to-t from-institutional-blue to-transparent"></div>
               </div>
-              <div class="p-6 text-center">
+              <div class="p-6 text-center flex flex-col flex-grow">
                 <div class="flex justify-center mb-3">
                   <div class="flex">
                     {[...Array(5)].map((_, i) => (
@@ -221,12 +221,12 @@ const stats = [
                   </div>
                 </div>
                 <h3 class="text-xl text-white font-bold mb-3">{product.name}</h3>
-                <p class="text-white text-sm leading-relaxed mb-6 font-serif">{product.description}</p>
+                <p class="text-white text-sm leading-relaxed mb-6 font-serif flex-grow">{product.description}</p>
                 <a 
                   href="https://docs.google.com/forms/d/e/1FAIpQLSfdKlGXTKcVvKPovsqa4NjN7CDTcL3lrmcvi9CW0_g1bTN2aQ/viewform?usp=dialog" 
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="inline-flex items-center justify-center gap-2 bg-ancestral-gold text-white px-6 py-3 font-bold uppercase text-xs tracking-[0.2em] hover:bg-ancestral-gold/90 transition-colors"
+                  class="inline-flex items-center justify-center gap-2 bg-ancestral-gold text-white px-6 py-3 font-bold uppercase text-xs tracking-[0.2em] hover:bg-ancestral-gold/90 transition-colors mt-auto"
                 >
                   Hacer Pedido
                 </a>
