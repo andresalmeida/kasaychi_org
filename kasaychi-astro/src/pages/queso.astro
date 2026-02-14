@@ -302,12 +302,12 @@ const stats = [
       <StaggerContainer client:load className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {reasons.map((reason) => (
           <StaggerItem client:load>
-            <div class="bg-white/10 border border-white/20 p-6 hover:bg-white/20 transition-colors">
-              <div class="w-12 h-12 bg-ancestral-gold/30 flex items-center justify-center mb-4">
+            <div class="bg-white/10 border border-white/20 p-6 hover:bg-white/20 transition-colors flex flex-col h-full">
+              <div class="w-12 h-12 bg-ancestral-gold/30 flex items-center justify-center mb-4 flex-shrink-0">
                 <reason.icon className="w-6 h-6 text-ancestral-gold" />
               </div>
               <h3 class="text-lg text-white font-bold mb-2">{reason.title}</h3>
-              <p class="text-white text-sm leading-relaxed font-serif">{reason.description}</p>
+              <p class="text-white text-sm leading-relaxed font-serif flex-grow">{reason.description}</p>
             </div>
           </StaggerItem>
         ))}
