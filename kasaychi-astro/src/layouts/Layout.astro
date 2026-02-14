@@ -82,11 +82,16 @@ const fullTitle = title ? `${title} | ${siteTitle}` : siteTitle;
   })} />
 </head>
 <body class="min-h-screen bg-paper text-slate-900 antialiased chacana-bg">
+  <!-- Skip Link para accesibilidad -->
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-institutional-blue text-white p-4 z-[70] font-bold uppercase text-xs tracking-wider">
+    Saltar al contenido principal
+  </a>
+  
   <!-- Wiphala Border -->
   <div class="wiphala-border fixed top-0 w-full z-[60]"></div>
   
   <Header />
-  <main class="flex-1">
+  <main id="main-content" class="flex-1">
     <slot />
   </main>
   <Footer />

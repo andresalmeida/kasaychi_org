@@ -36,13 +36,13 @@ const footerLinks = {
           la defensa de nuestro territorio y el fortalecimiento de nuestra cultura milenaria.
         </p>
         <div class="flex gap-6">
-          <a href="#" class="text-white hover:text-white transition-colors">
+          <a href="https://facebook.com" target="_blank" rel="noopener" class="text-white hover:text-white transition-colors" aria-label="Facebook">
             <Globe className="w-5 h-5" />
           </a>
-          <a href="#" class="text-white hover:text-white transition-colors">
+          <a href="https://facebook.com" target="_blank" rel="noopener" class="text-white hover:text-white transition-colors" aria-label="Facebook">
             <Mail className="w-5 h-5" />
           </a>
-          <a href="#" class="text-white hover:text-white transition-colors">
+          <a href="https://facebook.com" target="_blank" rel="noopener" class="text-white hover:text-white transition-colors" aria-label="Facebook">
             <Share2 className="w-5 h-5" />
           </a>
         </div>
@@ -81,12 +81,15 @@ const footerLinks = {
         <h5 class="text-[10px] font-bold uppercase tracking-[0.2em] text-ancestral-gold mb-8">Suscríbete</h5>
         <p class="text-xs text-white mb-6 uppercase tracking-widest">Recibe noticias de nuestra comunidad.</p>
         <div class="flex border-b border-white/20 pb-2">
+          <label for="newsletter-email" class="sr-only">Correo electrónico</label>
           <input 
+            id="newsletter-email"
             type="email" 
-            placeholder="CORREO ELECTRÓNICO" 
+            placeholder="CORREO ELECTRÓNICO"
+            aria-required="true"
             class="bg-transparent border-none focus:ring-0 text-xs w-full placeholder:text-white uppercase tracking-widest text-white"
           />
-          <button class="text-ancestral-gold px-2 hover:text-white transition-colors">
+          <button type="submit" class="text-ancestral-gold px-2 hover:text-white transition-colors" aria-label="Suscribirse al boletín">
             <ArrowRight className="w-5 h-5" />
           </button>
         </div>
