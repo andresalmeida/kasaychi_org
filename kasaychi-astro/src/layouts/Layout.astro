@@ -32,6 +32,9 @@ const fullTitle = title ? `${title} | ${siteTitle}` : siteTitle;
   <title>{fullTitle}</title>
   <meta name="title" content={fullTitle} />
   <meta name="description" content={description} />
+  <meta name="keywords" content="Comunidad Kasaychi, Inti Churi, Kichwa, Guaranda, Ecuador, comunidad indígena, tradición ancestral, queso artesanal, ODS, desarrollo sostenible" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Comunidad Kasaychi" />
   
   <link rel="canonical" href={canonicalURL} />
   <link rel="icon" type="image/png" href="/images/KasaychiKunapak.png" />
@@ -61,9 +64,21 @@ const fullTitle = title ? `${title} | ${siteTitle}` : siteTitle;
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Comunidad Kasaychi",
+    "alternateName": "Inti Churi",
     "url": Astro.site?.toString(),
     "logo": new URL("/images/KasaychiKunapak.png", Astro.site).toString(),
     "description": description,
+    "foundingDate": "1981",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Km 19 Vía Riobamba, sector Kasaichi",
+      "addressLocality": "Guaranda",
+      "addressRegion": "Bolívar",
+      "addressCountry": "EC"
+    },
+    "sameAs": [
+      "https://www.facebook.com/people/Inti-Churi/100057352064394/"
+    ]
   })} />
 </head>
 <body class="min-h-screen bg-paper text-slate-900 antialiased chacana-bg">

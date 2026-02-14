@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kasaychi.org/sitemap-index.xml
